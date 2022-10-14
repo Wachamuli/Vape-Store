@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Registrarse";
+}
+
+<div class="formContainer">
+    <form action="@Url.Action("Registrarse", "HomeController")" method="post" class="loginForm">
+        <h1>Registro</h1>
+
+        <div class="control">
+            <label>Nombre</label>
+            <input name="nombre" />
+        </div>
+
+        <div class="control">
+            <label>Apellido</label>
+            <input  name="apellido"/>
+        </div>
+
+        <div class="control">
+            <label>Fecha de nacimiento</label>
+            <input name="fechaNacimiento" type="date" />
+        </div>
+
+        <div class="control">
+            <label>Sexo</label>
+            <div class="labelSexo">
+                <p>Hombre</p>
+                <span><input name="sexo" type="radio" /></span>
+            </div>
+            <div class="labelSexo">
+                <p>Mujer</p>
+                <span><input name="sexo" type="radio" /></span>
+            </div>
+        </div>
+
+        <div class="control">
+            <label>Teléfono</label>
+            <input name="telefono"/>
+        </div>
+
+        <div class="control">
+            <label>Correo</label>
+            <input name="correo" />
+        </div>
+
+        <div class="control">
+            <label>Nombre de usuario</label>
+            <input name="nombreUsuario" />
+        </div>
+
+        <div class="control">
+            <label>Contraseña</label>
+            <input class="password" name="contrasena" />
+        </div>
+
+        <button type="submit">Registrar</button>
+    </form>
+</div>
