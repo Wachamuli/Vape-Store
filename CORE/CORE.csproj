@@ -108,6 +108,10 @@
     <Content Include="App_Data\coreDB_log.ldf">
       <DependentUpon>coreDB.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\logCoreDB.mdf" />
+    <Content Include="App_Data\logCoreDB_log.ldf">
+      <DependentUpon>logCoreDB.mdf</DependentUpon>
+    </Content>
     <Content Include="coreWS.asmx" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />

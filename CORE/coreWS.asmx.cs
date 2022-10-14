@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using log4net;
 
 namespace CORE
 {
@@ -17,6 +18,9 @@ namespace CORE
     // [System.Web.Script.Services.ScriptService]
     public class coreWS : System.Web.Services.WebService
     {
+        //log4net init
+        private static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
+
         //dsAdapters
         ProductosTableAdapter adapterProducto = new ProductosTableAdapter();
         ClientesTableAdapter adapterCliente = new ClientesTableAdapter();
@@ -24,6 +28,11 @@ namespace CORE
         CuentasPorCobrarTableAdapter adapterCuenta = new CuentasPorCobrarTableAdapter();
         FacturasTableAdapter adapterFactura = new FacturasTableAdapter();
 
+        //soap clients
+
+
+
+        //metodos
         [WebMethod]
         public string InsertarProductoCORE(string Nombre, string Tipo, decimal Precio, int Cantidad, string productoID, string Descripcion, string Marca, string Imagen) 
         {
@@ -32,7 +41,7 @@ namespace CORE
 
             //Pasar a integracion
 
-            //Log4Net
+            Logger.Info("Producto " + Nombre + " fue insertado.");
             return "Producto " + Nombre + " fue insertado.";
         }
 
@@ -44,7 +53,7 @@ namespace CORE
 
             //Pasar a integracion
 
-            //Log4Net
+            Logger.Info("Producto con ID " + productoID + " fue eliminado.");
             return "Producto con ID " + productoID + " fue eliminado.";
         }
 
@@ -54,7 +63,7 @@ namespace CORE
 
             adapterProducto.spUpdProducto(Cantidad, productoID);
 
-            //Log4Net
+            Logger.Info("Producto con ID " + productoID + " fue actualizado.");
             return "Producto con ID " + productoID + " fue actualizado.";
         }
 
@@ -65,7 +74,7 @@ namespace CORE
             adapterCliente.spInsCliente(Nombres, Apellidos, Cedula, Telefono, fechaNacimiento, Email, Password, Sexo);
 
 
-            //Log4Net
+            Logger.Info("Cliente " + Nombres + " fue insertado.");
             return "Cliente " + Nombres + " fue insertado.";
         }
 
@@ -77,7 +86,7 @@ namespace CORE
 
             //Pasar a integracion
 
-            //Log4Net
+            Logger.Info("Cliente con cedula " + Cedula + " fue eliminado.");
             return "Cliente con cedula " + Cedula + " fue eliminado.";
         }
 
@@ -87,7 +96,7 @@ namespace CORE
 
             adapterCliente.spUpdCliente(totalGastado, Cedula);
 
-            //Log4Net
+            Logger.Info("Cliente con cedula " + Cedula + " fue actualizado.");
             return "Cliente con cedula " + Cedula + " fue actualizado.";
         }
 
@@ -99,7 +108,7 @@ namespace CORE
 
             //Pasar a integracion
 
-            //Log4Net
+            Logger.Info("Empleado " + Nombres + " fue insertado.");
             return "Empleado " + Nombres + " fue insertado.";
         }
 
@@ -111,7 +120,7 @@ namespace CORE
 
             //Pasar a integracion
 
-            //Log4Net
+            Logger.Info("Empleado con cedula " + Cedula + " fue eliminado.");
             return "Empleado con cedula " + Cedula + " fue eliminado.";
         }
 
@@ -122,7 +131,7 @@ namespace CORE
             adapterEmpleado.spUpdEmpleado(cuentasCobradas, Cedula);
 
 
-            //Log4Net
+            Logger.Info("Empleado con cedula " + Cedula + " fue actualizado.");
             return "Empleado con cedula " + Cedula + " fue actualizado.";
         }
 
@@ -133,7 +142,7 @@ namespace CORE
             adapterCuenta.spInsCuenta(Nombres, Apellidos, Producto, Total, cuentaID, Cedula);
 
 
-            //Log4Net
+            Logger.Info("Cuenta de " + Nombres + " esta pendiente para pagar.");
             return "Cuenta de " + Nombres + " esta pendiente para pagar.";
         }
 
@@ -144,7 +153,7 @@ namespace CORE
             adapterCuenta.spDelCuenta(cuentaID);
 
 
-            //Log4Net
+            Logger.Info("Cuenta de la cedula " + cuentaID + " ya fue pagada.");
             return "Cuenta de la cedula " + cuentaID + " ya fue pagada.";
         }
 
@@ -155,7 +164,7 @@ namespace CORE
             adapterFactura.spInsFactura(Nombres, Apellidos, Producto, Total, cuentaID, Cedula, facturadoPor);
 
 
-            //Log4Net
+            Logger.Info("Cuenta de " + Nombres + " esta pendiente para pagar.");
             return "Cuenta de " + Nombres + " esta pendiente para pagar.";
         }
 
