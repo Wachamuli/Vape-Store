@@ -1,8 +1,10 @@
-﻿using System;
+﻿using INTEGRACION.dsINTEGRACIONTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using log4net;
 
 namespace INTEGRACION
 {
@@ -16,11 +18,175 @@ namespace INTEGRACION
     // [System.Web.Script.Services.ScriptService]
     public class integracionSW : System.Web.Services.WebService
     {
+        //log4net init
+        private static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
+
+        //dsAdapters
+        ProductosTableAdapter adapterProducto = new ProductosTableAdapter();
+        ClientesTableAdapter adapterCliente = new ClientesTableAdapter();
+        EmpleadosTableAdapter adapterEmpleado = new EmpleadosTableAdapter();
+        CuentasPorCobrarTableAdapter adapterCuenta = new CuentasPorCobrarTableAdapter();
+        FacturasTableAdapter adapterFactura = new FacturasTableAdapter();
+
+        //dsAdapters REFERENCIAS a otras db
+
+
+
+        //soap clients
+        coreSR.coreWSSoapClient clientCore = new coreSR.coreWSSoapClient();
+
+
+
+        //metodos
+        [WebMethod]
+        public string InsertarProductoINTEGRACION(string Nombre, string Tipo, decimal Precio, int Cantidad, string productoID, string Descripcion, string Marca, string Imagen)
+        {
+
+            adapterProducto.spInsProducto(Nombre, Tipo, Precio, Cantidad, productoID, Descripcion, Marca, Imagen);
+
+            //pasar a WEBAPP
+            //pasar a CAJA
+
+            Logger.Info("Producto " + Nombre + " fue insertado.");
+            return "Producto " + Nombre + " fue insertado.";
+        }
 
         [WebMethod]
-        public string HelloWorld()
+        public string DeleteProductoINTEGRACION(string productoID)
         {
-            return "Hello World";
+
+            adapterProducto.spDelProducto(productoID);
+
+            //pasar a WEBAPP
+            //pasar a CAJA
+
+            Logger.Info("Producto con ID " + productoID + " fue eliminado.");
+            return "Producto con ID " + productoID + " fue eliminado.";
         }
+
+        [WebMethod]
+        public string UpdateProductoINTEGRACION(int Cantidad, string productoID)
+        {
+
+            adapterProducto.spUpdProducto(Cantidad, productoID);
+
+            //pasar a CORE, try
+            //pasar a CAJA o WEBAPP
+
+            Logger.Info("Producto con ID " + productoID + " fue actualizado.");
+            return "Producto con ID " + productoID + " fue actualizado.";
+        }
+
+        [WebMethod]
+        public string InsertClienteINTEGRACION(string Nombres, string Apellidos, string Cedula, string Telefono, DateTime fechaNacimiento, string Email, string Password, string Sexo)
+        {
+
+            adapterCliente.spInsCliente(Nombres, Apellidos, Cedula, Telefono, fechaNacimiento, Email, Password, Sexo);
+
+            //pasar a CORE, try
+            //pasar a CAJA
+
+            Logger.Info("Cliente " + Nombres + " fue insertado.");
+            return "Cliente " + Nombres + " fue insertado.";
+        }
+
+        [WebMethod]
+        public string DeleteClienteINTEGRACION(string Cedula)
+        {
+
+            adapterCliente.spDelCliente(Cedula);
+
+            //Pasar a WEBAPP
+            //pasar a CAJA
+
+            Logger.Info("Cliente con cedula " + Cedula + " fue eliminado.");
+            return "Cliente con cedula " + Cedula + " fue eliminado.";
+        }
+
+        [WebMethod]
+        public string UpdateClienteINTEGRACION(decimal totalGastado, string Cedula)
+        {
+            //pasar a CORE, try
+            //pasar a WEBAPP
+
+            adapterCliente.spUpdCliente(totalGastado, Cedula);
+
+            Logger.Info("Cliente con cedula " + Cedula + " fue actualizado.");
+            return "Cliente con cedula " + Cedula + " fue actualizado.";
+        }
+
+        [WebMethod]
+        public string InsertEmpleadoINTEGRACION(string Nombres, string Apellidos, string Cedula, string Telefono, string rol, string Email, string Password, string Sexo)
+        {
+
+            adapterEmpleado.spInsEmpleado(Nombres, Apellidos, Email, Telefono, Cedula, Password, rol, Sexo);
+
+            //Pasar a CAJA
+
+            Logger.Info("Empleado " + Nombres + " fue insertado.");
+            return "Empleado " + Nombres + " fue insertado.";
+        }
+
+        [WebMethod]
+        public string DeleteEmpleadoINTEGRACION(string Cedula)
+        {
+
+            adapterEmpleado.spDelEmpleado(Cedula);
+
+            //Pasar a CAJA
+
+            Logger.Info("Empleado con cedula " + Cedula + " fue eliminado.");
+            return "Empleado con cedula " + Cedula + " fue eliminado.";
+        }
+
+        [WebMethod]
+        public string UpdateEmpleadoINTEGRACION(int cuentasCobradas, string Cedula)
+        {
+
+            adapterEmpleado.spUpdEmpleado(cuentasCobradas, Cedula);
+
+            //Pasar a CORE, try
+
+            Logger.Info("Empleado con cedula " + Cedula + " fue actualizado.");
+            return "Empleado con cedula " + Cedula + " fue actualizado.";
+        }
+
+        [WebMethod]
+        public string InsertCuentaINTEGRACION(string Nombres, string Apellidos, string Producto, decimal Total, string cuentaID, string Cedula)
+        {
+
+            adapterCuenta.spInsCuenta(Nombres, Apellidos, Producto, Total, cuentaID, Cedula);
+
+            //Pasar a CORE, try
+            //Pasar a CAJA
+
+            Logger.Info("Cuenta de " + Nombres + " esta pendiente para pagar.");
+            return "Cuenta de " + Nombres + " esta pendiente para pagar.";
+        }
+
+        [WebMethod]
+        public string DeleteCuentaINTEGRACION(string cuentaID)
+        {
+
+            adapterCuenta.spDelCuenta(cuentaID);
+            //Pasar a CORE, try
+            //Pasar a WEBAPP
+
+
+            Logger.Info("Cuenta de la cedula " + cuentaID + " ya fue pagada.");
+            return "Cuenta de la cedula " + cuentaID + " ya fue pagada.";
+        }
+
+        [WebMethod]
+        public string InsertFacturaINTEGRACION(string Nombres, string Apellidos, string Producto, decimal Total, string cuentaID, string Cedula, string facturadoPor)
+        {
+
+            adapterFactura.spInsFactura(Nombres, Apellidos, Producto, Total, cuentaID, Cedula, facturadoPor);
+            //Pasar a CORE, try
+
+            Logger.Info("Cuenta de " + Nombres + " esta pendiente para pagar.");
+            return "Cuenta de " + Nombres + " esta pendiente para pagar.";
+        }
+
     }
 }

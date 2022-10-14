@@ -29,7 +29,7 @@ namespace CORE
         FacturasTableAdapter adapterFactura = new FacturasTableAdapter();
 
         //soap clients
-
+        integracionSR.integracionSWSoapClient clienteIntegracion = new integracionSR.integracionSWSoapClient();
 
 
         //metodos
@@ -39,7 +39,7 @@ namespace CORE
 
             adapterProducto.spInsProducto(Nombre, Tipo, Precio, Cantidad, productoID, Descripcion, Marca, Imagen);
 
-            //Pasar a integracion
+            //clienteIntegracion
 
             Logger.Info("Producto " + Nombre + " fue insertado.");
             return "Producto " + Nombre + " fue insertado.";
