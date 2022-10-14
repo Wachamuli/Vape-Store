@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 using log4net;
+using System.Data.SqlClient;
 
 namespace CORE
 {
@@ -18,6 +19,11 @@ namespace CORE
     // [System.Web.Script.Services.ScriptService]
     public class coreWS : System.Web.Services.WebService
     {
+        //transaction
+        SqlTransaction transaction = null;
+
+
+
         //log4net init
         private static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
 
@@ -104,12 +110,43 @@ namespace CORE
         public string InsertEmpleadoCORE(string Nombres, string Apellidos, string Cedula, string Telefono, string rol, string Email, string Password, string Sexo)
         {
 
-            adapterEmpleado.spInsEmpleado(Nombres, Apellidos, Email, Telefono, Cedula, Password, rol, Sexo);
+            try
+            {
+                dsCORE.EmpleadosDataTable dtEmpleados = adapterEmpleado.spFillByCedula1(Cedula);
 
-            clienteIntegracion.InsertEmpleadoINTEGRACION(Nombres, Apellidos, Email, Telefono, Cedula, Password, rol, Sexo);
+                adapterEmpleado.Connection.Open();
+                transaction = adapterEmpleado.Connection.BeginTransaction();
+                adapterEmpleado.Transaction = transaction;
 
-            Logger.Info("Empleado " + Nombres + " fue insertado.");
-            return "Empleado " + Nombres + " fue insertado.";
+
+                if (dtEmpleados.Rows.Count == 0)
+                {
+
+                adapterEmpleado.spInsEmpleado(Nombres, Apellidos, Email, Telefono, Cedula, Password, rol, Sexo);
+
+                clienteIntegracion.InsertEmpleadoINTEGRACION(Nombres, Apellidos, Cedula, Telefono, rol,  Email, Password, Sexo);
+
+                transaction.Commit();
+                adapterEmpleado.Connection.Close();
+
+                Logger.Info("Empleado " + Nombres + " fue insertado.");
+                return "Empleado " + Nombres + " fue insertado.";
+                }
+
+                throw new Exception();
+            }
+            catch (Exception e)
+            {
+                transaction.Rollback();
+                adapterEmpleado.Connection.Close();
+
+                Logger.Info("Error al insertar empleado " + Nombres + " . Tal vez ya exista o la conexion con la capa de integracion no este abierta.");
+                return "Error al insertar empleado " + Nombres + " . Tal vez ya exista o la conexion con la capa de integracion no este abierta.";
+                
+                throw;
+            }
+
+            
         }
 
         [WebMethod]
