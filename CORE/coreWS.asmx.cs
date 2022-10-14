@@ -43,12 +43,42 @@ namespace CORE
         public string InsertarProductoCORE(string Nombre, string Tipo, decimal Precio, int Cantidad, string productoID, string Descripcion, string Marca, string Imagen) 
         {
 
-            adapterProducto.spInsProducto(Nombre, Tipo, Precio, Cantidad, productoID, Descripcion, Marca, Imagen);
+            try
+            {
+                dsCORE.ProductosDataTable dtProductos = adapterProducto.spFillByProductoID1(productoID);
 
-            clienteIntegracion.InsertarProductoINTEGRACION(Nombre, Tipo, Precio, Cantidad, productoID, Descripcion, Marca, Imagen);
+                adapterProducto.Connection.Open();
+                transaction = adapterProducto.Connection.BeginTransaction();
+                adapterProducto.Transaction = transaction;
 
-            Logger.Info("Producto " + Nombre + " fue insertado.");
-            return "Producto " + Nombre + " fue insertado.";
+
+                if (dtProductos.Rows.Count == 0)
+                {
+
+                    adapterProducto.spInsProducto(Nombre, Tipo, Precio, Cantidad, productoID, Descripcion, Marca, Imagen);
+
+                    clienteIntegracion.InsertarProductoINTEGRACION(Nombre, Tipo, Precio, Cantidad, productoID, Descripcion, Marca, Imagen);
+
+                    transaction.Commit();
+                    adapterEmpleado.Connection.Close();
+
+                    Logger.Info("Producto " + Nombre + " fue insertado.");
+                    return "Producto " + Nombre + " fue insertado.";
+                }
+
+                throw new Exception();
+            }
+            catch (Exception e)
+            {
+                transaction.Rollback();
+                adapterEmpleado.Connection.Close();
+
+                Logger.Error("Error al producto empleado " + Nombre + " . Tal vez ya exista o la conexion con la capa de integracion no este abierta.");
+                return "Error al producto empleado " + Nombre + " . Tal vez ya exista o la conexion con la capa de integracion no este abierta.";
+
+                throw;
+            }
+
         }
 
         [WebMethod]
@@ -140,7 +170,7 @@ namespace CORE
                 transaction.Rollback();
                 adapterEmpleado.Connection.Close();
 
-                Logger.Info("Error al insertar empleado " + Nombres + " . Tal vez ya exista o la conexion con la capa de integracion no este abierta.");
+                Logger.Error("Error al insertar empleado " + Nombres + " . Tal vez ya exista o la conexion con la capa de integracion no este abierta.");
                 return "Error al insertar empleado " + Nombres + " . Tal vez ya exista o la conexion con la capa de integracion no este abierta.";
                 
                 throw;
