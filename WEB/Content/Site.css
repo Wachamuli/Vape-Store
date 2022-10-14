@@ -37,9 +37,6 @@ textarea {
     font-family: "Lobster Two";
 }
 
-.container {
-
-}
 
 #title {
     font-family: "Lobster Two";
@@ -65,7 +62,6 @@ textarea {
 
 .productCard .btnComprar {
     display: block;
-
     width: 100%;
 }
 
@@ -137,7 +133,7 @@ textarea {
 
 .control span {
     overflow: hidden;
-    display: block;
+    display: inline;
 }
 
 
@@ -154,5 +150,12 @@ textarea {
 
 .labelSexo span {
     align-content: flex-start;
+    display: flex;
+    flex-direction: row;
 
+}
+
+#formContainerLogin {
+    margin-top: 10rem;
+    margin-top: 10rem;
 }
