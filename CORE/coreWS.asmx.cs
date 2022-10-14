@@ -39,7 +39,7 @@ namespace CORE
 
             adapterProducto.spInsProducto(Nombre, Tipo, Precio, Cantidad, productoID, Descripcion, Marca, Imagen);
 
-            //clienteIntegracion
+            clienteIntegracion.InsertarProductoINTEGRACION(Nombre, Tipo, Precio, Cantidad, productoID, Descripcion, Marca, Imagen);
 
             Logger.Info("Producto " + Nombre + " fue insertado.");
             return "Producto " + Nombre + " fue insertado.";
@@ -51,7 +51,7 @@ namespace CORE
 
             adapterProducto.spDelProducto(productoID);
 
-            //Pasar a integracion
+            clienteIntegracion.DeleteProductoINTEGRACION(productoID);
 
             Logger.Info("Producto con ID " + productoID + " fue eliminado.");
             return "Producto con ID " + productoID + " fue eliminado.";
@@ -84,7 +84,7 @@ namespace CORE
 
             adapterCliente.spDelCliente(Cedula);
 
-            //Pasar a integracion
+            clienteIntegracion.DeleteClienteINTEGRACION(Cedula);
 
             Logger.Info("Cliente con cedula " + Cedula + " fue eliminado.");
             return "Cliente con cedula " + Cedula + " fue eliminado.";
@@ -106,7 +106,7 @@ namespace CORE
 
             adapterEmpleado.spInsEmpleado(Nombres, Apellidos, Email, Telefono, Cedula, Password, rol, Sexo);
 
-            //Pasar a integracion
+            clienteIntegracion.InsertEmpleadoINTEGRACION(Nombres, Apellidos, Email, Telefono, Cedula, Password, rol, Sexo);
 
             Logger.Info("Empleado " + Nombres + " fue insertado.");
             return "Empleado " + Nombres + " fue insertado.";
@@ -118,7 +118,7 @@ namespace CORE
 
             adapterEmpleado.spDelEmpleado(Cedula);
 
-            //Pasar a integracion
+            clienteIntegracion.DeleteEmpleadoINTEGRACION(Cedula);
 
             Logger.Info("Empleado con cedula " + Cedula + " fue eliminado.");
             return "Empleado con cedula " + Cedula + " fue eliminado.";

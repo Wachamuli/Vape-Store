@@ -114,7 +114,40 @@
     <Content Include="App_Data\logCoreDB_log.ldf">
       <DependentUpon>logCoreDB.mdf</DependentUpon>
     </Content>
-    <Content Include="Connected Services\integracionSR\CORE.integracionSR.HelloWorldResponse.datasource">
+    <Content Include="Connected Services\integracionSR\CORE.integracionSR.DeleteClienteINTEGRACIONResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\integracionSR\CORE.integracionSR.DeleteCuentaINTEGRACIONResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\integracionSR\CORE.integracionSR.DeleteEmpleadoINTEGRACIONResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\integracionSR\CORE.integracionSR.DeleteProductoINTEGRACIONResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\integracionSR\CORE.integracionSR.InsertarProductoINTEGRACIONResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\integracionSR\CORE.integracionSR.InsertClienteINTEGRACIONResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\integracionSR\CORE.integracionSR.InsertCuentaINTEGRACIONResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\integracionSR\CORE.integracionSR.InsertEmpleadoINTEGRACIONResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\integracionSR\CORE.integracionSR.InsertFacturaINTEGRACIONResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\integracionSR\CORE.integracionSR.UpdateClienteINTEGRACIONResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\integracionSR\CORE.integracionSR.UpdateEmpleadoINTEGRACIONResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\integracionSR\CORE.integracionSR.UpdateProductoINTEGRACIONResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\integracionSR\integracionSW.disco" />
