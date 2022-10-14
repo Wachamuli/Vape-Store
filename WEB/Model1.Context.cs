@@ -27,6 +27,7 @@ namespace WEB
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Carrito> Carritoes { get; set; }
         public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<Producto> Productos { get; set; }
     
@@ -67,6 +68,69 @@ namespace WEB
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsCliente", nombresParameter, apellidosParameter, cedulaParameter, telefonoParameter, fechaNacimientoParameter, emailParameter, passwordParameter, sexoParameter);
         }
     
+        public virtual int spInsertProductoACarrito(string codigo, string tipo, string marca, Nullable<decimal> precio, Nullable<int> cantidad, string nombre, Nullable<decimal> peso, string imagen, string descripcion, string usuarioCedula)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            var tipoParameter = tipo != null ?
+                new ObjectParameter("tipo", tipo) :
+                new ObjectParameter("tipo", typeof(string));
+    
+            var marcaParameter = marca != null ?
+                new ObjectParameter("marca", marca) :
+                new ObjectParameter("marca", typeof(string));
+    
+            var precioParameter = precio.HasValue ?
+                new ObjectParameter("precio", precio) :
+                new ObjectParameter("precio", typeof(decimal));
+    
+            var cantidadParameter = cantidad.HasValue ?
+                new ObjectParameter("cantidad", cantidad) :
+                new ObjectParameter("cantidad", typeof(int));
+    
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("nombre", nombre) :
+                new ObjectParameter("nombre", typeof(string));
+    
+            var pesoParameter = peso.HasValue ?
+                new ObjectParameter("peso", peso) :
+                new ObjectParameter("peso", typeof(decimal));
+    
+            var imagenParameter = imagen != null ?
+                new ObjectParameter("imagen", imagen) :
+                new ObjectParameter("imagen", typeof(string));
+    
+            var descripcionParameter = descripcion != null ?
+                new ObjectParameter("descripcion", descripcion) :
+                new ObjectParameter("descripcion", typeof(string));
+    
+            var usuarioCedulaParameter = usuarioCedula != null ?
+                new ObjectParameter("usuarioCedula", usuarioCedula) :
+                new ObjectParameter("usuarioCedula", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertProductoACarrito", codigoParameter, tipoParameter, marcaParameter, precioParameter, cantidadParameter, nombreParameter, pesoParameter, imagenParameter, descripcionParameter, usuarioCedulaParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> spIsExistProducto(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("spIsExistProducto", codigoParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> spIsExistProductoEnCarrito(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("spIsExistProductoEnCarrito", codigoParameter);
+        }
+    
         public virtual ObjectResult<spSelectByCedu_Result> spSelectByCedu(string cedula)
         {
             var cedulaParameter = cedula != null ?
@@ -76,9 +140,49 @@ namespace WEB
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spSelectByCedu_Result>("spSelectByCedu", cedulaParameter);
         }
     
+        public virtual ObjectResult<spSelectCarrito_Result> spSelectCarrito(string usuarioCedula)
+        {
+            var usuarioCedulaParameter = usuarioCedula != null ?
+                new ObjectParameter("usuarioCedula", usuarioCedula) :
+                new ObjectParameter("usuarioCedula", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spSelectCarrito_Result>("spSelectCarrito", usuarioCedulaParameter);
+        }
+    
+        public virtual ObjectResult<spSelectProductoByCodigo_Result> spSelectProductoByCodigo(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spSelectProductoByCodigo_Result>("spSelectProductoByCodigo", codigoParameter);
+        }
+    
         public virtual ObjectResult<spSelectProductos_Result> spSelectProductos()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spSelectProductos_Result>("spSelectProductos");
+        }
+    
+        public virtual int spUpdateCarritoEstado(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spUpdateCarritoEstado", codigoParameter);
+        }
+    
+        public virtual int spUpdateProductoEstado(string codigo, string usuarioCedula)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            var usuarioCedulaParameter = usuarioCedula != null ?
+                new ObjectParameter("usuarioCedula", usuarioCedula) :
+                new ObjectParameter("usuarioCedula", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spUpdateProductoEstado", codigoParameter, usuarioCedulaParameter);
         }
     }
 }

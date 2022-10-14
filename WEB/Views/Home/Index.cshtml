@@ -11,18 +11,32 @@
         <div class="productGrid">
             @foreach (var producto in ViewBag.Productos)
             {
-                <div class="card">
-                    <img class="productImage" height="350px" src="~/Static/@producto.imagen"  alt="Imagen no disponible" style="width:100%">
-                    <h1>@producto.nombre</h1>
-                    <label class="marca">@producto.marca</label>
-                    <p class="price">RD$@producto.precio</p>
-                    <p>@producto.descripcion</p>
-                    <button onclick="location.href = '@Url.Action("Carrito", "Home", new { productoCodigo = @producto.codigo })'">
-                        AÑADIR
-                        <i class="fa fa-shopping-cart fa-lg"></i>
-                    </button>
-                </div>
-             }
+
+                    <div class="card">
+                        <img class="productImage" height="350px" src="~/Static/@producto.imagen" alt="Imagen no disponible" style="width:100%">
+                        <h1>@producto.nombre</h1>
+                        <label class="marca">@producto.marca</label>
+                        <p class="price">RD$@producto.precio</p>
+                        <p>@producto.descripcion</p>
+                        @if (string.IsNullOrEmpty(Session["Usuario"].ToString()) == false && @producto.usuarioCedula == Session["Usuario"].ToString())
+                        {
+                            <button onclick="location.href = '@Url.Action("Carrito", "Home")'">
+                                Ver en carrito
+                                <i class="fa fa-shopping-cart fa-lg"></i>
+                            </button>
+                        }
+                        else
+                        {
+                            <form method="post" action="@Url.Action("Index", "Home", new { productoCodigo = @producto.codigo })">
+                                <button type="submit">
+                                    AÑADIR
+                                    <i class="fa fa-plus-circle fa-lg icon"></i>
+                                </button>
+                            </form>
+
+                        }
+                    </div>
+            }
         </div>
     </div>
 </div>

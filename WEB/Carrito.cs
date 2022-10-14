@@ -12,7 +12,7 @@ namespace WEB
     using System;
     using System.Collections.Generic;
     
-    public partial class Producto
+    public partial class Carrito
     {
         public int Id { get; set; }
         public string codigo { get; set; }

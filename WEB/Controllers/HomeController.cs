@@ -10,8 +10,18 @@ namespace WEB.Controllers
 
         public ActionResult Index()
         {
+            if (Session["Usuario"] == null)
+                Session["Usuario"] = "ANONIMO";
+
             var productos = new List<WEB.spSelectProductos_Result>();
             var productoData = entities.spSelectProductos();
+            var carritos = new List<WEB.spSelectCarrito_Result>();
+            var carritoData = entities.spSelectCarrito(Session["Usuario"].ToString());
+
+            foreach (var c in carritoData)
+            {
+                carritos.Add(c);
+            }
 
             foreach (var p in productoData)
             {
@@ -19,6 +29,7 @@ namespace WEB.Controllers
             }
 
             this.ViewBag.Productos = productos;
+            this.ViewBag.Carritos = carritos;
 
             return View();
         }
@@ -41,7 +52,7 @@ namespace WEB.Controllers
             {
                 if (cliente.Cedula == clienteEncontrado.Cedula && cliente.Password == clienteEncontrado.Password)
                 {
-                    Session["Usuario"] = cliente;
+                    Session["Usuario"] = cliente.Cedula;
                     return RedirectToAction("Index");
                 }
                 else
@@ -68,13 +79,48 @@ namespace WEB.Controllers
 
             entities.spInsCliente(cliente.Nombres, cliente.Apellidos, cliente.Cedula, cliente.Telefono, cliente.fechaNacimiento, cliente.Email, cliente.Password, cliente.Sexo);
 
-            return View();
+            return RedirectToAction("Login");
+        }
+
+        [HttpPost]
+        public ActionResult Index(string productoCodigo)
+        {
+            if (Session["Usuario"] == null)
+                Session["Usuario"] = "ANONIMO";
+
+            var producto = entities.spSelectProductoByCodigo(productoCodigo).Single();
+            entities.spInsertProductoACarrito(producto.codigo, producto.tipo, producto.marca, producto.precio, producto.cantidad, producto.nombre, producto.peso, producto.imagen, producto.descripcion, Session["Usuario"].ToString());
+            entities.spUpdateProductoEstado(productoCodigo, Session["Usuario"].ToString());
+
+            return RedirectToAction("Carrito");
         }
 
         [Route("Carrito")]
-        [Route("Carrito/{productoCodigo}")]
         public ActionResult Carrito()
         {
+            if (Session["Usuario"] == null)
+                Session["Usuario"] = "ANONIMO";
+
+            var productos = new List<WEB.spSelectCarrito_Result>();
+            var productoData = entities.spSelectCarrito(Session["Usuario"].ToString());
+
+
+            foreach (var p in productoData)
+            {
+                productos.Add(p);
+            }
+
+            this.ViewBag.Productos = productos;
+
+            var totales = new Dictionary<string, string>();
+            //var precioTotal = entities.spGetPrecioTotal(Session["Usuario"].ToString();
+            //var pesoTotal = entities.spGetPesoTotal(Session["Usuario"].ToString());
+            //var cantidadTotal = entities.spGetCantidadTotal(Session["Usuario"].ToString());
+
+            //totales.Add("precioTotal", );
+            
+
+
             return View();
         }
     }

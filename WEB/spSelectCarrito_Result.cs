@@ -10,18 +10,15 @@
 namespace WEB
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Producto
+    public partial class spSelectCarrito_Result
     {
-        public int Id { get; set; }
         public string codigo { get; set; }
         public string marca { get; set; }
         public decimal precio { get; set; }
         public int cantidad { get; set; }
         public string tipo { get; set; }
         public string nombre { get; set; }
-        public System.DateTime abastfecha { get; set; }
         public decimal peso { get; set; }
         public string imagen { get; set; }
         public string descripcion { get; set; }

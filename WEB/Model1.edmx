@@ -4,7 +4,24 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DtModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DtModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Carrito">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="marca" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="precio" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="cantidad" Type="int" Nullable="false" />
+          <Property Name="tipo" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="nombre" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="abastfecha" Type="date" Nullable="false" />
+          <Property Name="peso" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="imagen" Type="nvarchar" MaxLength="200" />
+          <Property Name="descripcion" Type="nvarchar" MaxLength="200" />
+          <Property Name="usuarioCedula" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Clientes">
           <Key>
             <PropertyRef Name="Id" />
@@ -36,6 +53,7 @@
           <Property Name="peso" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="imagen" Type="nvarchar" MaxLength="200" />
           <Property Name="descripcion" Type="nvarchar" MaxLength="200" />
+          <Property Name="usuarioCedula" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Function Name="spInsCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Nombres" Type="nvarchar" Mode="In" />
@@ -47,19 +65,67 @@
           <Parameter Name="Password" Type="nvarchar" Mode="In" />
           <Parameter Name="Sexo" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="spInsertProductoACarrito" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigo" Type="nvarchar" Mode="In" />
+          <Parameter Name="tipo" Type="nvarchar" Mode="In" />
+          <Parameter Name="marca" Type="nvarchar" Mode="In" />
+          <Parameter Name="precio" Type="decimal" Mode="In" />
+          <Parameter Name="cantidad" Type="int" Mode="In" />
+          <Parameter Name="nombre" Type="nvarchar" Mode="In" />
+          <Parameter Name="peso" Type="decimal" Mode="In" />
+          <Parameter Name="imagen" Type="nvarchar" Mode="In" />
+          <Parameter Name="descripcion" Type="nvarchar" Mode="In" />
+          <Parameter Name="usuarioCedula" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spIsExistProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigo" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spIsExistProductoEnCarrito" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigo" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="spSelectByCedu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="cedula" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="spSelectCarrito" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usuarioCedula" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spSelectProductoByCodigo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigo" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="spSelectProductos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spUpdateCarritoEstado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigo" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spUpdateProductoEstado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigo" Type="nvarchar" Mode="In" />
+          <Parameter Name="usuarioCedula" Type="nvarchar" Mode="In" />
+        </Function>
         <EntityContainer Name="DtModelStoreContainer">
+          <EntitySet Name="Carrito" EntityType="Self.Carrito" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DtModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Carrito">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="marca" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="precio" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="cantidad" Type="Int32" Nullable="false" />
+          <Property Name="tipo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="abastfecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="peso" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="imagen" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="usuarioCedula" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
         <EntityType Name="Cliente">
           <Key>
             <PropertyRef Name="Id" />
@@ -91,8 +157,10 @@
           <Property Name="peso" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="imagen" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="usuarioCedula" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="DtEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Carritoes" EntityType="Self.Carrito" />
           <EntitySet Name="Clientes" EntityType="Self.Cliente" />
           <EntitySet Name="Productos" EntityType="Self.Producto" />
           <FunctionImport Name="spInsCliente">
@@ -105,10 +173,41 @@
             <Parameter Name="Password" Mode="In" Type="String" />
             <Parameter Name="Sexo" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="spInsertProductoACarrito">
+            <Parameter Name="codigo" Mode="In" Type="String" />
+            <Parameter Name="tipo" Mode="In" Type="String" />
+            <Parameter Name="marca" Mode="In" Type="String" />
+            <Parameter Name="precio" Mode="In" Type="Decimal" />
+            <Parameter Name="cantidad" Mode="In" Type="Int32" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="peso" Mode="In" Type="Decimal" />
+            <Parameter Name="imagen" Mode="In" Type="String" />
+            <Parameter Name="descripcion" Mode="In" Type="String" />
+            <Parameter Name="usuarioCedula" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spIsExistProducto" ReturnType="Collection(Int32)">
+          <Parameter Name="codigo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spIsExistProductoEnCarrito" ReturnType="Collection(Int32)">
+          <Parameter Name="codigo" Mode="In" Type="String" />
+          </FunctionImport>
           <FunctionImport Name="spSelectByCedu" ReturnType="Collection(DtModel.spSelectByCedu_Result)">
-            <Parameter Name="cedula" Mode="In" Type="String" />
+          <Parameter Name="cedula" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spSelectCarrito" ReturnType="Collection(DtModel.spSelectCarrito_Result)">
+          <Parameter Name="usuarioCedula" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spSelectProductoByCodigo" ReturnType="Collection(DtModel.spSelectProductoByCodigo_Result)">
+          <Parameter Name="codigo" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="spSelectProductos" ReturnType="Collection(DtModel.spSelectProductos_Result)" />
+          <FunctionImport Name="spUpdateCarritoEstado">
+          <Parameter Name="codigo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spUpdateProductoEstado">
+            <Parameter Name="codigo" Mode="In" Type="String" />
+            <Parameter Name="usuarioCedula" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="spSelectByCedu_Result">
           <Property Type="String" Name="Nombres" Nullable="false" MaxLength="150" />
@@ -120,6 +219,31 @@
           <Property Type="String" Name="Email" Nullable="false" MaxLength="150" />
           <Property Type="String" Name="Password" Nullable="false" MaxLength="150" />
           <Property Type="String" Name="Sexo" Nullable="false" MaxLength="150" />
+        </ComplexType>
+        <ComplexType Name="spSelectCarrito_Result">
+          <Property Type="String" Name="codigo" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="marca" Nullable="false" MaxLength="150" />
+          <Property Type="Decimal" Name="precio" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="cantidad" Nullable="false" />
+          <Property Type="String" Name="tipo" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="500" />
+          <Property Type="Decimal" Name="peso" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="String" Name="imagen" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="descripcion" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="usuarioCedula" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="spSelectProductoByCodigo_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="codigo" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="marca" Nullable="false" MaxLength="150" />
+          <Property Type="Decimal" Name="precio" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="cantidad" Nullable="false" />
+          <Property Type="String" Name="tipo" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="500" />
+          <Property Type="DateTime" Name="abastfecha" Nullable="false" />
+          <Property Type="Decimal" Name="peso" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="String" Name="imagen" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="descripcion" Nullable="true" MaxLength="200" />
         </ComplexType>
         <ComplexType Name="spSelectProductos_Result">
           <Property Type="Int32" Name="Id" Nullable="false" />
@@ -133,6 +257,7 @@
           <Property Type="Decimal" Name="peso" Nullable="false" Precision="18" Scale="2" />
           <Property Type="String" Name="imagen" Nullable="true" MaxLength="200" />
           <Property Type="String" Name="descripcion" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="usuarioCedula" Nullable="true" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -140,6 +265,24 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DtModelStoreContainer" CdmEntityContainer="DtEntities">
+          <EntitySetMapping Name="Carritoes">
+            <EntityTypeMapping TypeName="DtModel.Carrito">
+              <MappingFragment StoreEntitySet="Carrito">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="marca" ColumnName="marca" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="abastfecha" ColumnName="abastfecha" />
+                <ScalarProperty Name="peso" ColumnName="peso" />
+                <ScalarProperty Name="imagen" ColumnName="imagen" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="usuarioCedula" ColumnName="usuarioCedula" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Clientes">
             <EntityTypeMapping TypeName="DtModel.Cliente">
               <MappingFragment StoreEntitySet="Clientes">
@@ -171,10 +314,14 @@
                 <ScalarProperty Name="peso" ColumnName="peso" />
                 <ScalarProperty Name="imagen" ColumnName="imagen" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="usuarioCedula" ColumnName="usuarioCedula" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="spInsCliente" FunctionName="DtModel.Store.spInsCliente" />
+          <FunctionImportMapping FunctionImportName="spInsertProductoACarrito" FunctionName="DtModel.Store.spInsertProductoACarrito" />
+          <FunctionImportMapping FunctionImportName="spIsExistProducto" FunctionName="DtModel.Store.spIsExistProducto" />
+          <FunctionImportMapping FunctionImportName="spIsExistProductoEnCarrito" FunctionName="DtModel.Store.spIsExistProductoEnCarrito" />
           <FunctionImportMapping FunctionImportName="spSelectByCedu" FunctionName="DtModel.Store.spSelectByCedu">
             <ResultMapping>
               <ComplexTypeMapping TypeName="DtModel.spSelectByCedu_Result">
@@ -187,6 +334,39 @@
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spSelectCarrito" FunctionName="DtModel.Store.spSelectCarrito">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DtModel.spSelectCarrito_Result">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="marca" ColumnName="marca" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="peso" ColumnName="peso" />
+                <ScalarProperty Name="imagen" ColumnName="imagen" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="usuarioCedula" ColumnName="usuarioCedula" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spSelectProductoByCodigo" FunctionName="DtModel.Store.spSelectProductoByCodigo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DtModel.spSelectProductoByCodigo_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="marca" ColumnName="marca" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="abastfecha" ColumnName="abastfecha" />
+                <ScalarProperty Name="peso" ColumnName="peso" />
+                <ScalarProperty Name="imagen" ColumnName="imagen" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -204,9 +384,12 @@
                 <ScalarProperty Name="peso" ColumnName="peso" />
                 <ScalarProperty Name="imagen" ColumnName="imagen" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="usuarioCedula" ColumnName="usuarioCedula" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spUpdateCarritoEstado" FunctionName="DtModel.Store.spUpdateCarritoEstado" />
+          <FunctionImportMapping FunctionImportName="spUpdateProductoEstado" FunctionName="DtModel.Store.spUpdateProductoEstado" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
