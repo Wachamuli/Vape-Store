@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 using log4net;
+using System.Data;
 
 namespace INTEGRACION
 {
@@ -20,6 +21,11 @@ namespace INTEGRACION
     {
         //log4net init
         private static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
+
+        //try para cuando no haya conexion
+
+        DataTable dtUpdate = new DataTable();
+
 
         //dsAdapters
         ProductosTableAdapter adapterProducto = new ProductosTableAdapter();
@@ -67,10 +73,10 @@ namespace INTEGRACION
         [WebMethod]
         public string UpdateProductoINTEGRACION(int Cantidad, string productoID)
         {
-
+ 
             adapterProducto.spUpdProducto(Cantidad, productoID);
+            clientCore.UpdateProductoCORE(Cantidad, productoID);
 
-            //pasar a CORE, try
             //pasar a CAJA o WEBAPP
 
             Logger.Info("Producto con ID " + productoID + " fue actualizado.");
