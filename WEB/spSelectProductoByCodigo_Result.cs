@@ -10,11 +10,10 @@
 namespace WEB
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Producto
+    public partial class spSelectProductoByCodigo_Result
     {
-        public int Id { get; set; }
+        public int id { get; set; }
         public string codigo { get; set; }
         public string marca { get; set; }
         public decimal precio { get; set; }
@@ -25,6 +24,5 @@ namespace WEB
         public decimal peso { get; set; }
         public string imagen { get; set; }
         public string descripcion { get; set; }
-        public string usuarioCedula { get; set; }
     }
 }

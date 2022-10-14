@@ -5,5 +5,20 @@
 
 
 <div class="card">
+    <div>
+        <h1>Carrito - Productos añadidas</h1>
+    </div>
+    <div class="productGrid">
+        @foreach (var producto in ViewBag.Productos)
+        {
+            <div class="card">
+                <h1>@producto.nombre</h1>
+                <label class="marca">@producto.marca</label>
+                <p class="price">RD$@producto.precio</p>
+            </div>
+        }
+    </div>
+    <div class="resumen">
 
+    </div>
 </div>
