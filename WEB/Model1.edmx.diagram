@@ -7,7 +7,7 @@
       <Diagram DiagramId="9579c55af9db4b06b3e229397be986ad" Name="Diagram1">
         <EntityTypeShape EntityType="DtModel.Carrito" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DtModel.Cliente" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DtModel.Producto" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DtModel.Producto" Width="1.5" PointX="4.75" PointY="0.875" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

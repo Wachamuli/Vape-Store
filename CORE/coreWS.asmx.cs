@@ -38,12 +38,12 @@ namespace CORE
 
         //metodos que maneja directamente el core
         [WebMethod]
-        public string InsertarProductoCORE(string Nombre, string Tipo, decimal Precio, int Cantidad, string productoID, string Descripcion, string Marca, string Imagen) 
+        public string InsertarProductoCORE(string codigo, string marca,decimal precio, int cantidad, string tipo, string nombre, int peso, string imagen, string descripcion) 
         {
 
             try
             {
-                dsCORE.ProductosDataTable dtProductos = adapterProducto.spFillByProductoID1(productoID);
+                dsCORE.ProductosDataTable dtProductos = adapterProducto.spFillByProductoID1(codigo);
 
                 adapterProducto.Connection.Open();
                 transaction = adapterProducto.Connection.BeginTransaction();
@@ -53,15 +53,15 @@ namespace CORE
                 if (dtProductos.Rows.Count == 0)
                 {
 
-                    adapterProducto.spInsProducto(Nombre, Tipo, Precio, Cantidad, productoID, Descripcion, Marca, Imagen);
+                    adapterProducto.spInsProducto(codigo, marca, precio, cantidad, tipo, nombre, peso, imagen,descripcion);
 
-                    clienteIntegracion.InsertarProductoINTEGRACION(Nombre, Tipo, Precio, Cantidad, productoID, Descripcion, Marca, Imagen);
+                   // clienteIntegracion.InsertarProductoINTEGRACION(codigo, marca, precio, cantidad, tipo, nombre, peso, imagen, descripcion);
 
                     transaction.Commit();
                     adapterEmpleado.Connection.Close();
 
-                    Logger.Info("Producto " + Nombre + " fue insertado.");
-                    return "Producto " + Nombre + " fue insertado.";
+                    Logger.Info("Producto " + nombre + " fue insertado.");
+                    return "Producto " + nombre + " fue insertado.";
                 }
 
                 throw new Exception();
@@ -71,8 +71,8 @@ namespace CORE
                 transaction.Rollback();
                 adapterProducto.Connection.Close();
 
-                Logger.Error("Error al producto empleado " + Nombre + " . Tal vez ya exista o la conexion con la capa de integracion no este abierta.");
-                return "Error al producto empleado " + Nombre + " . Tal vez ya exista o la conexion con la capa de integracion no este abierta.";
+                Logger.Error("Error al producto empleado " + nombre + " . Tal vez ya exista o la conexion con la capa de integracion no este abierta.");
+                return "Error al producto empleado " + nombre + " . Tal vez ya exista o la conexion con la capa de integracion no este abierta.";
 
                 throw;
             }
@@ -80,12 +80,12 @@ namespace CORE
         }
 
         [WebMethod]
-        public string DeleteProductoCORE(string productoID)
+        public string DeleteProductoCORE(string codigo)
         {
 
             try
             {
-                dsCORE.ProductosDataTable dtProductos = adapterProducto.spFillByProductoID1(productoID);
+                dsCORE.ProductosDataTable dtProductos = adapterProducto.spFillByProductoID1(codigo);
 
                 adapterProducto.Connection.Open();
                 transaction = adapterProducto.Connection.BeginTransaction();
@@ -95,15 +95,15 @@ namespace CORE
                 if (dtProductos.Rows.Count > 0)
                 {
 
-                    adapterProducto.spDelProducto(productoID);
+                    adapterProducto.spDelProducto(codigo);
 
-                    clienteIntegracion.DeleteProductoINTEGRACION(productoID);
+                    clienteIntegracion.DeleteProductoINTEGRACION(codigo);
 
                     transaction.Commit();
                     adapterEmpleado.Connection.Close();
 
-                    Logger.Info("Producto con ID " + productoID + " fue eliminado.");
-                    return "Producto con ID " + productoID + " fue eliminado.";
+                    Logger.Info("Producto con ID " + codigo + " fue eliminado.");
+                    return "Producto con ID " + codigo + " fue eliminado.";
                 }
 
                 throw new Exception();
@@ -113,16 +113,14 @@ namespace CORE
                 transaction.Rollback();
                 adapterProducto.Connection.Close();
 
-                Logger.Error("Error al eliminar el producto con ID " + productoID + " . Tal vez no exista o la conexion con la capa de integracion no este abierta.");
-                return "Error al eliminar el producto con ID " + productoID + " . Tal vez no exista o la conexion con la capa de integracion no este abierta.";
+                Logger.Error("Error al eliminar el producto con ID " + codigo + " . Tal vez no exista o la conexion con la capa de integracion no este abierta.");
+                return "Error al eliminar el producto con ID " + codigo + " . Tal vez no exista o la conexion con la capa de integracion no este abierta.";
 
                 throw;
             }
 
           
         }
-
-        
 
         [WebMethod]
         public string DeleteClienteCORE(string Cedula)
@@ -165,8 +163,6 @@ namespace CORE
             }
            
         }
-
-        
 
         [WebMethod]
         public string InsertEmpleadoCORE(string Nombres, string Apellidos, string Cedula, string Telefono, string rol, string Email, string Password, string Sexo)
@@ -257,7 +253,10 @@ namespace CORE
 
 
 
-        //metodos de update que no maneja directamente el core
+
+
+
+        //metodos de update que no maneja directamente el core FALTA
 
         [WebMethod]
         public string UpdateClienteCORE(decimal totalGastado, string Cedula)
@@ -281,13 +280,13 @@ namespace CORE
         }
 
         [WebMethod]
-        public string UpdateProductoCORE(int Cantidad, string productoID)
+        public string UpdateProductoCORE(string codigo, string usuarioCedula)
         {
 
-            adapterProducto.spUpdProducto(Cantidad, productoID);
+            adapterProducto.spUpdateProductoEstado(codigo, usuarioCedula);
 
-            Logger.Info("Producto con ID " + productoID + " fue actualizado.");
-            return "Producto con ID " + productoID + " fue actualizado.";
+            Logger.Info("Producto con ID " + codigo + " fue actualizado.");
+            return "Producto con ID " + codigo + " fue actualizado.";
         }
 
 
@@ -295,7 +294,7 @@ namespace CORE
 
 
 
-        //metodos que no maneja directamente el core
+        //metodos que no maneja directamente el core FALTA
         [WebMethod]
         public string InsertClienteCORE(string Nombres, string Apellidos, string Cedula, string Telefono, DateTime fechaNacimiento, string Email, string Password, string Sexo)
         {

@@ -15,7 +15,7 @@ namespace WEB
     public partial class Producto
     {
         public int Id { get; set; }
-        public string codigo { get; set; }
+        public string productoID { get; set; }
         public string marca { get; set; }
         public decimal precio { get; set; }
         public int cantidad { get; set; }

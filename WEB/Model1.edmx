@@ -147,7 +147,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="productoID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="marca" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="precio" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="cantidad" Type="Int32" Nullable="false" />
@@ -304,7 +304,7 @@
             <EntityTypeMapping TypeName="DtModel.Producto">
               <MappingFragment StoreEntitySet="Productos">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="productoID" ColumnName="codigo" />
                 <ScalarProperty Name="marca" ColumnName="marca" />
                 <ScalarProperty Name="precio" ColumnName="precio" />
                 <ScalarProperty Name="cantidad" ColumnName="cantidad" />
