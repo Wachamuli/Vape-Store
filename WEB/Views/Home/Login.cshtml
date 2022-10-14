@@ -2,20 +2,21 @@
     ViewBag.Title = "Iniciar sesión";
 }
 
-<div class="formContainer">
-    <form class="loginForm">
+<div class="formContainer card" id="formContainerLogin">
+    <form class="loginForm" form="@Url.Action("Login", "Home")" method="post">
         <h1>Iniciar sesión</h1>
 
         <div class="control">
-            <label>Nombre de usuario</label>
-            <input />
+            <label>Cédula</label>
+            <input name="Cedula" />
         </div>
 
         <div class="control">
             <label>Contraseña</label>
-            <span><input class="password" name="Contrasena" /></span>
+            <span><input class="password" name="Password" /></span>
         </div>
 
+        <p>@ViewData["Error"]</p>
         <button>Login</button>
     </form>
 </div>

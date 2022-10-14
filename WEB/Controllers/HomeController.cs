@@ -1,51 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace WEB.Controllers
 {
     public class HomeController : Controller
     {
+        DtEntities entities = new DtEntities();
+
         public ActionResult Index()
         {
-            var productos = new List<Producto>();
-            productos.Add(new Producto()
-            {
-                Imagen = "https://picsum.photos/id/237/200/300",
-                Descripcion = "Una buena y breve descripción.",
-                Nombre = "FOOBAR TRIM",
-                Marca = "Patagonia Plus",
-                Precio = 1550.05m
-            });
+            var productos = new List<WEB.spSelectProductos_Result>();
+            var productoData = entities.spSelectProductos();
 
-            productos.Add(new Producto()
+            foreach (var p in productoData)
             {
-                Imagen = "https://picsum.photos/id/237/200/300",
-                Descripcion = "Una buena y breve descripción.",
-                Nombre = "FOOBAR TRIM",
-                Marca = "Patagonia Plus",
-                Precio = 1550.05m
-            });
-
-            productos.Add(new Producto()
-            {
-                Imagen = "https://picsum.photos/id/237/200/300",
-                Descripcion = "Una buena y breve descripción.",
-                Nombre = "FOOBAR TRIM",
-                Marca = "Patagonia Plus",
-                Precio = 1550.05m
-            });
-
-            productos.Add(new Producto()
-            {
-                Imagen = "https://picsum.photos/id/237/200/300",
-                Descripcion = "Una buena y breve descripción.",
-                Nombre = "FOOBAR TRIM",
-                Marca = "Patagonia Plus",
-                Precio = 1550.05m
-            });
+                productos.Add(p);
+            }
 
             this.ViewBag.Productos = productos;
 
@@ -59,6 +30,30 @@ namespace WEB.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Login(Cliente cliente)
+        {
+            ViewBag.Message = "Your application description page.";
+
+            var clienteEncontrado = entities.spSelectByCedu(cliente.Cedula).SingleOrDefault();
+
+            if (clienteEncontrado != null)
+            {
+                if (cliente.Cedula == clienteEncontrado.Cedula && cliente.Password == clienteEncontrado.Password)
+                {
+                    Session["Usuario"] = cliente;
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ViewData["Error"] = "Cédula o contraseña incorrectos. Intente de nuevo";
+                }
+            }
+
+            ViewData["Error"] = "Célula no registrada";
+            return View();
+        }
+
         public ActionResult Registrarse()
         {
             ViewBag.Message = "Your contact page.";
@@ -67,24 +62,20 @@ namespace WEB.Controllers
         }
 
         [HttpPost]
-        public ActionResult Registrarse(Usuario usuario)
+        public ActionResult Registrarse(Cliente cliente)
         {
             ViewBag.Message = "Your contact page.";
 
+            entities.spInsCliente(cliente.Nombres, cliente.Apellidos, cliente.Cedula, cliente.Telefono, cliente.fechaNacimiento, cliente.Email, cliente.Password, cliente.Sexo);
+
             return View();
         }
-    }
 
-    public class Producto
-    {
-        public string Imagen { get; set; }
-        public string Nombre { get; set; }
-        public string Descripcion { get; set; }
-        public decimal Precio { get; set; }
-        public string Marca { get; set; }
-    }
-
-    public class Usuario
-    {
+        [Route("Carrito")]
+        [Route("Carrito/{productoCodigo}")]
+        public ActionResult Carrito()
+        {
+            return View();
+        }
     }
 }

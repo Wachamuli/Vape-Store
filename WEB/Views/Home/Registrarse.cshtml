@@ -3,54 +3,58 @@
 }
 
 <div class="formContainer">
-    <form action="@Url.Action("Registrarse", "HomeController")" method="post" class="loginForm">
+    <form action="@Url.Action("Registrarse", "Home")" method="post" class="loginForm">
         <h1>Registro</h1>
 
         <div class="control">
             <label>Nombre</label>
-            <input name="nombre" />
+            <input name="Nombres" />
         </div>
 
         <div class="control">
             <label>Apellido</label>
-            <input  name="apellido"/>
+            <input name="Apellidos" />
         </div>
 
         <div class="control">
             <label>Fecha de nacimiento</label>
-            <input name="fechaNacimiento" type="date" />
+            <input name="FechaNacimiento" type="date" />
         </div>
 
         <div class="control">
             <label>Sexo</label>
             <div class="labelSexo">
-                <p>Hombre</p>
+                Hombre
                 <span><input name="sexo" type="radio" /></span>
-            </div>
-            <div class="labelSexo">
-                <p>Mujer</p>
+
+                Mujer
                 <span><input name="sexo" type="radio" /></span>
             </div>
         </div>
 
         <div class="control">
             <label>Teléfono</label>
-            <input name="telefono"/>
+            <input name="telefono" />
         </div>
 
         <div class="control">
             <label>Correo</label>
-            <input name="correo" />
+            <input name="Email" />
         </div>
 
         <div class="control">
-            <label>Nombre de usuario</label>
-            <input name="nombreUsuario" />
+            <label>Cédula</label>
+            <input name="Cedula" />
         </div>
 
         <div class="control">
             <label>Contraseña</label>
-            <input class="password" name="contrasena" />
+            <input type="password" class="password" name="Password" />
+        </div>
+
+        <div class="control">
+            <label>Confirmar contraseña</label>
+            <input type="password" class="password" name="confirmarpassword" />
         </div>
 
         <button type="submit">Registrar</button>

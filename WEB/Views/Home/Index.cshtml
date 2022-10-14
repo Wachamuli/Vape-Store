@@ -12,17 +12,17 @@
             @foreach (var producto in ViewBag.Productos)
             {
                 <div class="card">
-                    <img class="productImage" height="350px" src="@producto.Imagen" alt="Denim Jeans" style="width:100%">
-                    <h1>@producto.Nombre</h1>
-                    <label class="marca">@producto.Marca</label>
-                    <p class="price">RD$@producto.Precio</p>
-                    <p>@producto.Descripcion</p>
-                    <button>
+                    <img class="productImage" height="350px" src="~/Static/@producto.imagen"  alt="Imagen no disponible" style="width:100%">
+                    <h1>@producto.nombre</h1>
+                    <label class="marca">@producto.marca</label>
+                    <p class="price">RD$@producto.precio</p>
+                    <p>@producto.descripcion</p>
+                    <button onclick="location.href = '@Url.Action("Carrito", "Home", new { productoCodigo = @producto.codigo })'">
                         AÑADIR
                         <i class="fa fa-shopping-cart fa-lg"></i>
                     </button>
                 </div>
-            }
+             }
         </div>
     </div>
 </div>
