@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container">
+    <div id="title"
+        <h1>Vape Store</h1>
+    </div>
+    <div class="productViewer" />
+    <div class="gridProduct">
+        <div class="productGrid">
+            @foreach (var producto in ViewBag.Productos)
+            {
+                <div class="card">
+                    <img class="productImage" height="350px" src="@producto.Imagen" alt="Denim Jeans" style="width:100%">
+                    <h1>@producto.Nombre</h1>
+                    <label class="marca">@producto.Marca</label>
+                    <p class="price">RD$@producto.Precio</p>
+                    <p>@producto.Descripcion</p>
+                    <button>
+                        AÑADIR
+                        <i class="fa fa-shopping-cart fa-lg"></i>
+                    </button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+</div>
