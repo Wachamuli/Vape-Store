@@ -11,6 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INTEGRACION", "INTEGRACION\
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WEB", "WEB\WEB.csproj", "{C45BC876-EC1A-4AE9-98CF-41EBBBDCE923}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5B3255FE-A47F-449A-8B21-AE74344C4EBB} = {5B3255FE-A47F-449A-8B21-AE74344C4EBB}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
