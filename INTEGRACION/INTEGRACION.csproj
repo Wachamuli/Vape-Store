@@ -7,16 +7,16 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C43FCFC7-E21D-4DFC-BADB-E333F679D5D0}</ProjectGuid>
+    <ProjectGuid>{5B3255FE-A47F-449A-8B21-AE74344C4EBB}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CORE</RootNamespace>
-    <AssemblyName>CORE</AssemblyName>
+    <RootNamespace>INTEGRACION</RootNamespace>
+    <AssemblyName>INTEGRACION</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44318</IISExpressSSLPort>
+    <IISExpressSSLPort>44397</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -106,96 +106,96 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\coreDB.mdf" />
-    <Content Include="App_Data\coreDB_log.ldf">
-      <DependentUpon>coreDB.mdf</DependentUpon>
+    <Content Include="App_Data\integracionDB.mdf" />
+    <Content Include="App_Data\integracionDB_log.ldf">
+      <DependentUpon>integracionDB.mdf</DependentUpon>
     </Content>
-    <Content Include="App_Data\logCoreDB.mdf" />
-    <Content Include="App_Data\logCoreDB_log.ldf">
-      <DependentUpon>logCoreDB.mdf</DependentUpon>
+    <Content Include="App_Data\logIntegracionDB.mdf" />
+    <Content Include="App_Data\logIntegracionDB_log.ldf">
+      <DependentUpon>logIntegracionDB.mdf</DependentUpon>
     </Content>
-    <Content Include="Connected Services\integracionSR\CORE.integracionSR.DeleteClienteINTEGRACIONResponse.datasource">
+    <None Include="Connected Services\coreSR\coreWS.disco" />
+    <None Include="Connected Services\coreSR\configuration91.svcinfo" />
+    <None Include="Connected Services\coreSR\configuration.svcinfo" />
+    <Content Include="Connected Services\coreSR\INTEGRACION.coreSR.DeleteClienteCOREResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\integracionSR\CORE.integracionSR.DeleteCuentaINTEGRACIONResponse.datasource">
+    <Content Include="Connected Services\coreSR\INTEGRACION.coreSR.DeleteCuentaCOREResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\integracionSR\CORE.integracionSR.DeleteEmpleadoINTEGRACIONResponse.datasource">
+    <Content Include="Connected Services\coreSR\INTEGRACION.coreSR.DeleteEmpleadoCOREResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\integracionSR\CORE.integracionSR.DeleteProductoINTEGRACIONResponse.datasource">
+    <Content Include="Connected Services\coreSR\INTEGRACION.coreSR.DeleteProductoCOREResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\integracionSR\CORE.integracionSR.InsertarProductoINTEGRACIONResponse.datasource">
+    <Content Include="Connected Services\coreSR\INTEGRACION.coreSR.InsertarProductoCOREResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\integracionSR\CORE.integracionSR.InsertClienteINTEGRACIONResponse.datasource">
+    <Content Include="Connected Services\coreSR\INTEGRACION.coreSR.InsertClienteCOREResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\integracionSR\CORE.integracionSR.InsertCuentaINTEGRACIONResponse.datasource">
+    <Content Include="Connected Services\coreSR\INTEGRACION.coreSR.InsertCuentaCOREResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\integracionSR\CORE.integracionSR.InsertEmpleadoINTEGRACIONResponse.datasource">
+    <Content Include="Connected Services\coreSR\INTEGRACION.coreSR.InsertEmpleadoCOREResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\integracionSR\CORE.integracionSR.InsertFacturaINTEGRACIONResponse.datasource">
+    <Content Include="Connected Services\coreSR\INTEGRACION.coreSR.InsertFacturaCOREResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\integracionSR\CORE.integracionSR.UpdateClienteINTEGRACIONResponse.datasource">
+    <Content Include="Connected Services\coreSR\INTEGRACION.coreSR.UpdateClienteCOREResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\integracionSR\CORE.integracionSR.UpdateEmpleadoINTEGRACIONResponse.datasource">
+    <Content Include="Connected Services\coreSR\INTEGRACION.coreSR.UpdateEmpleadoCOREResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\integracionSR\CORE.integracionSR.UpdateProductoINTEGRACIONResponse.datasource">
+    <Content Include="Connected Services\coreSR\INTEGRACION.coreSR.UpdateProductoCOREResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\integracionSR\integracionSW.disco" />
-    <None Include="Connected Services\integracionSR\configuration91.svcinfo" />
-    <None Include="Connected Services\integracionSR\configuration.svcinfo" />
-    <None Include="Connected Services\integracionSR\Reference.svcmap">
+    <None Include="Connected Services\coreSR\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="coreWS.asmx" />
     <Content Include="Global.asax" />
+    <Content Include="integracionSW.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Connected Services\integracionSR\Reference.cs">
+    <Compile Include="Connected Services\coreSR\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="coreWS.asmx.cs">
-      <DependentUpon>coreWS.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="dsCORE.Designer.cs">
+    <Compile Include="dsINTEGRACION.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dsCORE.xsd</DependentUpon>
+      <DependentUpon>dsINTEGRACION.xsd</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="integracionSW.asmx.cs">
+      <DependentUpon>integracionSW.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <Content Include="dsCORE.xsc">
-      <DependentUpon>dsCORE.xsd</DependentUpon>
+    <Content Include="dsINTEGRACION.xsc">
+      <DependentUpon>dsINTEGRACION.xsd</DependentUpon>
     </Content>
-    <None Include="Connected Services\integracionSR\integracionSW.wsdl" />
-    <None Include="dsCORE.xsd">
+    <None Include="Connected Services\coreSR\coreWS.wsdl" />
+    <None Include="dsINTEGRACION.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsCORE.Designer.cs</LastGenOutput>
+      <LastGenOutput>dsINTEGRACION.Designer.cs</LastGenOutput>
     </None>
-    <Content Include="dsCORE.xss">
-      <DependentUpon>dsCORE.xsd</DependentUpon>
+    <Content Include="dsINTEGRACION.xss">
+      <DependentUpon>dsINTEGRACION.xsd</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
@@ -213,7 +213,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\integracionSR\" />
+    <WCFMetadataStorage Include="Connected Services\coreSR\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -228,9 +228,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>52239</DevelopmentServerPort>
+          <DevelopmentServerPort>59504</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44318/</IISUrl>
+          <IISUrl>https://localhost:44397/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

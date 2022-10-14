@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://intec.edu.do" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://intec.edu.do" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://intec.edu.do">
+      <s:element name="InsertarProductoINTEGRACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Precio" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="productoID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Marca" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Imagen" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarProductoINTEGRACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertarProductoINTEGRACIONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteProductoINTEGRACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="productoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteProductoINTEGRACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteProductoINTEGRACIONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProductoINTEGRACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="productoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProductoINTEGRACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateProductoINTEGRACIONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertClienteINTEGRACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nombres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Apellidos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cedula" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaNacimiento" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sexo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertClienteINTEGRACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertClienteINTEGRACIONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteClienteINTEGRACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Cedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteClienteINTEGRACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteClienteINTEGRACIONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateClienteINTEGRACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="totalGastado" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateClienteINTEGRACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateClienteINTEGRACIONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertEmpleadoINTEGRACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nombres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Apellidos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cedula" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sexo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertEmpleadoINTEGRACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertEmpleadoINTEGRACIONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteEmpleadoINTEGRACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Cedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteEmpleadoINTEGRACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteEmpleadoINTEGRACIONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEmpleadoINTEGRACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cuentasCobradas" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEmpleadoINTEGRACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateEmpleadoINTEGRACIONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCuentaINTEGRACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nombres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Apellidos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Producto" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="cuentaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCuentaINTEGRACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertCuentaINTEGRACIONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCuentaINTEGRACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cuentaID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCuentaINTEGRACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteCuentaINTEGRACIONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertFacturaINTEGRACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nombres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Apellidos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Producto" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="cuentaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cedula" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="facturadoPor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertFacturaINTEGRACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertFacturaINTEGRACIONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertarProductoINTEGRACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarProductoINTEGRACION" />
+  </wsdl:message>
+  <wsdl:message name="InsertarProductoINTEGRACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarProductoINTEGRACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProductoINTEGRACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteProductoINTEGRACION" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProductoINTEGRACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteProductoINTEGRACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductoINTEGRACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateProductoINTEGRACION" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductoINTEGRACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateProductoINTEGRACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertClienteINTEGRACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertClienteINTEGRACION" />
+  </wsdl:message>
+  <wsdl:message name="InsertClienteINTEGRACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertClienteINTEGRACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteClienteINTEGRACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteClienteINTEGRACION" />
+  </wsdl:message>
+  <wsdl:message name="DeleteClienteINTEGRACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteClienteINTEGRACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateClienteINTEGRACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateClienteINTEGRACION" />
+  </wsdl:message>
+  <wsdl:message name="UpdateClienteINTEGRACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateClienteINTEGRACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertEmpleadoINTEGRACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertEmpleadoINTEGRACION" />
+  </wsdl:message>
+  <wsdl:message name="InsertEmpleadoINTEGRACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertEmpleadoINTEGRACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEmpleadoINTEGRACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteEmpleadoINTEGRACION" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEmpleadoINTEGRACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteEmpleadoINTEGRACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmpleadoINTEGRACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEmpleadoINTEGRACION" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmpleadoINTEGRACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEmpleadoINTEGRACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertCuentaINTEGRACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertCuentaINTEGRACION" />
+  </wsdl:message>
+  <wsdl:message name="InsertCuentaINTEGRACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertCuentaINTEGRACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCuentaINTEGRACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteCuentaINTEGRACION" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCuentaINTEGRACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteCuentaINTEGRACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertFacturaINTEGRACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertFacturaINTEGRACION" />
+  </wsdl:message>
+  <wsdl:message name="InsertFacturaINTEGRACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertFacturaINTEGRACIONResponse" />
+  </wsdl:message>
+  <wsdl:portType name="integracionSWSoap">
+    <wsdl:operation name="InsertarProductoINTEGRACION">
+      <wsdl:input message="tns:InsertarProductoINTEGRACIONSoapIn" />
+      <wsdl:output message="tns:InsertarProductoINTEGRACIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProductoINTEGRACION">
+      <wsdl:input message="tns:DeleteProductoINTEGRACIONSoapIn" />
+      <wsdl:output message="tns:DeleteProductoINTEGRACIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductoINTEGRACION">
+      <wsdl:input message="tns:UpdateProductoINTEGRACIONSoapIn" />
+      <wsdl:output message="tns:UpdateProductoINTEGRACIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertClienteINTEGRACION">
+      <wsdl:input message="tns:InsertClienteINTEGRACIONSoapIn" />
+      <wsdl:output message="tns:InsertClienteINTEGRACIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClienteINTEGRACION">
+      <wsdl:input message="tns:DeleteClienteINTEGRACIONSoapIn" />
+      <wsdl:output message="tns:DeleteClienteINTEGRACIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClienteINTEGRACION">
+      <wsdl:input message="tns:UpdateClienteINTEGRACIONSoapIn" />
+      <wsdl:output message="tns:UpdateClienteINTEGRACIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmpleadoINTEGRACION">
+      <wsdl:input message="tns:InsertEmpleadoINTEGRACIONSoapIn" />
+      <wsdl:output message="tns:InsertEmpleadoINTEGRACIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmpleadoINTEGRACION">
+      <wsdl:input message="tns:DeleteEmpleadoINTEGRACIONSoapIn" />
+      <wsdl:output message="tns:DeleteEmpleadoINTEGRACIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmpleadoINTEGRACION">
+      <wsdl:input message="tns:UpdateEmpleadoINTEGRACIONSoapIn" />
+      <wsdl:output message="tns:UpdateEmpleadoINTEGRACIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCuentaINTEGRACION">
+      <wsdl:input message="tns:InsertCuentaINTEGRACIONSoapIn" />
+      <wsdl:output message="tns:InsertCuentaINTEGRACIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCuentaINTEGRACION">
+      <wsdl:input message="tns:DeleteCuentaINTEGRACIONSoapIn" />
+      <wsdl:output message="tns:DeleteCuentaINTEGRACIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertFacturaINTEGRACION">
+      <wsdl:input message="tns:InsertFacturaINTEGRACIONSoapIn" />
+      <wsdl:output message="tns:InsertFacturaINTEGRACIONSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="integracionSWSoap" type="tns:integracionSWSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertarProductoINTEGRACION">
+      <soap:operation soapAction="http://intec.edu.do/InsertarProductoINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProductoINTEGRACION">
+      <soap:operation soapAction="http://intec.edu.do/DeleteProductoINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductoINTEGRACION">
+      <soap:operation soapAction="http://intec.edu.do/UpdateProductoINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertClienteINTEGRACION">
+      <soap:operation soapAction="http://intec.edu.do/InsertClienteINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClienteINTEGRACION">
+      <soap:operation soapAction="http://intec.edu.do/DeleteClienteINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClienteINTEGRACION">
+      <soap:operation soapAction="http://intec.edu.do/UpdateClienteINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmpleadoINTEGRACION">
+      <soap:operation soapAction="http://intec.edu.do/InsertEmpleadoINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmpleadoINTEGRACION">
+      <soap:operation soapAction="http://intec.edu.do/DeleteEmpleadoINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmpleadoINTEGRACION">
+      <soap:operation soapAction="http://intec.edu.do/UpdateEmpleadoINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCuentaINTEGRACION">
+      <soap:operation soapAction="http://intec.edu.do/InsertCuentaINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCuentaINTEGRACION">
+      <soap:operation soapAction="http://intec.edu.do/DeleteCuentaINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertFacturaINTEGRACION">
+      <soap:operation soapAction="http://intec.edu.do/InsertFacturaINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="integracionSWSoap12" type="tns:integracionSWSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertarProductoINTEGRACION">
+      <soap12:operation soapAction="http://intec.edu.do/InsertarProductoINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProductoINTEGRACION">
+      <soap12:operation soapAction="http://intec.edu.do/DeleteProductoINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductoINTEGRACION">
+      <soap12:operation soapAction="http://intec.edu.do/UpdateProductoINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertClienteINTEGRACION">
+      <soap12:operation soapAction="http://intec.edu.do/InsertClienteINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClienteINTEGRACION">
+      <soap12:operation soapAction="http://intec.edu.do/DeleteClienteINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClienteINTEGRACION">
+      <soap12:operation soapAction="http://intec.edu.do/UpdateClienteINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmpleadoINTEGRACION">
+      <soap12:operation soapAction="http://intec.edu.do/InsertEmpleadoINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmpleadoINTEGRACION">
+      <soap12:operation soapAction="http://intec.edu.do/DeleteEmpleadoINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmpleadoINTEGRACION">
+      <soap12:operation soapAction="http://intec.edu.do/UpdateEmpleadoINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCuentaINTEGRACION">
+      <soap12:operation soapAction="http://intec.edu.do/InsertCuentaINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCuentaINTEGRACION">
+      <soap12:operation soapAction="http://intec.edu.do/DeleteCuentaINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertFacturaINTEGRACION">
+      <soap12:operation soapAction="http://intec.edu.do/InsertFacturaINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="integracionSW">
+    <wsdl:port name="integracionSWSoap" binding="tns:integracionSWSoap">
+      <soap:address location="https://localhost:44397/integracionSW.asmx" />
+    </wsdl:port>
+    <wsdl:port name="integracionSWSoap12" binding="tns:integracionSWSoap12">
+      <soap12:address location="https://localhost:44397/integracionSW.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

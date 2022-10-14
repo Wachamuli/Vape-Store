@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://intec.edu.do" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://intec.edu.do" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://intec.edu.do">
+      <s:element name="InsertarProductoCORE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Precio" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="productoID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Marca" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Imagen" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarProductoCOREResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertarProductoCOREResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteProductoCORE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="productoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteProductoCOREResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteProductoCOREResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProductoCORE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="productoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProductoCOREResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateProductoCOREResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertClienteCORE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nombres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Apellidos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cedula" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaNacimiento" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sexo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertClienteCOREResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertClienteCOREResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteClienteCORE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Cedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteClienteCOREResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteClienteCOREResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateClienteCORE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="totalGastado" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateClienteCOREResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateClienteCOREResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertEmpleadoCORE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nombres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Apellidos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cedula" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sexo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertEmpleadoCOREResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertEmpleadoCOREResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteEmpleadoCORE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Cedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteEmpleadoCOREResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteEmpleadoCOREResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEmpleadoCORE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cuentasCobradas" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEmpleadoCOREResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateEmpleadoCOREResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCuentaCORE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nombres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Apellidos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Producto" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="cuentaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCuentaCOREResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertCuentaCOREResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCuentaCORE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cuentaID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCuentaCOREResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteCuentaCOREResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertFacturaCORE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nombres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Apellidos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Producto" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="cuentaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cedula" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="facturadoPor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertFacturaCOREResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertFacturaCOREResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertarProductoCORESoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarProductoCORE" />
+  </wsdl:message>
+  <wsdl:message name="InsertarProductoCORESoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarProductoCOREResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProductoCORESoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteProductoCORE" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProductoCORESoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteProductoCOREResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductoCORESoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateProductoCORE" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductoCORESoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateProductoCOREResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertClienteCORESoapIn">
+    <wsdl:part name="parameters" element="tns:InsertClienteCORE" />
+  </wsdl:message>
+  <wsdl:message name="InsertClienteCORESoapOut">
+    <wsdl:part name="parameters" element="tns:InsertClienteCOREResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteClienteCORESoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteClienteCORE" />
+  </wsdl:message>
+  <wsdl:message name="DeleteClienteCORESoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteClienteCOREResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateClienteCORESoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateClienteCORE" />
+  </wsdl:message>
+  <wsdl:message name="UpdateClienteCORESoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateClienteCOREResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertEmpleadoCORESoapIn">
+    <wsdl:part name="parameters" element="tns:InsertEmpleadoCORE" />
+  </wsdl:message>
+  <wsdl:message name="InsertEmpleadoCORESoapOut">
+    <wsdl:part name="parameters" element="tns:InsertEmpleadoCOREResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEmpleadoCORESoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteEmpleadoCORE" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEmpleadoCORESoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteEmpleadoCOREResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmpleadoCORESoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEmpleadoCORE" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmpleadoCORESoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEmpleadoCOREResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertCuentaCORESoapIn">
+    <wsdl:part name="parameters" element="tns:InsertCuentaCORE" />
+  </wsdl:message>
+  <wsdl:message name="InsertCuentaCORESoapOut">
+    <wsdl:part name="parameters" element="tns:InsertCuentaCOREResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCuentaCORESoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteCuentaCORE" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCuentaCORESoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteCuentaCOREResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertFacturaCORESoapIn">
+    <wsdl:part name="parameters" element="tns:InsertFacturaCORE" />
+  </wsdl:message>
+  <wsdl:message name="InsertFacturaCORESoapOut">
+    <wsdl:part name="parameters" element="tns:InsertFacturaCOREResponse" />
+  </wsdl:message>
+  <wsdl:portType name="coreWSSoap">
+    <wsdl:operation name="InsertarProductoCORE">
+      <wsdl:input message="tns:InsertarProductoCORESoapIn" />
+      <wsdl:output message="tns:InsertarProductoCORESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProductoCORE">
+      <wsdl:input message="tns:DeleteProductoCORESoapIn" />
+      <wsdl:output message="tns:DeleteProductoCORESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductoCORE">
+      <wsdl:input message="tns:UpdateProductoCORESoapIn" />
+      <wsdl:output message="tns:UpdateProductoCORESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertClienteCORE">
+      <wsdl:input message="tns:InsertClienteCORESoapIn" />
+      <wsdl:output message="tns:InsertClienteCORESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClienteCORE">
+      <wsdl:input message="tns:DeleteClienteCORESoapIn" />
+      <wsdl:output message="tns:DeleteClienteCORESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClienteCORE">
+      <wsdl:input message="tns:UpdateClienteCORESoapIn" />
+      <wsdl:output message="tns:UpdateClienteCORESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmpleadoCORE">
+      <wsdl:input message="tns:InsertEmpleadoCORESoapIn" />
+      <wsdl:output message="tns:InsertEmpleadoCORESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmpleadoCORE">
+      <wsdl:input message="tns:DeleteEmpleadoCORESoapIn" />
+      <wsdl:output message="tns:DeleteEmpleadoCORESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmpleadoCORE">
+      <wsdl:input message="tns:UpdateEmpleadoCORESoapIn" />
+      <wsdl:output message="tns:UpdateEmpleadoCORESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCuentaCORE">
+      <wsdl:input message="tns:InsertCuentaCORESoapIn" />
+      <wsdl:output message="tns:InsertCuentaCORESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCuentaCORE">
+      <wsdl:input message="tns:DeleteCuentaCORESoapIn" />
+      <wsdl:output message="tns:DeleteCuentaCORESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertFacturaCORE">
+      <wsdl:input message="tns:InsertFacturaCORESoapIn" />
+      <wsdl:output message="tns:InsertFacturaCORESoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="coreWSSoap" type="tns:coreWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertarProductoCORE">
+      <soap:operation soapAction="http://intec.edu.do/InsertarProductoCORE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProductoCORE">
+      <soap:operation soapAction="http://intec.edu.do/DeleteProductoCORE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductoCORE">
+      <soap:operation soapAction="http://intec.edu.do/UpdateProductoCORE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertClienteCORE">
+      <soap:operation soapAction="http://intec.edu.do/InsertClienteCORE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClienteCORE">
+      <soap:operation soapAction="http://intec.edu.do/DeleteClienteCORE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClienteCORE">
+      <soap:operation soapAction="http://intec.edu.do/UpdateClienteCORE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmpleadoCORE">
+      <soap:operation soapAction="http://intec.edu.do/InsertEmpleadoCORE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmpleadoCORE">
+      <soap:operation soapAction="http://intec.edu.do/DeleteEmpleadoCORE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmpleadoCORE">
+      <soap:operation soapAction="http://intec.edu.do/UpdateEmpleadoCORE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCuentaCORE">
+      <soap:operation soapAction="http://intec.edu.do/InsertCuentaCORE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCuentaCORE">
+      <soap:operation soapAction="http://intec.edu.do/DeleteCuentaCORE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertFacturaCORE">
+      <soap:operation soapAction="http://intec.edu.do/InsertFacturaCORE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="coreWSSoap12" type="tns:coreWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertarProductoCORE">
+      <soap12:operation soapAction="http://intec.edu.do/InsertarProductoCORE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProductoCORE">
+      <soap12:operation soapAction="http://intec.edu.do/DeleteProductoCORE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductoCORE">
+      <soap12:operation soapAction="http://intec.edu.do/UpdateProductoCORE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertClienteCORE">
+      <soap12:operation soapAction="http://intec.edu.do/InsertClienteCORE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClienteCORE">
+      <soap12:operation soapAction="http://intec.edu.do/DeleteClienteCORE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClienteCORE">
+      <soap12:operation soapAction="http://intec.edu.do/UpdateClienteCORE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmpleadoCORE">
+      <soap12:operation soapAction="http://intec.edu.do/InsertEmpleadoCORE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmpleadoCORE">
+      <soap12:operation soapAction="http://intec.edu.do/DeleteEmpleadoCORE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmpleadoCORE">
+      <soap12:operation soapAction="http://intec.edu.do/UpdateEmpleadoCORE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCuentaCORE">
+      <soap12:operation soapAction="http://intec.edu.do/InsertCuentaCORE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCuentaCORE">
+      <soap12:operation soapAction="http://intec.edu.do/DeleteCuentaCORE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertFacturaCORE">
+      <soap12:operation soapAction="http://intec.edu.do/InsertFacturaCORE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="coreWS">
+    <wsdl:port name="coreWSSoap" binding="tns:coreWSSoap">
+      <soap:address location="https://localhost:44318/coreWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="coreWSSoap12" binding="tns:coreWSSoap12">
+      <soap12:address location="https://localhost:44318/coreWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
