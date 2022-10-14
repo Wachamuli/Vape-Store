@@ -22,8 +22,6 @@ namespace CORE
         //transaction
         SqlTransaction transaction = null;
 
-
-
         //log4net init
         private static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
 
@@ -38,7 +36,7 @@ namespace CORE
         integracionSR.integracionSWSoapClient clienteIntegracion = new integracionSR.integracionSWSoapClient();
 
 
-        //metodos
+        //metodos que maneja directamente el core
         [WebMethod]
         public string InsertarProductoCORE(string Nombre, string Tipo, decimal Precio, int Cantidad, string productoID, string Descripcion, string Marca, string Imagen) 
         {
@@ -71,7 +69,7 @@ namespace CORE
             catch (Exception e)
             {
                 transaction.Rollback();
-                adapterEmpleado.Connection.Close();
+                adapterProducto.Connection.Close();
 
                 Logger.Error("Error al producto empleado " + Nombre + " . Tal vez ya exista o la conexion con la capa de integracion no este abierta.");
                 return "Error al producto empleado " + Nombre + " . Tal vez ya exista o la conexion con la capa de integracion no este abierta.";
@@ -85,56 +83,90 @@ namespace CORE
         public string DeleteProductoCORE(string productoID)
         {
 
-            adapterProducto.spDelProducto(productoID);
+            try
+            {
+                dsCORE.ProductosDataTable dtProductos = adapterProducto.spFillByProductoID1(productoID);
 
-            clienteIntegracion.DeleteProductoINTEGRACION(productoID);
+                adapterProducto.Connection.Open();
+                transaction = adapterProducto.Connection.BeginTransaction();
+                adapterProducto.Transaction = transaction;
 
-            Logger.Info("Producto con ID " + productoID + " fue eliminado.");
-            return "Producto con ID " + productoID + " fue eliminado.";
+
+                if (dtProductos.Rows.Count > 0)
+                {
+
+                    adapterProducto.spDelProducto(productoID);
+
+                    clienteIntegracion.DeleteProductoINTEGRACION(productoID);
+
+                    transaction.Commit();
+                    adapterEmpleado.Connection.Close();
+
+                    Logger.Info("Producto con ID " + productoID + " fue eliminado.");
+                    return "Producto con ID " + productoID + " fue eliminado.";
+                }
+
+                throw new Exception();
+            }
+            catch (Exception e)
+            {
+                transaction.Rollback();
+                adapterProducto.Connection.Close();
+
+                Logger.Error("Error al eliminar el producto con ID " + productoID + " . Tal vez no exista o la conexion con la capa de integracion no este abierta.");
+                return "Error al eliminar el producto con ID " + productoID + " . Tal vez no exista o la conexion con la capa de integracion no este abierta.";
+
+                throw;
+            }
+
+          
         }
 
-        [WebMethod]
-        public string UpdateProductoCORE(int Cantidad, string productoID)
-        {
-
-            adapterProducto.spUpdProducto(Cantidad, productoID);
-
-            Logger.Info("Producto con ID " + productoID + " fue actualizado.");
-            return "Producto con ID " + productoID + " fue actualizado.";
-        }
-
-        [WebMethod]
-        public string InsertClienteCORE(string Nombres, string Apellidos, string Cedula, string Telefono, DateTime fechaNacimiento, string Email, string Password, string Sexo)
-        {
-
-            adapterCliente.spInsCliente(Nombres, Apellidos, Cedula, Telefono, fechaNacimiento, Email, Password, Sexo);
-
-
-            Logger.Info("Cliente " + Nombres + " fue insertado.");
-            return "Cliente " + Nombres + " fue insertado.";
-        }
+        
 
         [WebMethod]
         public string DeleteClienteCORE(string Cedula)
         {
 
-            adapterCliente.spDelCliente(Cedula);
+            try
+            {
+                dsCORE.ClientesDataTable dtCliente = adapterCliente.spFillByCedulaCliente1(Cedula);
 
-            clienteIntegracion.DeleteClienteINTEGRACION(Cedula);
+                adapterCliente.Connection.Open();
+                transaction = adapterCliente.Connection.BeginTransaction();
+                adapterCliente.Transaction = transaction;
 
-            Logger.Info("Cliente con cedula " + Cedula + " fue eliminado.");
-            return "Cliente con cedula " + Cedula + " fue eliminado.";
+
+                if (dtCliente.Rows.Count > 0)
+                {
+
+                    adapterCliente.spDelCliente(Cedula);
+
+                    clienteIntegracion.DeleteClienteINTEGRACION(Cedula);
+
+                    transaction.Commit();
+                    adapterCliente.Connection.Close();
+
+                    Logger.Info("Cliente con cedula " + Cedula + " fue eliminado.");
+                    return "Cliente con cedula " + Cedula + " fue eliminado.";
+                }
+
+                throw new Exception();
+            }
+            catch (Exception e)
+            {
+                transaction.Rollback();
+                adapterCliente.Connection.Close();
+
+                Logger.Error("Error al eliminar el cliente con cedula " + Cedula + " . Tal vez no exista o la conexion con la capa de integracion no este abierta.");
+                return "Error al eliminar el cliente con cedula " + Cedula + " . Tal vez no exista o la conexion con la capa de integracion no este abierta.";
+
+                throw;
+            }
+           
         }
 
-        [WebMethod]
-        public string UpdateClienteCORE(decimal totalGastado, string Cedula)
-        {
-
-            adapterCliente.spUpdCliente(totalGastado, Cedula);
-
-            Logger.Info("Cliente con cedula " + Cedula + " fue actualizado.");
-            return "Cliente con cedula " + Cedula + " fue actualizado.";
-        }
+        
 
         [WebMethod]
         public string InsertEmpleadoCORE(string Nombres, string Apellidos, string Cedula, string Telefono, string rol, string Email, string Password, string Sexo)
@@ -183,12 +215,58 @@ namespace CORE
         public string DeleteEmpleadoCORE(string Cedula)
         {
 
-            adapterEmpleado.spDelEmpleado(Cedula);
+            try
+            {
+                dsCORE.EmpleadosDataTable dtEmpleados = adapterEmpleado.spFillByCedula1(Cedula);
 
-            clienteIntegracion.DeleteEmpleadoINTEGRACION(Cedula);
+                adapterEmpleado.Connection.Open();
+                transaction = adapterEmpleado.Connection.BeginTransaction();
+                adapterEmpleado.Transaction = transaction;
 
-            Logger.Info("Empleado con cedula " + Cedula + " fue eliminado.");
-            return "Empleado con cedula " + Cedula + " fue eliminado.";
+
+                if (dtEmpleados.Rows.Count > 0)
+                {
+
+                    adapterEmpleado.spDelEmpleado(Cedula);
+
+                    clienteIntegracion.DeleteEmpleadoINTEGRACION(Cedula);
+
+                    transaction.Commit();
+                    adapterEmpleado.Connection.Close();
+
+                    Logger.Info("Empleado con cedula " + Cedula + " fue eliminado.");
+                    return "Empleado con cedula " + Cedula + " fue eliminado.";
+                }
+
+                throw new Exception();
+            }
+            catch (Exception e)
+            {
+                transaction.Rollback();
+                adapterEmpleado.Connection.Close();
+
+                Logger.Error("Error al eliminar el empleado con cedula " + Cedula + " . Tal vez no exista o la conexion con la capa de integracion no este abierta.");
+                return "Error al eliminar el empleado con cedula " + Cedula + " . Tal vez no exista o la conexion con la capa de integracion no este abierta.";
+
+                throw;
+            }
+
+
+            
+        }
+
+
+
+        //metodos de update que no maneja directamente el core
+
+        [WebMethod]
+        public string UpdateClienteCORE(decimal totalGastado, string Cedula)
+        {
+
+            adapterCliente.spUpdCliente(totalGastado, Cedula);
+
+            Logger.Info("Cliente con cedula " + Cedula + " fue actualizado.");
+            return "Cliente con cedula " + Cedula + " fue actualizado.";
         }
 
         [WebMethod]
@@ -200,6 +278,33 @@ namespace CORE
 
             Logger.Info("Empleado con cedula " + Cedula + " fue actualizado.");
             return "Empleado con cedula " + Cedula + " fue actualizado.";
+        }
+
+        [WebMethod]
+        public string UpdateProductoCORE(int Cantidad, string productoID)
+        {
+
+            adapterProducto.spUpdProducto(Cantidad, productoID);
+
+            Logger.Info("Producto con ID " + productoID + " fue actualizado.");
+            return "Producto con ID " + productoID + " fue actualizado.";
+        }
+
+
+
+
+
+
+        //metodos que no maneja directamente el core
+        [WebMethod]
+        public string InsertClienteCORE(string Nombres, string Apellidos, string Cedula, string Telefono, DateTime fechaNacimiento, string Email, string Password, string Sexo)
+        {
+
+            adapterCliente.spInsCliente(Nombres, Apellidos, Cedula, Telefono, fechaNacimiento, Email, Password, Sexo);
+
+
+            Logger.Info("Cliente " + Nombres + " fue insertado.");
+            return "Cliente " + Nombres + " fue insertado.";
         }
 
         [WebMethod]
@@ -234,6 +339,12 @@ namespace CORE
             Logger.Info("Cuenta de " + Nombres + " esta pendiente para pagar.");
             return "Cuenta de " + Nombres + " esta pendiente para pagar.";
         }
+
+
+
+
+
+
 
     }
 }
