@@ -19,7 +19,7 @@ namespace CORE
     // [System.Web.Script.Services.ScriptService]
     public class coreWS : System.Web.Services.WebService
     {
-        // PRORGAMA HECHO POR JOSE RICHIES Y MARIO ESTRELLA :)))
+        // PRORGAMA HECHO POR JOSE RICHIEZ Y MARIO ESTRELLA :)))
 
 
 
