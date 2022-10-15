@@ -182,3 +182,12 @@ textarea {
 .tabla tr {
     border-bottom: 2px solid black;
 }
+
+.tabla {
+    margin-top: 2rem;
+}
+
+.cuentas-pendiente{
+
+    margin-top: 10rem;
+}

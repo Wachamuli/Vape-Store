@@ -3,29 +3,35 @@
     ViewBag.Title = "CuentasPorCobrar";
 }
 
-<h2>CuentasPorCobrar</h2>
+<h2 class="cuentas-pendiente">Cuentas Por Cobrar</h2>
 
 
 <table class="tabla">
     <thead>
         <tr>
-            <th class="columna">Código</th>
-            <th class="columna">Cédula</th>
-            <th class="columna">Nombre</th>
-            <th class="columna">Apellido</th>
+            <th class="columna">Nombres</th>
+            <th class="columna">Apellidos</th>
+            <th class="columna">Producto</th>
             <th class="columna">Total</th>
             <th class="columna">ID</th>
-            <th class="columna">Surcursal</th>
+            <th class="columna">Sucursal</th>
             <th class="columna">Fecha de compra</th>
+            <th class="columna">Cédula</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var cuenta in ViewBag.CuentasPorCobrar)
+        @foreach (var cuenta in @ViewBag.CuentasPorCobrar)
         {
-            <tr>
-                <td class="fila">Dom</td>
-                <td>6000</td>
-            </tr>
+        <tr>
+            <td>@cuenta.Nombres</td>
+            <td>@cuenta.Apellidos</td>
+            <td>@cuenta.Producto</td>
+            <td>@cuenta.Total</td>
+            <td>@cuenta.cuentaID</td>
+            <td>@cuenta.sucursal</td>
+            <td>@cuenta.fechaCompra</td>
+            <td>@cuenta.Cedula</td>
+        </tr>
         }
     </tbody>
 </table>
