@@ -105,6 +105,12 @@
     <Compile Include="Empleado.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReciboViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,8 +151,17 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Transaccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaccion.Designer.cs">
+      <DependentUpon>Transaccion.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Cuadre.resx">
       <DependentUpon>Cuadre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReciboViewer.resx">
       <DependentUpon>ReciboViewer.cs</DependentUpon>
