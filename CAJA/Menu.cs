@@ -40,7 +40,7 @@ namespace CAJA
         private void button3_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            var cuadreForm = new Cuadre();
+            var cuadreForm = new CuadreViewer();
             cuadreForm.Show();
         }
 
@@ -49,6 +49,11 @@ namespace CAJA
             this.Visible = false;
             var loginForm = new Login();
             loginForm.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
