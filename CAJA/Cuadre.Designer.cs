@@ -315,6 +315,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Cuadre";
             this.Text = "Cuadre";
+            this.Load += new System.EventHandler(this.Cuadre_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
