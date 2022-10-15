@@ -12,6 +12,8 @@ namespace CAJA
 {
     public partial class Login : Form
     {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         public Login()
         {
             InitializeComponent();
@@ -35,22 +37,22 @@ namespace CAJA
 
         private void btn_Click(object sender, EventArgs e)
         {
-            var entity = new Dt();
+            //var entity = new Dt();
 
-            var cedula = tbCedula.Text;
-            var contrasena = tbContrasena.Text;
+            //var cedula = tbCedula.Text;
+            //var contrasena = tbContrasena.Text;
 
-            var empleadoEncontrado = entity.spFIllByCedulaPasswordRol(contrasena, cedula);
+            //var empleadoEncontrado = entity.spFIllByCedulaPasswordRol(contrasena, cedula);
 
 
-            if (empleadoEncontrado == null)
-            {
-                // Open form
-                lbError.Text = "Exito";
+            //if (empleadoEncontrado == null)
+            //{
+            //    // Open form
+            //    lbError.Text = "Exito";
 
-            }
+            //}
 
-            lbError.Text = "Cedula o contraseña no válidos.";
+            //lbError.Text = "Cedula o contraseña no válidos.";
         }
 
         private void tbUsuario_TextChanged(object sender, EventArgs e)

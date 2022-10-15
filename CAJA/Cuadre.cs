@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace CAJA
 {
-    public partial class Form2 : Form
+    public partial class Cuadre : Form
     {
-        public Form2()
+        public Cuadre()
         {
             InitializeComponent();
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
