@@ -9,6 +9,7 @@
         <h1>Carrito - Productos añadidas</h1>
     </div>
     <div class="productGrid">
+
         @foreach (var producto in ViewBag.Productos)
         {
             <div class="card">
@@ -18,12 +19,19 @@
             </div>
         }
     </div>
-    <form method="post" action="@Url.Action("CarritoComprar","Home") ">
+        @if (ViewBag.Productos.Count == 0)
+        {
+            <h4> No hay productos en el carrito. </h4>
+        }
+        else 
+        { 
+            <form method="post" action="@Url.Action("CarritoComprar","Home") ">
         <button type="submit">
             COMPRAR
             <i class="fa fa-plus-circle fa-lg icon"></i>
         </button>
     </form>
+        }
     <div class="resumen">
 
 
