@@ -34,6 +34,7 @@ namespace INTEGRACION
         EmpleadosTableAdapter adapterEmpleado = new EmpleadosTableAdapter();
         CuentasPorCobrarTableAdapter adapterCuenta = new CuentasPorCobrarTableAdapter();
         FacturasTableAdapter adapterFactura = new FacturasTableAdapter();
+        CarritoTableAdapter adapterCarrito = new CarritoTableAdapter();
 
         //dsAdapters REFERENCIAS a otras db
         ProductosTableREFAdapter adapterProductoREF = new ProductosTableREFAdapter();
@@ -73,18 +74,18 @@ namespace INTEGRACION
             return "Producto con ID " + codigo + " fue eliminado.";
         }
 
-        [WebMethod]
-        public string UpdateProductoINTEGRACION(string codigo, string usuarioCedula)
-        {
+        //[WebMethod]
+        //public string UpdateProductoINTEGRACION(string codigo, string usuarioCedula)
+        //{
 
-            adapterProducto.spUpdateProductoEstado(codigo, usuarioCedula);
-            clientCore.UpdateProductoCORE(codigo, usuarioCedula);
+        //    adapterProducto.spUpdateProductoEstado(codigo, usuarioCedula);
+        //    clientCore.UpdateProductoCORE(codigo, usuarioCedula);
 
-            //pasar a CAJA o WEBAPP
+        //    //pasar a CAJA o WEBAPP
 
-            Logger.Info("Producto con ID " + codigo + " fue actualizado.");
-            return "Producto con ID " + codigo + " fue actualizado.";
-        }
+        //    Logger.Info("Producto con ID " + codigo + " fue actualizado.");
+        //    return "Producto con ID " + codigo + " fue actualizado.";
+        //}
 
         [WebMethod]
         public string InsertClienteINTEGRACION(string Nombres, string Apellidos, string Cedula, string Telefono, DateTime fechaNacimiento, string Email, string Password, string Sexo)
@@ -92,7 +93,7 @@ namespace INTEGRACION
 
             adapterCliente.spInsCliente(Nombres, Apellidos, Cedula, Telefono, fechaNacimiento, Email, Password, Sexo);
 
-            //pasar a CORE, try
+            clientCore.InsertClienteCORE(Nombres, Apellidos, Cedula, Telefono, fechaNacimiento, Email, Password, Sexo);
             //pasar a CAJA
 
             Logger.Info("Cliente " + Nombres + " fue insertado.");
@@ -115,10 +116,13 @@ namespace INTEGRACION
         [WebMethod]
         public string UpdateClienteINTEGRACION(decimal totalGastado, string Cedula)
         {
-            //pasar a CORE, try
-            //pasar a WEBAPP
 
             adapterCliente.spUpdCliente(totalGastado, Cedula);
+
+            clientCore.UpdateClienteCORE(totalGastado, Cedula);
+            //pasar a WEBAPP
+
+
 
             Logger.Info("Cliente con cedula " + Cedula + " fue actualizado.");
             return "Cliente con cedula " + Cedula + " fue actualizado.";
@@ -166,7 +170,7 @@ namespace INTEGRACION
 
             adapterCuenta.spInsCuenta(Nombres, Apellidos, Producto, Total, cuentaID, Cedula);
 
-            //Pasar a CORE, try
+            clientCore.InsertCuentaCORE(Nombres, Apellidos, Producto, Total, cuentaID, Cedula);
             //Pasar a CAJA
 
             Logger.Info("Cuenta de " + Nombres + " esta pendiente para pagar.");
@@ -195,6 +199,31 @@ namespace INTEGRACION
 
             Logger.Info("Cuenta de " + Nombres + " esta pendiente para pagar.");
             return "Cuenta de " + Nombres + " esta pendiente para pagar.";
+        }
+
+        [WebMethod]
+        public string InsertarCarritoINTEGRACION(string codigo, string marca, decimal precio, int cantidad, string tipo, string nombre, int peso, string imagen, string descripcion, string usuarioCedula)
+        {
+
+            adapterCarrito.spInsertProductoACarrito( codigo,  tipo,  marca,  precio,  cantidad,  nombre,  peso,  imagen,  descripcion, usuarioCedula);
+
+            clientCore.InsertarCarritoCORE( codigo,  marca,  precio,  cantidad,  tipo,  nombre,  peso,  imagen,  descripcion,  usuarioCedula);
+
+            Logger.Info("Cliente con cedula " + usuarioCedula + " agrego el producto " + nombre + " al carrito.");
+            return "Cliente con cedula " + usuarioCedula + " agrego el producto " + nombre + " al carrito.";
+        }
+
+
+        [WebMethod]
+        public string DeleteCarritoINTEGRACION(string usuarioCedula)
+        {
+
+            adapterCarrito.spDelCarrito(usuarioCedula);
+
+            clientCore.DeleteCarritoCORE(usuarioCedula);
+
+            Logger.Info("Cliente con cedula " + usuarioCedula + " ha comprado todos sus productos del carrito.");
+            return "Cliente con cedula " + usuarioCedula + " ha comprado todos sus productos del carrito.";
         }
 
     }

@@ -19,6 +19,10 @@ namespace CORE
     // [System.Web.Script.Services.ScriptService]
     public class coreWS : System.Web.Services.WebService
     {
+        // PRORGAMA HECHO POR JOSE RICHIES Y MARIO ESTRELLA :)))
+
+
+
         //transaction
         SqlTransaction transaction = null;
 
@@ -31,6 +35,7 @@ namespace CORE
         EmpleadosTableAdapter adapterEmpleado = new EmpleadosTableAdapter();
         CuentasPorCobrarTableAdapter adapterCuenta = new CuentasPorCobrarTableAdapter();
         FacturasTableAdapter adapterFactura = new FacturasTableAdapter();
+        CarritoTableAdapter adapterCarrito = new CarritoTableAdapter();
 
         //soap clients
         integracionSR.integracionSWSoapClient clienteIntegracion = new integracionSR.integracionSWSoapClient();
@@ -279,15 +284,15 @@ namespace CORE
             return "Empleado con cedula " + Cedula + " fue actualizado.";
         }
 
-        [WebMethod]
-        public string UpdateProductoCORE(string codigo, string usuarioCedula)
-        {
+        //[WebMethod]
+        //public string UpdateProductoCORE(string codigo, string usuarioCedula)
+        //{
 
-            adapterProducto.spUpdateProductoEstado(codigo, usuarioCedula);
+        //    adapterProducto.spUpdateProductoEstado(codigo, usuarioCedula);
 
-            Logger.Info("Producto con ID " + codigo + " fue actualizado.");
-            return "Producto con ID " + codigo + " fue actualizado.";
-        }
+        //    Logger.Info("Producto con ID " + codigo + " fue actualizado.");
+        //    return "Producto con ID " + codigo + " fue actualizado.";
+        //}
 
 
 
@@ -295,6 +300,7 @@ namespace CORE
 
 
         //metodos que no maneja directamente el core FALTA
+
         [WebMethod]
         public string InsertClienteCORE(string Nombres, string Apellidos, string Cedula, string Telefono, DateTime fechaNacimiento, string Email, string Password, string Sexo)
         {
@@ -339,7 +345,25 @@ namespace CORE
             return "Cuenta de " + Nombres + " esta pendiente para pagar.";
         }
 
+        [WebMethod]
+        public string InsertarCarritoCORE(string codigo, string marca, decimal precio, int cantidad, string tipo, string nombre, int peso, string imagen, string descripcion, string usuarioCedula)
+        {
 
+            adapterCarrito.spInsertProductoACarrito(codigo, tipo, marca, precio, cantidad, nombre, peso, imagen, descripcion, usuarioCedula);
+
+            Logger.Info("Cliente con cedula " + usuarioCedula + " agrego el producto " + nombre + " al carrito.");
+            return "Cliente con cedula " + usuarioCedula + " agrego el producto " + nombre + " al carrito.";
+        }
+
+        [WebMethod]
+        public string DeleteCarritoCORE(string usuarioCedula)
+        {
+
+            adapterCarrito.spDelCarrito(usuarioCedula);
+
+            Logger.Info("Cliente con cedula " + usuarioCedula + " ha comprado todos sus productos del carrito.");
+            return "Cliente con cedula " + usuarioCedula + " ha comprado todos sus productos del carrito.";
+        }
 
 
 

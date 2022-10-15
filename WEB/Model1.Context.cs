@@ -395,5 +395,16 @@ namespace WEB
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spDelCarrito", usuarioCedulaParameter);
         }
+    
+        public virtual ObjectResult<spFillByCedulaCUENTAS_Result> spFillByCedulaCUENTAS(string cedula)
+        {
+            var cedulaParameter = cedula != null ?
+                new ObjectParameter("Cedula", cedula) :
+                new ObjectParameter("Cedula", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spFillByCedulaCUENTAS_Result>("spFillByCedulaCUENTAS", cedulaParameter);
+        }
+
+        public System.Data.Entity.DbSet<WEB.spFillByCedulaCUENTAS_Result> spFillByCedulaCUENTAS_Result { get; set; }
     }
 }

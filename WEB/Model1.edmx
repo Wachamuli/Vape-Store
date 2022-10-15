@@ -70,6 +70,9 @@
         <Function Name="spDelProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="codigo" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="spFillByCedulaCUENTAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Cedula" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="spInsCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Nombres" Type="nvarchar" Mode="In" />
           <Parameter Name="Apellidos" Type="nvarchar" Mode="In" />
@@ -319,7 +322,10 @@
             <Parameter Name="Cedula" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="spDelCarrito">
-            <Parameter Name="usuarioCedula" Mode="In" Type="String" />
+          <Parameter Name="usuarioCedula" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spFillByCedulaCUENTAS" ReturnType="Collection(DtModel.spFillByCedulaCUENTAS_Result)">
+            <Parameter Name="Cedula" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="spSelectByCedu_Result">
@@ -371,6 +377,17 @@
           <Property Type="String" Name="imagen" Nullable="true" MaxLength="200" />
           <Property Type="String" Name="descripcion" Nullable="true" MaxLength="200" />
           <Property Type="String" Name="usuarioCedula" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="spFillByCedulaCUENTAS_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Nombres" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="Apellidos" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="Producto" Nullable="false" MaxLength="150" />
+          <Property Type="Decimal" Name="Total" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="String" Name="cuentaID" Nullable="false" />
+          <Property Type="String" Name="sucursal" Nullable="false" MaxLength="150" />
+          <Property Type="DateTime" Name="fechaCompra" Nullable="false" />
+          <Property Type="String" Name="Cedula" Nullable="false" MaxLength="150" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -511,6 +528,21 @@
           <FunctionImportMapping FunctionImportName="spUpdCliente" FunctionName="DtModel.Store.spUpdCliente" />
           <FunctionImportMapping FunctionImportName="spUpdEmpleado" FunctionName="DtModel.Store.spUpdEmpleado" />
           <FunctionImportMapping FunctionImportName="spDelCarrito" FunctionName="DtModel.Store.spDelCarrito" />
+          <FunctionImportMapping FunctionImportName="spFillByCedulaCUENTAS" FunctionName="DtModel.Store.spFillByCedulaCUENTAS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DtModel.spFillByCedulaCUENTAS_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Producto" ColumnName="Producto" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="cuentaID" ColumnName="cuentaID" />
+                <ScalarProperty Name="sucursal" ColumnName="sucursal" />
+                <ScalarProperty Name="fechaCompra" ColumnName="fechaCompra" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -29,13 +29,6 @@ namespace WEB.integracionSR {
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/DeleteProductoINTEGRACION", ReplyAction="*")]
         System.Threading.Tasks.Task<WEB.integracionSR.DeleteProductoINTEGRACIONResponse> DeleteProductoINTEGRACIONAsync(WEB.integracionSR.DeleteProductoINTEGRACIONRequest request);
         
-        // CODEGEN: Generating message contract since element name codigo from namespace http://intec.edu.do is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/UpdateProductoINTEGRACION", ReplyAction="*")]
-        WEB.integracionSR.UpdateProductoINTEGRACIONResponse UpdateProductoINTEGRACION(WEB.integracionSR.UpdateProductoINTEGRACIONRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/UpdateProductoINTEGRACION", ReplyAction="*")]
-        System.Threading.Tasks.Task<WEB.integracionSR.UpdateProductoINTEGRACIONResponse> UpdateProductoINTEGRACIONAsync(WEB.integracionSR.UpdateProductoINTEGRACIONRequest request);
-        
         // CODEGEN: Generating message contract since element name Nombres from namespace http://intec.edu.do is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/InsertClienteINTEGRACION", ReplyAction="*")]
         WEB.integracionSR.InsertClienteINTEGRACIONResponse InsertClienteINTEGRACION(WEB.integracionSR.InsertClienteINTEGRACIONRequest request);
@@ -98,6 +91,20 @@ namespace WEB.integracionSR {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/InsertFacturaINTEGRACION", ReplyAction="*")]
         System.Threading.Tasks.Task<WEB.integracionSR.InsertFacturaINTEGRACIONResponse> InsertFacturaINTEGRACIONAsync(WEB.integracionSR.InsertFacturaINTEGRACIONRequest request);
+        
+        // CODEGEN: Generating message contract since element name codigo from namespace http://intec.edu.do is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/InsertarCarritoINTEGRACION", ReplyAction="*")]
+        WEB.integracionSR.InsertarCarritoINTEGRACIONResponse InsertarCarritoINTEGRACION(WEB.integracionSR.InsertarCarritoINTEGRACIONRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/InsertarCarritoINTEGRACION", ReplyAction="*")]
+        System.Threading.Tasks.Task<WEB.integracionSR.InsertarCarritoINTEGRACIONResponse> InsertarCarritoINTEGRACIONAsync(WEB.integracionSR.InsertarCarritoINTEGRACIONRequest request);
+        
+        // CODEGEN: Generating message contract since element name usuarioCedula from namespace http://intec.edu.do is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/DeleteCarritoINTEGRACION", ReplyAction="*")]
+        WEB.integracionSR.DeleteCarritoINTEGRACIONResponse DeleteCarritoINTEGRACION(WEB.integracionSR.DeleteCarritoINTEGRACIONRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/DeleteCarritoINTEGRACION", ReplyAction="*")]
+        System.Threading.Tasks.Task<WEB.integracionSR.DeleteCarritoINTEGRACIONResponse> DeleteCarritoINTEGRACIONAsync(WEB.integracionSR.DeleteCarritoINTEGRACIONRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -265,78 +272,6 @@ namespace WEB.integracionSR {
         
         public DeleteProductoINTEGRACIONResponseBody(string DeleteProductoINTEGRACIONResult) {
             this.DeleteProductoINTEGRACIONResult = DeleteProductoINTEGRACIONResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class UpdateProductoINTEGRACIONRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateProductoINTEGRACION", Namespace="http://intec.edu.do", Order=0)]
-        public WEB.integracionSR.UpdateProductoINTEGRACIONRequestBody Body;
-        
-        public UpdateProductoINTEGRACIONRequest() {
-        }
-        
-        public UpdateProductoINTEGRACIONRequest(WEB.integracionSR.UpdateProductoINTEGRACIONRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://intec.edu.do")]
-    public partial class UpdateProductoINTEGRACIONRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string codigo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string usuarioCedula;
-        
-        public UpdateProductoINTEGRACIONRequestBody() {
-        }
-        
-        public UpdateProductoINTEGRACIONRequestBody(string codigo, string usuarioCedula) {
-            this.codigo = codigo;
-            this.usuarioCedula = usuarioCedula;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class UpdateProductoINTEGRACIONResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateProductoINTEGRACIONResponse", Namespace="http://intec.edu.do", Order=0)]
-        public WEB.integracionSR.UpdateProductoINTEGRACIONResponseBody Body;
-        
-        public UpdateProductoINTEGRACIONResponse() {
-        }
-        
-        public UpdateProductoINTEGRACIONResponse(WEB.integracionSR.UpdateProductoINTEGRACIONResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://intec.edu.do")]
-    public partial class UpdateProductoINTEGRACIONResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string UpdateProductoINTEGRACIONResult;
-        
-        public UpdateProductoINTEGRACIONResponseBody() {
-        }
-        
-        public UpdateProductoINTEGRACIONResponseBody(string UpdateProductoINTEGRACIONResult) {
-            this.UpdateProductoINTEGRACIONResult = UpdateProductoINTEGRACIONResult;
         }
     }
     
@@ -1060,6 +995,178 @@ namespace WEB.integracionSR {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertarCarritoINTEGRACIONRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertarCarritoINTEGRACION", Namespace="http://intec.edu.do", Order=0)]
+        public WEB.integracionSR.InsertarCarritoINTEGRACIONRequestBody Body;
+        
+        public InsertarCarritoINTEGRACIONRequest() {
+        }
+        
+        public InsertarCarritoINTEGRACIONRequest(WEB.integracionSR.InsertarCarritoINTEGRACIONRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://intec.edu.do")]
+    public partial class InsertarCarritoINTEGRACIONRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string codigo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string marca;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public decimal precio;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public int cantidad;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string tipo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string nombre;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public int peso;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string imagen;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string descripcion;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string usuarioCedula;
+        
+        public InsertarCarritoINTEGRACIONRequestBody() {
+        }
+        
+        public InsertarCarritoINTEGRACIONRequestBody(string codigo, string marca, decimal precio, int cantidad, string tipo, string nombre, int peso, string imagen, string descripcion, string usuarioCedula) {
+            this.codigo = codigo;
+            this.marca = marca;
+            this.precio = precio;
+            this.cantidad = cantidad;
+            this.tipo = tipo;
+            this.nombre = nombre;
+            this.peso = peso;
+            this.imagen = imagen;
+            this.descripcion = descripcion;
+            this.usuarioCedula = usuarioCedula;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertarCarritoINTEGRACIONResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertarCarritoINTEGRACIONResponse", Namespace="http://intec.edu.do", Order=0)]
+        public WEB.integracionSR.InsertarCarritoINTEGRACIONResponseBody Body;
+        
+        public InsertarCarritoINTEGRACIONResponse() {
+        }
+        
+        public InsertarCarritoINTEGRACIONResponse(WEB.integracionSR.InsertarCarritoINTEGRACIONResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://intec.edu.do")]
+    public partial class InsertarCarritoINTEGRACIONResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string InsertarCarritoINTEGRACIONResult;
+        
+        public InsertarCarritoINTEGRACIONResponseBody() {
+        }
+        
+        public InsertarCarritoINTEGRACIONResponseBody(string InsertarCarritoINTEGRACIONResult) {
+            this.InsertarCarritoINTEGRACIONResult = InsertarCarritoINTEGRACIONResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DeleteCarritoINTEGRACIONRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteCarritoINTEGRACION", Namespace="http://intec.edu.do", Order=0)]
+        public WEB.integracionSR.DeleteCarritoINTEGRACIONRequestBody Body;
+        
+        public DeleteCarritoINTEGRACIONRequest() {
+        }
+        
+        public DeleteCarritoINTEGRACIONRequest(WEB.integracionSR.DeleteCarritoINTEGRACIONRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://intec.edu.do")]
+    public partial class DeleteCarritoINTEGRACIONRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string usuarioCedula;
+        
+        public DeleteCarritoINTEGRACIONRequestBody() {
+        }
+        
+        public DeleteCarritoINTEGRACIONRequestBody(string usuarioCedula) {
+            this.usuarioCedula = usuarioCedula;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DeleteCarritoINTEGRACIONResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteCarritoINTEGRACIONResponse", Namespace="http://intec.edu.do", Order=0)]
+        public WEB.integracionSR.DeleteCarritoINTEGRACIONResponseBody Body;
+        
+        public DeleteCarritoINTEGRACIONResponse() {
+        }
+        
+        public DeleteCarritoINTEGRACIONResponse(WEB.integracionSR.DeleteCarritoINTEGRACIONResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://intec.edu.do")]
+    public partial class DeleteCarritoINTEGRACIONResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string DeleteCarritoINTEGRACIONResult;
+        
+        public DeleteCarritoINTEGRACIONResponseBody() {
+        }
+        
+        public DeleteCarritoINTEGRACIONResponseBody(string DeleteCarritoINTEGRACIONResult) {
+            this.DeleteCarritoINTEGRACIONResult = DeleteCarritoINTEGRACIONResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface integracionSWSoapChannel : WEB.integracionSR.integracionSWSoap, System.ServiceModel.IClientChannel {
     }
@@ -1151,33 +1258,6 @@ namespace WEB.integracionSR {
             inValue.Body = new WEB.integracionSR.DeleteProductoINTEGRACIONRequestBody();
             inValue.Body.codigo = codigo;
             return ((WEB.integracionSR.integracionSWSoap)(this)).DeleteProductoINTEGRACIONAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WEB.integracionSR.UpdateProductoINTEGRACIONResponse WEB.integracionSR.integracionSWSoap.UpdateProductoINTEGRACION(WEB.integracionSR.UpdateProductoINTEGRACIONRequest request) {
-            return base.Channel.UpdateProductoINTEGRACION(request);
-        }
-        
-        public string UpdateProductoINTEGRACION(string codigo, string usuarioCedula) {
-            WEB.integracionSR.UpdateProductoINTEGRACIONRequest inValue = new WEB.integracionSR.UpdateProductoINTEGRACIONRequest();
-            inValue.Body = new WEB.integracionSR.UpdateProductoINTEGRACIONRequestBody();
-            inValue.Body.codigo = codigo;
-            inValue.Body.usuarioCedula = usuarioCedula;
-            WEB.integracionSR.UpdateProductoINTEGRACIONResponse retVal = ((WEB.integracionSR.integracionSWSoap)(this)).UpdateProductoINTEGRACION(inValue);
-            return retVal.Body.UpdateProductoINTEGRACIONResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WEB.integracionSR.UpdateProductoINTEGRACIONResponse> WEB.integracionSR.integracionSWSoap.UpdateProductoINTEGRACIONAsync(WEB.integracionSR.UpdateProductoINTEGRACIONRequest request) {
-            return base.Channel.UpdateProductoINTEGRACIONAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WEB.integracionSR.UpdateProductoINTEGRACIONResponse> UpdateProductoINTEGRACIONAsync(string codigo, string usuarioCedula) {
-            WEB.integracionSR.UpdateProductoINTEGRACIONRequest inValue = new WEB.integracionSR.UpdateProductoINTEGRACIONRequest();
-            inValue.Body = new WEB.integracionSR.UpdateProductoINTEGRACIONRequestBody();
-            inValue.Body.codigo = codigo;
-            inValue.Body.usuarioCedula = usuarioCedula;
-            return ((WEB.integracionSR.integracionSWSoap)(this)).UpdateProductoINTEGRACIONAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1457,6 +1537,74 @@ namespace WEB.integracionSR {
             inValue.Body.Cedula = Cedula;
             inValue.Body.facturadoPor = facturadoPor;
             return ((WEB.integracionSR.integracionSWSoap)(this)).InsertFacturaINTEGRACIONAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WEB.integracionSR.InsertarCarritoINTEGRACIONResponse WEB.integracionSR.integracionSWSoap.InsertarCarritoINTEGRACION(WEB.integracionSR.InsertarCarritoINTEGRACIONRequest request) {
+            return base.Channel.InsertarCarritoINTEGRACION(request);
+        }
+        
+        public string InsertarCarritoINTEGRACION(string codigo, string marca, decimal precio, int cantidad, string tipo, string nombre, int peso, string imagen, string descripcion, string usuarioCedula) {
+            WEB.integracionSR.InsertarCarritoINTEGRACIONRequest inValue = new WEB.integracionSR.InsertarCarritoINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.InsertarCarritoINTEGRACIONRequestBody();
+            inValue.Body.codigo = codigo;
+            inValue.Body.marca = marca;
+            inValue.Body.precio = precio;
+            inValue.Body.cantidad = cantidad;
+            inValue.Body.tipo = tipo;
+            inValue.Body.nombre = nombre;
+            inValue.Body.peso = peso;
+            inValue.Body.imagen = imagen;
+            inValue.Body.descripcion = descripcion;
+            inValue.Body.usuarioCedula = usuarioCedula;
+            WEB.integracionSR.InsertarCarritoINTEGRACIONResponse retVal = ((WEB.integracionSR.integracionSWSoap)(this)).InsertarCarritoINTEGRACION(inValue);
+            return retVal.Body.InsertarCarritoINTEGRACIONResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WEB.integracionSR.InsertarCarritoINTEGRACIONResponse> WEB.integracionSR.integracionSWSoap.InsertarCarritoINTEGRACIONAsync(WEB.integracionSR.InsertarCarritoINTEGRACIONRequest request) {
+            return base.Channel.InsertarCarritoINTEGRACIONAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WEB.integracionSR.InsertarCarritoINTEGRACIONResponse> InsertarCarritoINTEGRACIONAsync(string codigo, string marca, decimal precio, int cantidad, string tipo, string nombre, int peso, string imagen, string descripcion, string usuarioCedula) {
+            WEB.integracionSR.InsertarCarritoINTEGRACIONRequest inValue = new WEB.integracionSR.InsertarCarritoINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.InsertarCarritoINTEGRACIONRequestBody();
+            inValue.Body.codigo = codigo;
+            inValue.Body.marca = marca;
+            inValue.Body.precio = precio;
+            inValue.Body.cantidad = cantidad;
+            inValue.Body.tipo = tipo;
+            inValue.Body.nombre = nombre;
+            inValue.Body.peso = peso;
+            inValue.Body.imagen = imagen;
+            inValue.Body.descripcion = descripcion;
+            inValue.Body.usuarioCedula = usuarioCedula;
+            return ((WEB.integracionSR.integracionSWSoap)(this)).InsertarCarritoINTEGRACIONAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WEB.integracionSR.DeleteCarritoINTEGRACIONResponse WEB.integracionSR.integracionSWSoap.DeleteCarritoINTEGRACION(WEB.integracionSR.DeleteCarritoINTEGRACIONRequest request) {
+            return base.Channel.DeleteCarritoINTEGRACION(request);
+        }
+        
+        public string DeleteCarritoINTEGRACION(string usuarioCedula) {
+            WEB.integracionSR.DeleteCarritoINTEGRACIONRequest inValue = new WEB.integracionSR.DeleteCarritoINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.DeleteCarritoINTEGRACIONRequestBody();
+            inValue.Body.usuarioCedula = usuarioCedula;
+            WEB.integracionSR.DeleteCarritoINTEGRACIONResponse retVal = ((WEB.integracionSR.integracionSWSoap)(this)).DeleteCarritoINTEGRACION(inValue);
+            return retVal.Body.DeleteCarritoINTEGRACIONResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WEB.integracionSR.DeleteCarritoINTEGRACIONResponse> WEB.integracionSR.integracionSWSoap.DeleteCarritoINTEGRACIONAsync(WEB.integracionSR.DeleteCarritoINTEGRACIONRequest request) {
+            return base.Channel.DeleteCarritoINTEGRACIONAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WEB.integracionSR.DeleteCarritoINTEGRACIONResponse> DeleteCarritoINTEGRACIONAsync(string usuarioCedula) {
+            WEB.integracionSR.DeleteCarritoINTEGRACIONRequest inValue = new WEB.integracionSR.DeleteCarritoINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.DeleteCarritoINTEGRACIONRequestBody();
+            inValue.Body.usuarioCedula = usuarioCedula;
+            return ((WEB.integracionSR.integracionSWSoap)(this)).DeleteCarritoINTEGRACIONAsync(inValue);
         }
     }
 }

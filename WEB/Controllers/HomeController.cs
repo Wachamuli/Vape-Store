@@ -10,7 +10,7 @@ namespace WEB.Controllers
         DtEntities entities = new DtEntities();
 
         //soap clients
-        integracionSR.integracionSWSoapClient clienteIntegracion = new integracionSR.integracionSWSoapClient();
+        integracionSR.integracionSWSoapClient clientIntegracion = new integracionSR.integracionSWSoapClient();
 
         public ActionResult Index()
         {
@@ -86,7 +86,7 @@ namespace WEB.Controllers
             if (clienteEncontrado == null)
             {
                 entities.spInsCliente(cliente.Nombres, cliente.Apellidos, cliente.Cedula, cliente.Telefono, cliente.fechaNacimiento, cliente.Email, cliente.Password, cliente.Sexo);
-                clienteIntegracion.InsertClienteINTEGRACION(cliente.Nombres, cliente.Apellidos, cliente.Cedula, cliente.Telefono, cliente.fechaNacimiento, cliente.Email, cliente.Password, cliente.Sexo);
+                clientIntegracion.InsertClienteINTEGRACION(cliente.Nombres, cliente.Apellidos, cliente.Cedula, cliente.Telefono, cliente.fechaNacimiento, cliente.Email, cliente.Password, cliente.Sexo);
                 return RedirectToAction("Login");
             }
 
@@ -103,6 +103,9 @@ namespace WEB.Controllers
 
             var producto = entities.spSelectProductoByCodigo(productoCodigo).Single();
             entities.spInsertProductoACarrito(producto.codigo, producto.tipo, producto.marca, producto.precio, producto.cantidad, producto.nombre, producto.peso, producto.imagen, producto.descripcion, Session["Usuario"].ToString());
+
+            clientIntegracion.InsertarCarritoINTEGRACION(producto.codigo, producto.marca, producto.precio, producto.cantidad,  producto.tipo, producto.nombre, (int)producto.peso, producto.imagen, producto.descripcion, Session["Usuario"].ToString());
+
             entities.spUpdateProductoEstado(productoCodigo, Session["Usuario"].ToString());
 
             return RedirectToAction("Carrito");
@@ -173,23 +176,39 @@ namespace WEB.Controllers
                 if (clienteEncontrado == null)
                 {
                     entities.spInsCuenta("ANONIMO", "ANONIMO", item.nombre, item.precio, cuentaID, "ANONIMO");
+
+                    clientIntegracion.InsertCuentaINTEGRACION("ANONIMO", "ANONIMO", item.nombre, item.precio, cuentaID, "ANONIMO");
+
                     entities.spDelCarrito("ANONIMO");
+
+                    clientIntegracion.DeleteCarritoINTEGRACION("ANONIMO");
+
                     entities.spUpdateProductoEstado(item.codigo, null);
                 }
                 else 
                 {
                     entities.spInsCuenta(clienteEncontrado.Nombres, clienteEncontrado.Apellidos, item.nombre, item.precio, cuentaID, Session["Usuario"].ToString());
+
+                    clientIntegracion.InsertCuentaINTEGRACION(clienteEncontrado.Nombres, clienteEncontrado.Apellidos, item.nombre, item.precio, cuentaID, Session["Usuario"].ToString());
+
                     entities.spDelCarrito(Session["Usuario"].ToString());
+
+                    clientIntegracion.DeleteCarritoINTEGRACION(Session["Usuario"].ToString());
+
                     entities.spUpdateProductoEstado(item.codigo, null);
                 }
                    
             }
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Carrito");
+            //return View("CuentasPorCobrar", Session["Usuario"].ToString());
         }
 
-
-
+     
+        public ActionResult CuentasPorCobrar()
+        {
+            return View();
+        }
 
     }
 }

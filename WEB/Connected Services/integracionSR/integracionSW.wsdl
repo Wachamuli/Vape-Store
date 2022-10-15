@@ -38,21 +38,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="UpdateProductoINTEGRACION">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="usuarioCedula" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="UpdateProductoINTEGRACIONResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="UpdateProductoINTEGRACIONResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="InsertClienteINTEGRACION">
         <s:complexType>
           <s:sequence>
@@ -206,6 +191,43 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="InsertarCarritoINTEGRACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="marca" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="precio" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="peso" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="imagen" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuarioCedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarCarritoINTEGRACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertarCarritoINTEGRACIONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCarritoINTEGRACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuarioCedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCarritoINTEGRACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteCarritoINTEGRACIONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="InsertarProductoINTEGRACIONSoapIn">
@@ -219,12 +241,6 @@
   </wsdl:message>
   <wsdl:message name="DeleteProductoINTEGRACIONSoapOut">
     <wsdl:part name="parameters" element="tns:DeleteProductoINTEGRACIONResponse" />
-  </wsdl:message>
-  <wsdl:message name="UpdateProductoINTEGRACIONSoapIn">
-    <wsdl:part name="parameters" element="tns:UpdateProductoINTEGRACION" />
-  </wsdl:message>
-  <wsdl:message name="UpdateProductoINTEGRACIONSoapOut">
-    <wsdl:part name="parameters" element="tns:UpdateProductoINTEGRACIONResponse" />
   </wsdl:message>
   <wsdl:message name="InsertClienteINTEGRACIONSoapIn">
     <wsdl:part name="parameters" element="tns:InsertClienteINTEGRACION" />
@@ -280,6 +296,18 @@
   <wsdl:message name="InsertFacturaINTEGRACIONSoapOut">
     <wsdl:part name="parameters" element="tns:InsertFacturaINTEGRACIONResponse" />
   </wsdl:message>
+  <wsdl:message name="InsertarCarritoINTEGRACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarCarritoINTEGRACION" />
+  </wsdl:message>
+  <wsdl:message name="InsertarCarritoINTEGRACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarCarritoINTEGRACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCarritoINTEGRACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteCarritoINTEGRACION" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCarritoINTEGRACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteCarritoINTEGRACIONResponse" />
+  </wsdl:message>
   <wsdl:portType name="integracionSWSoap">
     <wsdl:operation name="InsertarProductoINTEGRACION">
       <wsdl:input message="tns:InsertarProductoINTEGRACIONSoapIn" />
@@ -288,10 +316,6 @@
     <wsdl:operation name="DeleteProductoINTEGRACION">
       <wsdl:input message="tns:DeleteProductoINTEGRACIONSoapIn" />
       <wsdl:output message="tns:DeleteProductoINTEGRACIONSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdateProductoINTEGRACION">
-      <wsdl:input message="tns:UpdateProductoINTEGRACIONSoapIn" />
-      <wsdl:output message="tns:UpdateProductoINTEGRACIONSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="InsertClienteINTEGRACION">
       <wsdl:input message="tns:InsertClienteINTEGRACIONSoapIn" />
@@ -329,6 +353,14 @@
       <wsdl:input message="tns:InsertFacturaINTEGRACIONSoapIn" />
       <wsdl:output message="tns:InsertFacturaINTEGRACIONSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="InsertarCarritoINTEGRACION">
+      <wsdl:input message="tns:InsertarCarritoINTEGRACIONSoapIn" />
+      <wsdl:output message="tns:InsertarCarritoINTEGRACIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCarritoINTEGRACION">
+      <wsdl:input message="tns:DeleteCarritoINTEGRACIONSoapIn" />
+      <wsdl:output message="tns:DeleteCarritoINTEGRACIONSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="integracionSWSoap" type="tns:integracionSWSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -343,15 +375,6 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteProductoINTEGRACION">
       <soap:operation soapAction="http://intec.edu.do/DeleteProductoINTEGRACION" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateProductoINTEGRACION">
-      <soap:operation soapAction="http://intec.edu.do/UpdateProductoINTEGRACION" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -440,6 +463,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="InsertarCarritoINTEGRACION">
+      <soap:operation soapAction="http://intec.edu.do/InsertarCarritoINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCarritoINTEGRACION">
+      <soap:operation soapAction="http://intec.edu.do/DeleteCarritoINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="integracionSWSoap12" type="tns:integracionSWSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -454,15 +495,6 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteProductoINTEGRACION">
       <soap12:operation soapAction="http://intec.edu.do/DeleteProductoINTEGRACION" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateProductoINTEGRACION">
-      <soap12:operation soapAction="http://intec.edu.do/UpdateProductoINTEGRACION" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -544,6 +576,24 @@
     </wsdl:operation>
     <wsdl:operation name="InsertFacturaINTEGRACION">
       <soap12:operation soapAction="http://intec.edu.do/InsertFacturaINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarCarritoINTEGRACION">
+      <soap12:operation soapAction="http://intec.edu.do/InsertarCarritoINTEGRACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCarritoINTEGRACION">
+      <soap12:operation soapAction="http://intec.edu.do/DeleteCarritoINTEGRACION" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

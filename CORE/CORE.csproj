@@ -147,7 +147,10 @@
     <Content Include="Connected Services\integracionSR\CORE.integracionSR.UpdateEmpleadoINTEGRACIONResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\integracionSR\CORE.integracionSR.UpdateProductoINTEGRACIONResponse.datasource">
+    <Content Include="Connected Services\integracionSR\CORE.integracionSR.DeleteCarritoINTEGRACIONResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\integracionSR\CORE.integracionSR.InsertarCarritoINTEGRACIONResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\integracionSR\integracionSW.disco" />
