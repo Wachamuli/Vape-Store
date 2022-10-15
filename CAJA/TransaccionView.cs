@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace CAJA
 {
-    public partial class Transaccion : Form
+    public partial class TransaccionView : Form
     {
-        public Transaccion()
+        public TransaccionView()
         {
             InitializeComponent();
+        }
+
+        private void Transaccion_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CAJA
 {
-    public partial class Cuadre : Form
+    public partial class CuadreViewer : Form
     {
-        public Cuadre()
+        public CuadreViewer()
         {
             InitializeComponent();
         }
