@@ -169,3 +169,16 @@ textarea {
     font-size: 32px;
     font-family: "Lobster Two";
 }
+
+.columna {
+    padding: 20px;
+}
+
+.fila {
+    padding: 20px;
+    text-align: left;
+}
+
+.tabla tr {
+    border-bottom: 2px solid black;
+}

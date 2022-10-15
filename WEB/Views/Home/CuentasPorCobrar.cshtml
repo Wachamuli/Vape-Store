@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "CuentasPorCobrar";
+}
+
+<h2>CuentasPorCobrar</h2>
+
+
+<table class="tabla">
+    <thead>
+        <tr>
+            <th class="columna">Código</th>
+            <th class="columna">Cédula</th>
+            <th class="columna">Nombre</th>
+            <th class="columna">Apellido</th>
+            <th class="columna">Total</th>
+            <th class="columna">ID</th>
+            <th class="columna">Surcursal</th>
+            <th class="columna">Fecha de compra</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cuenta in ViewBag.CuentasPorCobrar)
+        {
+            <tr>
+                <td class="fila">Dom</td>
+                <td>6000</td>
+            </tr>
+        }
+    </tbody>
+</table>

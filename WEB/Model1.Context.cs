@@ -395,5 +395,68 @@ namespace WEB
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spDelCarrito", usuarioCedulaParameter);
         }
+    
+        public virtual int spFillByCedulaCUENTAS(string cedula)
+        {
+            var cedulaParameter = cedula != null ?
+                new ObjectParameter("Cedula", cedula) :
+                new ObjectParameter("Cedula", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spFillByCedulaCUENTAS", cedulaParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> spGetCantidadTotal(string usuarioCedula)
+        {
+            var usuarioCedulaParameter = usuarioCedula != null ?
+                new ObjectParameter("usuarioCedula", usuarioCedula) :
+                new ObjectParameter("usuarioCedula", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("spGetCantidadTotal", usuarioCedulaParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<decimal>> spGetPesoTotal(string usuarioCedula)
+        {
+            var usuarioCedulaParameter = usuarioCedula != null ?
+                new ObjectParameter("usuarioCedula", usuarioCedula) :
+                new ObjectParameter("usuarioCedula", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("spGetPesoTotal", usuarioCedulaParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<decimal>> spGetPrecioTotal(string usuarioCedula)
+        {
+            var usuarioCedulaParameter = usuarioCedula != null ?
+                new ObjectParameter("usuarioCedula", usuarioCedula) :
+                new ObjectParameter("usuarioCedula", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("spGetPrecioTotal", usuarioCedulaParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> spIsExistProducto1(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("spIsExistProducto1", codigoParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> spIsExistProductoEnCarrito1(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("spIsExistProductoEnCarrito1", codigoParameter);
+        }
+    
+        public virtual int spUpdateCarritoEstado1(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spUpdateCarritoEstado1", codigoParameter);
+        }
     }
 }

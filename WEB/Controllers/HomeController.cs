@@ -185,7 +185,22 @@ namespace WEB.Controllers
                    
             }
 
-            return RedirectToAction("Index");
+            return RedirectToAction("CuentasPorCobrar");
+        }
+
+        public ActionResult CuentasPorCobrar()
+        {
+            //var listaCuentasPorCobrar = new List<WEB.spSelectCarrito_Result>();
+            //var cuentasPorCobrar = entities.spFillByCedulaCUENTAS(Session["Usuario"].ToString());
+
+            //foreach (var c in cuentasPorCobrar)
+            //{
+            //    listaCuentasPorCobrar.Add(c);
+            //}
+
+            //this.ViewBag.CuentasPorCobrar = listaCuentasPorCobrar;
+
+            return View();
         }
 
 
