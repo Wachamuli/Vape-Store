@@ -1,75 +1,31 @@
-﻿@model IEnumerable<WEB.spFillByCedulaCUENTAS_Result>
-
+﻿
 @{
     ViewBag.Title = "CuentasPorCobrar";
 }
 
 <h2>CuentasPorCobrar</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombres)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Apellidos)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Producto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Total)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cuentaID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.sucursal)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fechaCompra)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cedula)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombres)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Apellidos)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Producto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Total)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cuentaID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.sucursal)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.fechaCompra)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cedula)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
+<table class="tabla">
+    <thead>
+        <tr>
+            <th class="columna">Código</th>
+            <th class="columna">Cédula</th>
+            <th class="columna">Nombre</th>
+            <th class="columna">Apellido</th>
+            <th class="columna">Total</th>
+            <th class="columna">ID</th>
+            <th class="columna">Surcursal</th>
+            <th class="columna">Fecha de compra</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cuenta in ViewBag.CuentasPorCobrar)
+        {
+            <tr>
+                <td class="fila">Dom</td>
+                <td>6000</td>
+            </tr>
+        }
+    </tbody>
 </table>
