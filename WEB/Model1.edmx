@@ -55,6 +55,21 @@
           <Property Name="descripcion" Type="nvarchar" MaxLength="200" />
           <Property Name="usuarioCedula" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <Function Name="spDelCarrito" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usuarioCedula" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spDelCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Cedula" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spDelCuenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cuentaID" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="spDelEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Cedula" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spDelProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigo" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="spInsCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Nombres" Type="nvarchar" Mode="In" />
           <Parameter Name="Apellidos" Type="nvarchar" Mode="In" />
@@ -63,6 +78,24 @@
           <Parameter Name="fechaNacimiento" Type="date" Mode="In" />
           <Parameter Name="Email" Type="nvarchar" Mode="In" />
           <Parameter Name="Password" Type="nvarchar" Mode="In" />
+          <Parameter Name="Sexo" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spInsCuenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Nombres" Type="nvarchar" Mode="In" />
+          <Parameter Name="Apellidos" Type="nvarchar" Mode="In" />
+          <Parameter Name="Producto" Type="nvarchar" Mode="In" />
+          <Parameter Name="Total" Type="decimal" Mode="In" />
+          <Parameter Name="cuentaID" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Cedula" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spInsEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Nombres" Type="nvarchar" Mode="In" />
+          <Parameter Name="Apellidos" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Telefono" Type="nvarchar" Mode="In" />
+          <Parameter Name="Cedula" Type="nvarchar" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar" Mode="In" />
+          <Parameter Name="rol" Type="nvarchar" Mode="In" />
           <Parameter Name="Sexo" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="spInsertProductoACarrito" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -77,11 +110,25 @@
           <Parameter Name="descripcion" Type="nvarchar" Mode="In" />
           <Parameter Name="usuarioCedula" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="spIsExistProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="codigo" Type="nvarchar" Mode="In" />
+        <Function Name="spInsFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Nombres" Type="nvarchar" Mode="In" />
+          <Parameter Name="Apellidos" Type="nvarchar" Mode="In" />
+          <Parameter Name="Producto" Type="nvarchar" Mode="In" />
+          <Parameter Name="Total" Type="decimal" Mode="In" />
+          <Parameter Name="cuentaID" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Cedula" Type="nvarchar" Mode="In" />
+          <Parameter Name="facturadoPor" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="spIsExistProductoEnCarrito" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="spInsProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="codigo" Type="nvarchar" Mode="In" />
+          <Parameter Name="marca" Type="nvarchar" Mode="In" />
+          <Parameter Name="precio" Type="decimal" Mode="In" />
+          <Parameter Name="cantidad" Type="int" Mode="In" />
+          <Parameter Name="tipo" Type="nvarchar" Mode="In" />
+          <Parameter Name="nombre" Type="nvarchar" Mode="In" />
+          <Parameter Name="peso" Type="decimal" Mode="In" />
+          <Parameter Name="imagen" Type="nvarchar" Mode="In" />
+          <Parameter Name="descripcion" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="spSelectByCedu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="cedula" Type="nvarchar" Mode="In" />
@@ -93,12 +140,17 @@
           <Parameter Name="codigo" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="spSelectProductos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="spUpdateCarritoEstado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="codigo" Type="nvarchar" Mode="In" />
-        </Function>
         <Function Name="spUpdateProductoEstado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="codigo" Type="nvarchar" Mode="In" />
           <Parameter Name="usuarioCedula" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spUpdCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="totalGastado" Type="decimal" Mode="In" />
+          <Parameter Name="Cedula" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spUpdEmpleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cuentasCobradas" Type="int" Mode="In" />
+          <Parameter Name="Cedula" Type="nvarchar" Mode="In" />
         </Function>
         <EntityContainer Name="DtModelStoreContainer">
           <EntitySet Name="Carrito" EntityType="Self.Carrito" Schema="dbo" store:Type="Tables" />
@@ -206,6 +258,67 @@
           </FunctionImport>
           <FunctionImport Name="spUpdateProductoEstado">
             <Parameter Name="codigo" Mode="In" Type="String" />
+            <Parameter Name="usuarioCedula" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spDelCliente">
+          <Parameter Name="Cedula" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spDelCuenta">
+          <Parameter Name="cuentaID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spDelEmpleado">
+          <Parameter Name="Cedula" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spDelProducto">
+          <Parameter Name="codigo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spInsCuenta">
+            <Parameter Name="Nombres" Mode="In" Type="String" />
+            <Parameter Name="Apellidos" Mode="In" Type="String" />
+            <Parameter Name="Producto" Mode="In" Type="String" />
+            <Parameter Name="Total" Mode="In" Type="Decimal" />
+            <Parameter Name="cuentaID" Mode="In" Type="String" />
+            <Parameter Name="Cedula" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spInsEmpleado">
+            <Parameter Name="Nombres" Mode="In" Type="String" />
+            <Parameter Name="Apellidos" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Telefono" Mode="In" Type="String" />
+            <Parameter Name="Cedula" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="rol" Mode="In" Type="String" />
+            <Parameter Name="Sexo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spInsFactura">
+            <Parameter Name="Nombres" Mode="In" Type="String" />
+            <Parameter Name="Apellidos" Mode="In" Type="String" />
+            <Parameter Name="Producto" Mode="In" Type="String" />
+            <Parameter Name="Total" Mode="In" Type="Decimal" />
+            <Parameter Name="cuentaID" Mode="In" Type="String" />
+            <Parameter Name="Cedula" Mode="In" Type="String" />
+            <Parameter Name="facturadoPor" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spInsProducto">
+            <Parameter Name="codigo" Mode="In" Type="String" />
+            <Parameter Name="marca" Mode="In" Type="String" />
+            <Parameter Name="precio" Mode="In" Type="Decimal" />
+            <Parameter Name="cantidad" Mode="In" Type="Int32" />
+            <Parameter Name="tipo" Mode="In" Type="String" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="peso" Mode="In" Type="Decimal" />
+            <Parameter Name="imagen" Mode="In" Type="String" />
+            <Parameter Name="descripcion" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spUpdCliente">
+            <Parameter Name="totalGastado" Mode="In" Type="Decimal" />
+            <Parameter Name="Cedula" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spUpdEmpleado">
+            <Parameter Name="cuentasCobradas" Mode="In" Type="Int32" />
+            <Parameter Name="Cedula" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spDelCarrito">
             <Parameter Name="usuarioCedula" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
@@ -320,8 +433,6 @@
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="spInsCliente" FunctionName="DtModel.Store.spInsCliente" />
           <FunctionImportMapping FunctionImportName="spInsertProductoACarrito" FunctionName="DtModel.Store.spInsertProductoACarrito" />
-          <FunctionImportMapping FunctionImportName="spIsExistProducto" FunctionName="DtModel.Store.spIsExistProducto" />
-          <FunctionImportMapping FunctionImportName="spIsExistProductoEnCarrito" FunctionName="DtModel.Store.spIsExistProductoEnCarrito" />
           <FunctionImportMapping FunctionImportName="spSelectByCedu" FunctionName="DtModel.Store.spSelectByCedu">
             <ResultMapping>
               <ComplexTypeMapping TypeName="DtModel.spSelectByCedu_Result">
@@ -388,8 +499,18 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="spUpdateCarritoEstado" FunctionName="DtModel.Store.spUpdateCarritoEstado" />
           <FunctionImportMapping FunctionImportName="spUpdateProductoEstado" FunctionName="DtModel.Store.spUpdateProductoEstado" />
+          <FunctionImportMapping FunctionImportName="spDelCliente" FunctionName="DtModel.Store.spDelCliente" />
+          <FunctionImportMapping FunctionImportName="spDelCuenta" FunctionName="DtModel.Store.spDelCuenta" />
+          <FunctionImportMapping FunctionImportName="spDelEmpleado" FunctionName="DtModel.Store.spDelEmpleado" />
+          <FunctionImportMapping FunctionImportName="spDelProducto" FunctionName="DtModel.Store.spDelProducto" />
+          <FunctionImportMapping FunctionImportName="spInsCuenta" FunctionName="DtModel.Store.spInsCuenta" />
+          <FunctionImportMapping FunctionImportName="spInsEmpleado" FunctionName="DtModel.Store.spInsEmpleado" />
+          <FunctionImportMapping FunctionImportName="spInsFactura" FunctionName="DtModel.Store.spInsFactura" />
+          <FunctionImportMapping FunctionImportName="spInsProducto" FunctionName="DtModel.Store.spInsProducto" />
+          <FunctionImportMapping FunctionImportName="spUpdCliente" FunctionName="DtModel.Store.spUpdCliente" />
+          <FunctionImportMapping FunctionImportName="spUpdEmpleado" FunctionName="DtModel.Store.spUpdEmpleado" />
+          <FunctionImportMapping FunctionImportName="spDelCarrito" FunctionName="DtModel.Store.spDelCarrito" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

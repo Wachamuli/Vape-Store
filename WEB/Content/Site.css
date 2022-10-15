@@ -163,3 +163,9 @@ textarea {
 .icon {
     margin-left: 5px;
 }
+
+.nombre-usuario {
+    text-align: right;
+    font-size: 32px;
+    font-family: "Lobster Two";
+}

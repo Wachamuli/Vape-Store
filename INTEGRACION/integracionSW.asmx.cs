@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Services;
 using log4net;
 using System.Data;
+using INTEGRACION.dsWEBREFTableAdapters;
 
 namespace INTEGRACION
 {
@@ -35,7 +36,7 @@ namespace INTEGRACION
         FacturasTableAdapter adapterFactura = new FacturasTableAdapter();
 
         //dsAdapters REFERENCIAS a otras db
-
+        ProductosTableREFAdapter adapterProductoREF = new ProductosTableREFAdapter();
 
 
         //soap clients
@@ -45,42 +46,44 @@ namespace INTEGRACION
 
         //metodos
         [WebMethod]
-        public string InsertarProductoINTEGRACION(string Nombre, string Tipo, decimal Precio, int Cantidad, string productoID, string Descripcion, string Marca, string Imagen)
+        public string InsertarProductoINTEGRACION(string codigo, string marca, decimal precio, int cantidad, string tipo, string nombre, int peso, string imagen, string descripcion)
         {
 
-            adapterProducto.spInsProducto(Nombre, Tipo, Precio, Cantidad, productoID, Descripcion, Marca, Imagen);
+            adapterProducto.spInsProducto(codigo, marca, precio, cantidad, tipo, nombre, peso, imagen, descripcion);
 
-            //pasar a WEBAPP
+            adapterProductoREF.spInsProducto(codigo, marca, precio, cantidad, tipo, nombre, peso, imagen, descripcion);
+
             //pasar a CAJA
 
-            Logger.Info("Producto " + Nombre + " fue insertado.");
-            return "Producto " + Nombre + " fue insertado.";
+            Logger.Info("Producto " + nombre + " fue insertado.");
+            return "Producto " + nombre + " fue insertado.";
         }
 
         [WebMethod]
-        public string DeleteProductoINTEGRACION(string productoID)
+        public string DeleteProductoINTEGRACION(string codigo)
         {
 
-            adapterProducto.spDelProducto(productoID);
+            adapterProducto.spDelProducto(codigo);
 
-            //pasar a WEBAPP
+            adapterProductoREF.spDelProducto(codigo);
+
             //pasar a CAJA
 
-            Logger.Info("Producto con ID " + productoID + " fue eliminado.");
-            return "Producto con ID " + productoID + " fue eliminado.";
+            Logger.Info("Producto con ID " + codigo + " fue eliminado.");
+            return "Producto con ID " + codigo + " fue eliminado.";
         }
 
         [WebMethod]
-        public string UpdateProductoINTEGRACION(int Cantidad, string productoID)
+        public string UpdateProductoINTEGRACION(string codigo, string usuarioCedula)
         {
- 
-            adapterProducto.spUpdProducto(Cantidad, productoID);
-            clientCore.UpdateProductoCORE(Cantidad, productoID);
+
+            adapterProducto.spUpdateProductoEstado(codigo, usuarioCedula);
+            clientCore.UpdateProductoCORE(codigo, usuarioCedula);
 
             //pasar a CAJA o WEBAPP
 
-            Logger.Info("Producto con ID " + productoID + " fue actualizado.");
-            return "Producto con ID " + productoID + " fue actualizado.";
+            Logger.Info("Producto con ID " + codigo + " fue actualizado.");
+            return "Producto con ID " + codigo + " fue actualizado.";
         }
 
         [WebMethod]

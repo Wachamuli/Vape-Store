@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -7,6 +8,9 @@ namespace WEB.Controllers
     public class HomeController : Controller
     {
         DtEntities entities = new DtEntities();
+
+        //soap clients
+        integracionSR.integracionSWSoapClient clienteIntegracion = new integracionSR.integracionSWSoapClient();
 
         public ActionResult Index()
         {
@@ -72,14 +76,23 @@ namespace WEB.Controllers
             return View();
         }
 
+
         [HttpPost]
         public ActionResult Registrarse(Cliente cliente)
         {
             ViewBag.Message = "Your contact page.";
 
-            entities.spInsCliente(cliente.Nombres, cliente.Apellidos, cliente.Cedula, cliente.Telefono, cliente.fechaNacimiento, cliente.Email, cliente.Password, cliente.Sexo);
+            var clienteEncontrado = entities.spSelectByCedu(cliente.Cedula).SingleOrDefault();
+            if (clienteEncontrado == null)
+            {
+                entities.spInsCliente(cliente.Nombres, cliente.Apellidos, cliente.Cedula, cliente.Telefono, cliente.fechaNacimiento, cliente.Email, cliente.Password, cliente.Sexo);
+                clienteIntegracion.InsertClienteINTEGRACION(cliente.Nombres, cliente.Apellidos, cliente.Cedula, cliente.Telefono, cliente.fechaNacimiento, cliente.Email, cliente.Password, cliente.Sexo);
+                return RedirectToAction("Login");
+            }
 
-            return RedirectToAction("Login");
+            ViewData["Error"] = "Cliente ya existe";
+
+            return View();
         }
 
         [HttpPost]
@@ -112,16 +125,71 @@ namespace WEB.Controllers
 
             this.ViewBag.Productos = productos;
 
-            var totales = new Dictionary<string, string>();
-            //var precioTotal = entities.spGetPrecioTotal(Session["Usuario"].ToString();
-            //var pesoTotal = entities.spGetPesoTotal(Session["Usuario"].ToString());
-            //var cantidadTotal = entities.spGetCantidadTotal(Session["Usuario"].ToString());
+            var productosCarrito = entities.spSelectCarrito(Session["Usuario"].ToString());
 
-            //totales.Add("precioTotal", );
-            
+            decimal preciosTotales = 0;
+            int cantidadCompra = 0;
+            decimal pesoTotal = 0;
 
+            foreach (var item in productosCarrito)
+            {
+                preciosTotales += item.precio;
+                cantidadCompra += item.cantidad;
+                pesoTotal += item.peso;
+            }
+
+            ViewData["preciosTotales"] = preciosTotales;
+            ViewData["cantidadCompra"] = cantidadCompra;
+            ViewData["pesoTotal"] = pesoTotal;
 
             return View();
         }
+
+
+        [HttpPost]
+        public ActionResult CarritoComprar()
+        {
+            Guid myuuid = Guid.NewGuid();
+           
+
+            if (Session["Usuario"] == null)
+                Session["Usuario"] = "ANONIMO";
+        
+            var clienteEncontrado = entities.spSelectByCedu(Session["Usuario"].ToString()).SingleOrDefault();
+            var productosCarrito = entities.spSelectCarrito(Session["Usuario"].ToString());
+
+            var listaProducto = new List<spSelectCarrito_Result>();
+
+            foreach (var item in productosCarrito)
+            {
+                listaProducto.Add(item);
+            }
+
+
+            foreach (var item in listaProducto)
+            {
+                string cuentaID = myuuid.ToString();
+
+                if (clienteEncontrado == null)
+                {
+                    entities.spInsCuenta("ANONIMO", "ANONIMO", item.nombre, item.precio, cuentaID, "ANONIMO");
+                    entities.spDelCarrito("ANONIMO");
+                    entities.spUpdateProductoEstado(item.codigo, null);
+                }
+                else 
+                {
+                    entities.spInsCuenta(clienteEncontrado.Nombres, clienteEncontrado.Apellidos, item.nombre, item.precio, cuentaID, Session["Usuario"].ToString());
+                    entities.spDelCarrito(Session["Usuario"].ToString());
+                    entities.spUpdateProductoEstado(item.codigo, null);
+                }
+                   
+            }
+
+            return RedirectToAction("Index");
+        }
+
+
+
+
     }
 }

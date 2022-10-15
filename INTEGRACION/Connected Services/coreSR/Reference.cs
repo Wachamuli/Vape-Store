@@ -15,33 +15,19 @@ namespace INTEGRACION.coreSR {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://intec.edu.do", ConfigurationName="coreSR.coreWSSoap")]
     public interface coreWSSoap {
         
-        // CODEGEN: Generating message contract since element name Nombre from namespace http://intec.edu.do is not marked nillable
+        // CODEGEN: Generating message contract since element name codigo from namespace http://intec.edu.do is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/InsertarProductoCORE", ReplyAction="*")]
         INTEGRACION.coreSR.InsertarProductoCOREResponse InsertarProductoCORE(INTEGRACION.coreSR.InsertarProductoCORERequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/InsertarProductoCORE", ReplyAction="*")]
         System.Threading.Tasks.Task<INTEGRACION.coreSR.InsertarProductoCOREResponse> InsertarProductoCOREAsync(INTEGRACION.coreSR.InsertarProductoCORERequest request);
         
-        // CODEGEN: Generating message contract since element name productoID from namespace http://intec.edu.do is not marked nillable
+        // CODEGEN: Generating message contract since element name codigo from namespace http://intec.edu.do is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/DeleteProductoCORE", ReplyAction="*")]
         INTEGRACION.coreSR.DeleteProductoCOREResponse DeleteProductoCORE(INTEGRACION.coreSR.DeleteProductoCORERequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/DeleteProductoCORE", ReplyAction="*")]
         System.Threading.Tasks.Task<INTEGRACION.coreSR.DeleteProductoCOREResponse> DeleteProductoCOREAsync(INTEGRACION.coreSR.DeleteProductoCORERequest request);
-        
-        // CODEGEN: Generating message contract since element name productoID from namespace http://intec.edu.do is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/UpdateProductoCORE", ReplyAction="*")]
-        INTEGRACION.coreSR.UpdateProductoCOREResponse UpdateProductoCORE(INTEGRACION.coreSR.UpdateProductoCORERequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/UpdateProductoCORE", ReplyAction="*")]
-        System.Threading.Tasks.Task<INTEGRACION.coreSR.UpdateProductoCOREResponse> UpdateProductoCOREAsync(INTEGRACION.coreSR.UpdateProductoCORERequest request);
-        
-        // CODEGEN: Generating message contract since element name Nombres from namespace http://intec.edu.do is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/InsertClienteCORE", ReplyAction="*")]
-        INTEGRACION.coreSR.InsertClienteCOREResponse InsertClienteCORE(INTEGRACION.coreSR.InsertClienteCORERequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/InsertClienteCORE", ReplyAction="*")]
-        System.Threading.Tasks.Task<INTEGRACION.coreSR.InsertClienteCOREResponse> InsertClienteCOREAsync(INTEGRACION.coreSR.InsertClienteCORERequest request);
         
         // CODEGEN: Generating message contract since element name Cedula from namespace http://intec.edu.do is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/DeleteClienteCORE", ReplyAction="*")]
@@ -49,13 +35,6 @@ namespace INTEGRACION.coreSR {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/DeleteClienteCORE", ReplyAction="*")]
         System.Threading.Tasks.Task<INTEGRACION.coreSR.DeleteClienteCOREResponse> DeleteClienteCOREAsync(INTEGRACION.coreSR.DeleteClienteCORERequest request);
-        
-        // CODEGEN: Generating message contract since element name Cedula from namespace http://intec.edu.do is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/UpdateClienteCORE", ReplyAction="*")]
-        INTEGRACION.coreSR.UpdateClienteCOREResponse UpdateClienteCORE(INTEGRACION.coreSR.UpdateClienteCORERequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/UpdateClienteCORE", ReplyAction="*")]
-        System.Threading.Tasks.Task<INTEGRACION.coreSR.UpdateClienteCOREResponse> UpdateClienteCOREAsync(INTEGRACION.coreSR.UpdateClienteCORERequest request);
         
         // CODEGEN: Generating message contract since element name Nombres from namespace http://intec.edu.do is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/InsertEmpleadoCORE", ReplyAction="*")]
@@ -72,11 +51,32 @@ namespace INTEGRACION.coreSR {
         System.Threading.Tasks.Task<INTEGRACION.coreSR.DeleteEmpleadoCOREResponse> DeleteEmpleadoCOREAsync(INTEGRACION.coreSR.DeleteEmpleadoCORERequest request);
         
         // CODEGEN: Generating message contract since element name Cedula from namespace http://intec.edu.do is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/UpdateClienteCORE", ReplyAction="*")]
+        INTEGRACION.coreSR.UpdateClienteCOREResponse UpdateClienteCORE(INTEGRACION.coreSR.UpdateClienteCORERequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/UpdateClienteCORE", ReplyAction="*")]
+        System.Threading.Tasks.Task<INTEGRACION.coreSR.UpdateClienteCOREResponse> UpdateClienteCOREAsync(INTEGRACION.coreSR.UpdateClienteCORERequest request);
+        
+        // CODEGEN: Generating message contract since element name Cedula from namespace http://intec.edu.do is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/UpdateEmpleadoCORE", ReplyAction="*")]
         INTEGRACION.coreSR.UpdateEmpleadoCOREResponse UpdateEmpleadoCORE(INTEGRACION.coreSR.UpdateEmpleadoCORERequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/UpdateEmpleadoCORE", ReplyAction="*")]
         System.Threading.Tasks.Task<INTEGRACION.coreSR.UpdateEmpleadoCOREResponse> UpdateEmpleadoCOREAsync(INTEGRACION.coreSR.UpdateEmpleadoCORERequest request);
+        
+        // CODEGEN: Generating message contract since element name codigo from namespace http://intec.edu.do is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/UpdateProductoCORE", ReplyAction="*")]
+        INTEGRACION.coreSR.UpdateProductoCOREResponse UpdateProductoCORE(INTEGRACION.coreSR.UpdateProductoCORERequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/UpdateProductoCORE", ReplyAction="*")]
+        System.Threading.Tasks.Task<INTEGRACION.coreSR.UpdateProductoCOREResponse> UpdateProductoCOREAsync(INTEGRACION.coreSR.UpdateProductoCORERequest request);
+        
+        // CODEGEN: Generating message contract since element name Nombres from namespace http://intec.edu.do is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/InsertClienteCORE", ReplyAction="*")]
+        INTEGRACION.coreSR.InsertClienteCOREResponse InsertClienteCORE(INTEGRACION.coreSR.InsertClienteCORERequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/InsertClienteCORE", ReplyAction="*")]
+        System.Threading.Tasks.Task<INTEGRACION.coreSR.InsertClienteCOREResponse> InsertClienteCOREAsync(INTEGRACION.coreSR.InsertClienteCORERequest request);
         
         // CODEGEN: Generating message contract since element name Nombres from namespace http://intec.edu.do is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/InsertCuentaCORE", ReplyAction="*")]
@@ -124,41 +124,45 @@ namespace INTEGRACION.coreSR {
     public partial class InsertarProductoCORERequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string Nombre;
+        public string codigo;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string Tipo;
+        public string marca;
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public decimal Precio;
+        public decimal precio;
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public int Cantidad;
+        public int cantidad;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string productoID;
+        public string tipo;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Descripcion;
+        public string nombre;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string Marca;
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public int peso;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string Imagen;
+        public string imagen;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string descripcion;
         
         public InsertarProductoCORERequestBody() {
         }
         
-        public InsertarProductoCORERequestBody(string Nombre, string Tipo, decimal Precio, int Cantidad, string productoID, string Descripcion, string Marca, string Imagen) {
-            this.Nombre = Nombre;
-            this.Tipo = Tipo;
-            this.Precio = Precio;
-            this.Cantidad = Cantidad;
-            this.productoID = productoID;
-            this.Descripcion = Descripcion;
-            this.Marca = Marca;
-            this.Imagen = Imagen;
+        public InsertarProductoCORERequestBody(string codigo, string marca, decimal precio, int cantidad, string tipo, string nombre, int peso, string imagen, string descripcion) {
+            this.codigo = codigo;
+            this.marca = marca;
+            this.precio = precio;
+            this.cantidad = cantidad;
+            this.tipo = tipo;
+            this.nombre = nombre;
+            this.peso = peso;
+            this.imagen = imagen;
+            this.descripcion = descripcion;
         }
     }
     
@@ -220,13 +224,13 @@ namespace INTEGRACION.coreSR {
     public partial class DeleteProductoCORERequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string productoID;
+        public string codigo;
         
         public DeleteProductoCORERequestBody() {
         }
         
-        public DeleteProductoCORERequestBody(string productoID) {
-            this.productoID = productoID;
+        public DeleteProductoCORERequestBody(string codigo) {
+            this.codigo = codigo;
         }
     }
     
@@ -261,174 +265,6 @@ namespace INTEGRACION.coreSR {
         
         public DeleteProductoCOREResponseBody(string DeleteProductoCOREResult) {
             this.DeleteProductoCOREResult = DeleteProductoCOREResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class UpdateProductoCORERequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateProductoCORE", Namespace="http://intec.edu.do", Order=0)]
-        public INTEGRACION.coreSR.UpdateProductoCORERequestBody Body;
-        
-        public UpdateProductoCORERequest() {
-        }
-        
-        public UpdateProductoCORERequest(INTEGRACION.coreSR.UpdateProductoCORERequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://intec.edu.do")]
-    public partial class UpdateProductoCORERequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int Cantidad;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string productoID;
-        
-        public UpdateProductoCORERequestBody() {
-        }
-        
-        public UpdateProductoCORERequestBody(int Cantidad, string productoID) {
-            this.Cantidad = Cantidad;
-            this.productoID = productoID;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class UpdateProductoCOREResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateProductoCOREResponse", Namespace="http://intec.edu.do", Order=0)]
-        public INTEGRACION.coreSR.UpdateProductoCOREResponseBody Body;
-        
-        public UpdateProductoCOREResponse() {
-        }
-        
-        public UpdateProductoCOREResponse(INTEGRACION.coreSR.UpdateProductoCOREResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://intec.edu.do")]
-    public partial class UpdateProductoCOREResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string UpdateProductoCOREResult;
-        
-        public UpdateProductoCOREResponseBody() {
-        }
-        
-        public UpdateProductoCOREResponseBody(string UpdateProductoCOREResult) {
-            this.UpdateProductoCOREResult = UpdateProductoCOREResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class InsertClienteCORERequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertClienteCORE", Namespace="http://intec.edu.do", Order=0)]
-        public INTEGRACION.coreSR.InsertClienteCORERequestBody Body;
-        
-        public InsertClienteCORERequest() {
-        }
-        
-        public InsertClienteCORERequest(INTEGRACION.coreSR.InsertClienteCORERequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://intec.edu.do")]
-    public partial class InsertClienteCORERequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string Nombres;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string Apellidos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string Cedula;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Telefono;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public System.DateTime fechaNacimiento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Email;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string Password;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string Sexo;
-        
-        public InsertClienteCORERequestBody() {
-        }
-        
-        public InsertClienteCORERequestBody(string Nombres, string Apellidos, string Cedula, string Telefono, System.DateTime fechaNacimiento, string Email, string Password, string Sexo) {
-            this.Nombres = Nombres;
-            this.Apellidos = Apellidos;
-            this.Cedula = Cedula;
-            this.Telefono = Telefono;
-            this.fechaNacimiento = fechaNacimiento;
-            this.Email = Email;
-            this.Password = Password;
-            this.Sexo = Sexo;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class InsertClienteCOREResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertClienteCOREResponse", Namespace="http://intec.edu.do", Order=0)]
-        public INTEGRACION.coreSR.InsertClienteCOREResponseBody Body;
-        
-        public InsertClienteCOREResponse() {
-        }
-        
-        public InsertClienteCOREResponse(INTEGRACION.coreSR.InsertClienteCOREResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://intec.edu.do")]
-    public partial class InsertClienteCOREResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string InsertClienteCOREResult;
-        
-        public InsertClienteCOREResponseBody() {
-        }
-        
-        public InsertClienteCOREResponseBody(string InsertClienteCOREResult) {
-            this.InsertClienteCOREResult = InsertClienteCOREResult;
         }
     }
     
@@ -497,78 +333,6 @@ namespace INTEGRACION.coreSR {
         
         public DeleteClienteCOREResponseBody(string DeleteClienteCOREResult) {
             this.DeleteClienteCOREResult = DeleteClienteCOREResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class UpdateClienteCORERequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateClienteCORE", Namespace="http://intec.edu.do", Order=0)]
-        public INTEGRACION.coreSR.UpdateClienteCORERequestBody Body;
-        
-        public UpdateClienteCORERequest() {
-        }
-        
-        public UpdateClienteCORERequest(INTEGRACION.coreSR.UpdateClienteCORERequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://intec.edu.do")]
-    public partial class UpdateClienteCORERequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public decimal totalGastado;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string Cedula;
-        
-        public UpdateClienteCORERequestBody() {
-        }
-        
-        public UpdateClienteCORERequestBody(decimal totalGastado, string Cedula) {
-            this.totalGastado = totalGastado;
-            this.Cedula = Cedula;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class UpdateClienteCOREResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateClienteCOREResponse", Namespace="http://intec.edu.do", Order=0)]
-        public INTEGRACION.coreSR.UpdateClienteCOREResponseBody Body;
-        
-        public UpdateClienteCOREResponse() {
-        }
-        
-        public UpdateClienteCOREResponse(INTEGRACION.coreSR.UpdateClienteCOREResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://intec.edu.do")]
-    public partial class UpdateClienteCOREResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string UpdateClienteCOREResult;
-        
-        public UpdateClienteCOREResponseBody() {
-        }
-        
-        public UpdateClienteCOREResponseBody(string UpdateClienteCOREResult) {
-            this.UpdateClienteCOREResult = UpdateClienteCOREResult;
         }
     }
     
@@ -740,6 +504,78 @@ namespace INTEGRACION.coreSR {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UpdateClienteCORERequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateClienteCORE", Namespace="http://intec.edu.do", Order=0)]
+        public INTEGRACION.coreSR.UpdateClienteCORERequestBody Body;
+        
+        public UpdateClienteCORERequest() {
+        }
+        
+        public UpdateClienteCORERequest(INTEGRACION.coreSR.UpdateClienteCORERequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://intec.edu.do")]
+    public partial class UpdateClienteCORERequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public decimal totalGastado;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Cedula;
+        
+        public UpdateClienteCORERequestBody() {
+        }
+        
+        public UpdateClienteCORERequestBody(decimal totalGastado, string Cedula) {
+            this.totalGastado = totalGastado;
+            this.Cedula = Cedula;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UpdateClienteCOREResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateClienteCOREResponse", Namespace="http://intec.edu.do", Order=0)]
+        public INTEGRACION.coreSR.UpdateClienteCOREResponseBody Body;
+        
+        public UpdateClienteCOREResponse() {
+        }
+        
+        public UpdateClienteCOREResponse(INTEGRACION.coreSR.UpdateClienteCOREResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://intec.edu.do")]
+    public partial class UpdateClienteCOREResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string UpdateClienteCOREResult;
+        
+        public UpdateClienteCOREResponseBody() {
+        }
+        
+        public UpdateClienteCOREResponseBody(string UpdateClienteCOREResult) {
+            this.UpdateClienteCOREResult = UpdateClienteCOREResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class UpdateEmpleadoCORERequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateEmpleadoCORE", Namespace="http://intec.edu.do", Order=0)]
@@ -805,6 +641,174 @@ namespace INTEGRACION.coreSR {
         
         public UpdateEmpleadoCOREResponseBody(string UpdateEmpleadoCOREResult) {
             this.UpdateEmpleadoCOREResult = UpdateEmpleadoCOREResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UpdateProductoCORERequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateProductoCORE", Namespace="http://intec.edu.do", Order=0)]
+        public INTEGRACION.coreSR.UpdateProductoCORERequestBody Body;
+        
+        public UpdateProductoCORERequest() {
+        }
+        
+        public UpdateProductoCORERequest(INTEGRACION.coreSR.UpdateProductoCORERequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://intec.edu.do")]
+    public partial class UpdateProductoCORERequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string codigo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string usuarioCedula;
+        
+        public UpdateProductoCORERequestBody() {
+        }
+        
+        public UpdateProductoCORERequestBody(string codigo, string usuarioCedula) {
+            this.codigo = codigo;
+            this.usuarioCedula = usuarioCedula;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UpdateProductoCOREResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateProductoCOREResponse", Namespace="http://intec.edu.do", Order=0)]
+        public INTEGRACION.coreSR.UpdateProductoCOREResponseBody Body;
+        
+        public UpdateProductoCOREResponse() {
+        }
+        
+        public UpdateProductoCOREResponse(INTEGRACION.coreSR.UpdateProductoCOREResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://intec.edu.do")]
+    public partial class UpdateProductoCOREResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string UpdateProductoCOREResult;
+        
+        public UpdateProductoCOREResponseBody() {
+        }
+        
+        public UpdateProductoCOREResponseBody(string UpdateProductoCOREResult) {
+            this.UpdateProductoCOREResult = UpdateProductoCOREResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertClienteCORERequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertClienteCORE", Namespace="http://intec.edu.do", Order=0)]
+        public INTEGRACION.coreSR.InsertClienteCORERequestBody Body;
+        
+        public InsertClienteCORERequest() {
+        }
+        
+        public InsertClienteCORERequest(INTEGRACION.coreSR.InsertClienteCORERequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://intec.edu.do")]
+    public partial class InsertClienteCORERequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Nombres;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Apellidos;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Cedula;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Telefono;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public System.DateTime fechaNacimiento;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string Email;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string Password;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string Sexo;
+        
+        public InsertClienteCORERequestBody() {
+        }
+        
+        public InsertClienteCORERequestBody(string Nombres, string Apellidos, string Cedula, string Telefono, System.DateTime fechaNacimiento, string Email, string Password, string Sexo) {
+            this.Nombres = Nombres;
+            this.Apellidos = Apellidos;
+            this.Cedula = Cedula;
+            this.Telefono = Telefono;
+            this.fechaNacimiento = fechaNacimiento;
+            this.Email = Email;
+            this.Password = Password;
+            this.Sexo = Sexo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertClienteCOREResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertClienteCOREResponse", Namespace="http://intec.edu.do", Order=0)]
+        public INTEGRACION.coreSR.InsertClienteCOREResponseBody Body;
+        
+        public InsertClienteCOREResponse() {
+        }
+        
+        public InsertClienteCOREResponse(INTEGRACION.coreSR.InsertClienteCOREResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://intec.edu.do")]
+    public partial class InsertClienteCOREResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string InsertClienteCOREResult;
+        
+        public InsertClienteCOREResponseBody() {
+        }
+        
+        public InsertClienteCOREResponseBody(string InsertClienteCOREResult) {
+            this.InsertClienteCOREResult = InsertClienteCOREResult;
         }
     }
     
@@ -1088,17 +1092,18 @@ namespace INTEGRACION.coreSR {
             return base.Channel.InsertarProductoCORE(request);
         }
         
-        public string InsertarProductoCORE(string Nombre, string Tipo, decimal Precio, int Cantidad, string productoID, string Descripcion, string Marca, string Imagen) {
+        public string InsertarProductoCORE(string codigo, string marca, decimal precio, int cantidad, string tipo, string nombre, int peso, string imagen, string descripcion) {
             INTEGRACION.coreSR.InsertarProductoCORERequest inValue = new INTEGRACION.coreSR.InsertarProductoCORERequest();
             inValue.Body = new INTEGRACION.coreSR.InsertarProductoCORERequestBody();
-            inValue.Body.Nombre = Nombre;
-            inValue.Body.Tipo = Tipo;
-            inValue.Body.Precio = Precio;
-            inValue.Body.Cantidad = Cantidad;
-            inValue.Body.productoID = productoID;
-            inValue.Body.Descripcion = Descripcion;
-            inValue.Body.Marca = Marca;
-            inValue.Body.Imagen = Imagen;
+            inValue.Body.codigo = codigo;
+            inValue.Body.marca = marca;
+            inValue.Body.precio = precio;
+            inValue.Body.cantidad = cantidad;
+            inValue.Body.tipo = tipo;
+            inValue.Body.nombre = nombre;
+            inValue.Body.peso = peso;
+            inValue.Body.imagen = imagen;
+            inValue.Body.descripcion = descripcion;
             INTEGRACION.coreSR.InsertarProductoCOREResponse retVal = ((INTEGRACION.coreSR.coreWSSoap)(this)).InsertarProductoCORE(inValue);
             return retVal.Body.InsertarProductoCOREResult;
         }
@@ -1108,17 +1113,18 @@ namespace INTEGRACION.coreSR {
             return base.Channel.InsertarProductoCOREAsync(request);
         }
         
-        public System.Threading.Tasks.Task<INTEGRACION.coreSR.InsertarProductoCOREResponse> InsertarProductoCOREAsync(string Nombre, string Tipo, decimal Precio, int Cantidad, string productoID, string Descripcion, string Marca, string Imagen) {
+        public System.Threading.Tasks.Task<INTEGRACION.coreSR.InsertarProductoCOREResponse> InsertarProductoCOREAsync(string codigo, string marca, decimal precio, int cantidad, string tipo, string nombre, int peso, string imagen, string descripcion) {
             INTEGRACION.coreSR.InsertarProductoCORERequest inValue = new INTEGRACION.coreSR.InsertarProductoCORERequest();
             inValue.Body = new INTEGRACION.coreSR.InsertarProductoCORERequestBody();
-            inValue.Body.Nombre = Nombre;
-            inValue.Body.Tipo = Tipo;
-            inValue.Body.Precio = Precio;
-            inValue.Body.Cantidad = Cantidad;
-            inValue.Body.productoID = productoID;
-            inValue.Body.Descripcion = Descripcion;
-            inValue.Body.Marca = Marca;
-            inValue.Body.Imagen = Imagen;
+            inValue.Body.codigo = codigo;
+            inValue.Body.marca = marca;
+            inValue.Body.precio = precio;
+            inValue.Body.cantidad = cantidad;
+            inValue.Body.tipo = tipo;
+            inValue.Body.nombre = nombre;
+            inValue.Body.peso = peso;
+            inValue.Body.imagen = imagen;
+            inValue.Body.descripcion = descripcion;
             return ((INTEGRACION.coreSR.coreWSSoap)(this)).InsertarProductoCOREAsync(inValue);
         }
         
@@ -1127,10 +1133,10 @@ namespace INTEGRACION.coreSR {
             return base.Channel.DeleteProductoCORE(request);
         }
         
-        public string DeleteProductoCORE(string productoID) {
+        public string DeleteProductoCORE(string codigo) {
             INTEGRACION.coreSR.DeleteProductoCORERequest inValue = new INTEGRACION.coreSR.DeleteProductoCORERequest();
             inValue.Body = new INTEGRACION.coreSR.DeleteProductoCORERequestBody();
-            inValue.Body.productoID = productoID;
+            inValue.Body.codigo = codigo;
             INTEGRACION.coreSR.DeleteProductoCOREResponse retVal = ((INTEGRACION.coreSR.coreWSSoap)(this)).DeleteProductoCORE(inValue);
             return retVal.Body.DeleteProductoCOREResult;
         }
@@ -1140,77 +1146,11 @@ namespace INTEGRACION.coreSR {
             return base.Channel.DeleteProductoCOREAsync(request);
         }
         
-        public System.Threading.Tasks.Task<INTEGRACION.coreSR.DeleteProductoCOREResponse> DeleteProductoCOREAsync(string productoID) {
+        public System.Threading.Tasks.Task<INTEGRACION.coreSR.DeleteProductoCOREResponse> DeleteProductoCOREAsync(string codigo) {
             INTEGRACION.coreSR.DeleteProductoCORERequest inValue = new INTEGRACION.coreSR.DeleteProductoCORERequest();
             inValue.Body = new INTEGRACION.coreSR.DeleteProductoCORERequestBody();
-            inValue.Body.productoID = productoID;
+            inValue.Body.codigo = codigo;
             return ((INTEGRACION.coreSR.coreWSSoap)(this)).DeleteProductoCOREAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        INTEGRACION.coreSR.UpdateProductoCOREResponse INTEGRACION.coreSR.coreWSSoap.UpdateProductoCORE(INTEGRACION.coreSR.UpdateProductoCORERequest request) {
-            return base.Channel.UpdateProductoCORE(request);
-        }
-        
-        public string UpdateProductoCORE(int Cantidad, string productoID) {
-            INTEGRACION.coreSR.UpdateProductoCORERequest inValue = new INTEGRACION.coreSR.UpdateProductoCORERequest();
-            inValue.Body = new INTEGRACION.coreSR.UpdateProductoCORERequestBody();
-            inValue.Body.Cantidad = Cantidad;
-            inValue.Body.productoID = productoID;
-            INTEGRACION.coreSR.UpdateProductoCOREResponse retVal = ((INTEGRACION.coreSR.coreWSSoap)(this)).UpdateProductoCORE(inValue);
-            return retVal.Body.UpdateProductoCOREResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<INTEGRACION.coreSR.UpdateProductoCOREResponse> INTEGRACION.coreSR.coreWSSoap.UpdateProductoCOREAsync(INTEGRACION.coreSR.UpdateProductoCORERequest request) {
-            return base.Channel.UpdateProductoCOREAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<INTEGRACION.coreSR.UpdateProductoCOREResponse> UpdateProductoCOREAsync(int Cantidad, string productoID) {
-            INTEGRACION.coreSR.UpdateProductoCORERequest inValue = new INTEGRACION.coreSR.UpdateProductoCORERequest();
-            inValue.Body = new INTEGRACION.coreSR.UpdateProductoCORERequestBody();
-            inValue.Body.Cantidad = Cantidad;
-            inValue.Body.productoID = productoID;
-            return ((INTEGRACION.coreSR.coreWSSoap)(this)).UpdateProductoCOREAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        INTEGRACION.coreSR.InsertClienteCOREResponse INTEGRACION.coreSR.coreWSSoap.InsertClienteCORE(INTEGRACION.coreSR.InsertClienteCORERequest request) {
-            return base.Channel.InsertClienteCORE(request);
-        }
-        
-        public string InsertClienteCORE(string Nombres, string Apellidos, string Cedula, string Telefono, System.DateTime fechaNacimiento, string Email, string Password, string Sexo) {
-            INTEGRACION.coreSR.InsertClienteCORERequest inValue = new INTEGRACION.coreSR.InsertClienteCORERequest();
-            inValue.Body = new INTEGRACION.coreSR.InsertClienteCORERequestBody();
-            inValue.Body.Nombres = Nombres;
-            inValue.Body.Apellidos = Apellidos;
-            inValue.Body.Cedula = Cedula;
-            inValue.Body.Telefono = Telefono;
-            inValue.Body.fechaNacimiento = fechaNacimiento;
-            inValue.Body.Email = Email;
-            inValue.Body.Password = Password;
-            inValue.Body.Sexo = Sexo;
-            INTEGRACION.coreSR.InsertClienteCOREResponse retVal = ((INTEGRACION.coreSR.coreWSSoap)(this)).InsertClienteCORE(inValue);
-            return retVal.Body.InsertClienteCOREResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<INTEGRACION.coreSR.InsertClienteCOREResponse> INTEGRACION.coreSR.coreWSSoap.InsertClienteCOREAsync(INTEGRACION.coreSR.InsertClienteCORERequest request) {
-            return base.Channel.InsertClienteCOREAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<INTEGRACION.coreSR.InsertClienteCOREResponse> InsertClienteCOREAsync(string Nombres, string Apellidos, string Cedula, string Telefono, System.DateTime fechaNacimiento, string Email, string Password, string Sexo) {
-            INTEGRACION.coreSR.InsertClienteCORERequest inValue = new INTEGRACION.coreSR.InsertClienteCORERequest();
-            inValue.Body = new INTEGRACION.coreSR.InsertClienteCORERequestBody();
-            inValue.Body.Nombres = Nombres;
-            inValue.Body.Apellidos = Apellidos;
-            inValue.Body.Cedula = Cedula;
-            inValue.Body.Telefono = Telefono;
-            inValue.Body.fechaNacimiento = fechaNacimiento;
-            inValue.Body.Email = Email;
-            inValue.Body.Password = Password;
-            inValue.Body.Sexo = Sexo;
-            return ((INTEGRACION.coreSR.coreWSSoap)(this)).InsertClienteCOREAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1236,33 +1176,6 @@ namespace INTEGRACION.coreSR {
             inValue.Body = new INTEGRACION.coreSR.DeleteClienteCORERequestBody();
             inValue.Body.Cedula = Cedula;
             return ((INTEGRACION.coreSR.coreWSSoap)(this)).DeleteClienteCOREAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        INTEGRACION.coreSR.UpdateClienteCOREResponse INTEGRACION.coreSR.coreWSSoap.UpdateClienteCORE(INTEGRACION.coreSR.UpdateClienteCORERequest request) {
-            return base.Channel.UpdateClienteCORE(request);
-        }
-        
-        public string UpdateClienteCORE(decimal totalGastado, string Cedula) {
-            INTEGRACION.coreSR.UpdateClienteCORERequest inValue = new INTEGRACION.coreSR.UpdateClienteCORERequest();
-            inValue.Body = new INTEGRACION.coreSR.UpdateClienteCORERequestBody();
-            inValue.Body.totalGastado = totalGastado;
-            inValue.Body.Cedula = Cedula;
-            INTEGRACION.coreSR.UpdateClienteCOREResponse retVal = ((INTEGRACION.coreSR.coreWSSoap)(this)).UpdateClienteCORE(inValue);
-            return retVal.Body.UpdateClienteCOREResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<INTEGRACION.coreSR.UpdateClienteCOREResponse> INTEGRACION.coreSR.coreWSSoap.UpdateClienteCOREAsync(INTEGRACION.coreSR.UpdateClienteCORERequest request) {
-            return base.Channel.UpdateClienteCOREAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<INTEGRACION.coreSR.UpdateClienteCOREResponse> UpdateClienteCOREAsync(decimal totalGastado, string Cedula) {
-            INTEGRACION.coreSR.UpdateClienteCORERequest inValue = new INTEGRACION.coreSR.UpdateClienteCORERequest();
-            inValue.Body = new INTEGRACION.coreSR.UpdateClienteCORERequestBody();
-            inValue.Body.totalGastado = totalGastado;
-            inValue.Body.Cedula = Cedula;
-            return ((INTEGRACION.coreSR.coreWSSoap)(this)).UpdateClienteCOREAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1330,6 +1243,33 @@ namespace INTEGRACION.coreSR {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        INTEGRACION.coreSR.UpdateClienteCOREResponse INTEGRACION.coreSR.coreWSSoap.UpdateClienteCORE(INTEGRACION.coreSR.UpdateClienteCORERequest request) {
+            return base.Channel.UpdateClienteCORE(request);
+        }
+        
+        public string UpdateClienteCORE(decimal totalGastado, string Cedula) {
+            INTEGRACION.coreSR.UpdateClienteCORERequest inValue = new INTEGRACION.coreSR.UpdateClienteCORERequest();
+            inValue.Body = new INTEGRACION.coreSR.UpdateClienteCORERequestBody();
+            inValue.Body.totalGastado = totalGastado;
+            inValue.Body.Cedula = Cedula;
+            INTEGRACION.coreSR.UpdateClienteCOREResponse retVal = ((INTEGRACION.coreSR.coreWSSoap)(this)).UpdateClienteCORE(inValue);
+            return retVal.Body.UpdateClienteCOREResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<INTEGRACION.coreSR.UpdateClienteCOREResponse> INTEGRACION.coreSR.coreWSSoap.UpdateClienteCOREAsync(INTEGRACION.coreSR.UpdateClienteCORERequest request) {
+            return base.Channel.UpdateClienteCOREAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<INTEGRACION.coreSR.UpdateClienteCOREResponse> UpdateClienteCOREAsync(decimal totalGastado, string Cedula) {
+            INTEGRACION.coreSR.UpdateClienteCORERequest inValue = new INTEGRACION.coreSR.UpdateClienteCORERequest();
+            inValue.Body = new INTEGRACION.coreSR.UpdateClienteCORERequestBody();
+            inValue.Body.totalGastado = totalGastado;
+            inValue.Body.Cedula = Cedula;
+            return ((INTEGRACION.coreSR.coreWSSoap)(this)).UpdateClienteCOREAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         INTEGRACION.coreSR.UpdateEmpleadoCOREResponse INTEGRACION.coreSR.coreWSSoap.UpdateEmpleadoCORE(INTEGRACION.coreSR.UpdateEmpleadoCORERequest request) {
             return base.Channel.UpdateEmpleadoCORE(request);
         }
@@ -1354,6 +1294,72 @@ namespace INTEGRACION.coreSR {
             inValue.Body.cuentasCobradas = cuentasCobradas;
             inValue.Body.Cedula = Cedula;
             return ((INTEGRACION.coreSR.coreWSSoap)(this)).UpdateEmpleadoCOREAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        INTEGRACION.coreSR.UpdateProductoCOREResponse INTEGRACION.coreSR.coreWSSoap.UpdateProductoCORE(INTEGRACION.coreSR.UpdateProductoCORERequest request) {
+            return base.Channel.UpdateProductoCORE(request);
+        }
+        
+        public string UpdateProductoCORE(string codigo, string usuarioCedula) {
+            INTEGRACION.coreSR.UpdateProductoCORERequest inValue = new INTEGRACION.coreSR.UpdateProductoCORERequest();
+            inValue.Body = new INTEGRACION.coreSR.UpdateProductoCORERequestBody();
+            inValue.Body.codigo = codigo;
+            inValue.Body.usuarioCedula = usuarioCedula;
+            INTEGRACION.coreSR.UpdateProductoCOREResponse retVal = ((INTEGRACION.coreSR.coreWSSoap)(this)).UpdateProductoCORE(inValue);
+            return retVal.Body.UpdateProductoCOREResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<INTEGRACION.coreSR.UpdateProductoCOREResponse> INTEGRACION.coreSR.coreWSSoap.UpdateProductoCOREAsync(INTEGRACION.coreSR.UpdateProductoCORERequest request) {
+            return base.Channel.UpdateProductoCOREAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<INTEGRACION.coreSR.UpdateProductoCOREResponse> UpdateProductoCOREAsync(string codigo, string usuarioCedula) {
+            INTEGRACION.coreSR.UpdateProductoCORERequest inValue = new INTEGRACION.coreSR.UpdateProductoCORERequest();
+            inValue.Body = new INTEGRACION.coreSR.UpdateProductoCORERequestBody();
+            inValue.Body.codigo = codigo;
+            inValue.Body.usuarioCedula = usuarioCedula;
+            return ((INTEGRACION.coreSR.coreWSSoap)(this)).UpdateProductoCOREAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        INTEGRACION.coreSR.InsertClienteCOREResponse INTEGRACION.coreSR.coreWSSoap.InsertClienteCORE(INTEGRACION.coreSR.InsertClienteCORERequest request) {
+            return base.Channel.InsertClienteCORE(request);
+        }
+        
+        public string InsertClienteCORE(string Nombres, string Apellidos, string Cedula, string Telefono, System.DateTime fechaNacimiento, string Email, string Password, string Sexo) {
+            INTEGRACION.coreSR.InsertClienteCORERequest inValue = new INTEGRACION.coreSR.InsertClienteCORERequest();
+            inValue.Body = new INTEGRACION.coreSR.InsertClienteCORERequestBody();
+            inValue.Body.Nombres = Nombres;
+            inValue.Body.Apellidos = Apellidos;
+            inValue.Body.Cedula = Cedula;
+            inValue.Body.Telefono = Telefono;
+            inValue.Body.fechaNacimiento = fechaNacimiento;
+            inValue.Body.Email = Email;
+            inValue.Body.Password = Password;
+            inValue.Body.Sexo = Sexo;
+            INTEGRACION.coreSR.InsertClienteCOREResponse retVal = ((INTEGRACION.coreSR.coreWSSoap)(this)).InsertClienteCORE(inValue);
+            return retVal.Body.InsertClienteCOREResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<INTEGRACION.coreSR.InsertClienteCOREResponse> INTEGRACION.coreSR.coreWSSoap.InsertClienteCOREAsync(INTEGRACION.coreSR.InsertClienteCORERequest request) {
+            return base.Channel.InsertClienteCOREAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<INTEGRACION.coreSR.InsertClienteCOREResponse> InsertClienteCOREAsync(string Nombres, string Apellidos, string Cedula, string Telefono, System.DateTime fechaNacimiento, string Email, string Password, string Sexo) {
+            INTEGRACION.coreSR.InsertClienteCORERequest inValue = new INTEGRACION.coreSR.InsertClienteCORERequest();
+            inValue.Body = new INTEGRACION.coreSR.InsertClienteCORERequestBody();
+            inValue.Body.Nombres = Nombres;
+            inValue.Body.Apellidos = Apellidos;
+            inValue.Body.Cedula = Cedula;
+            inValue.Body.Telefono = Telefono;
+            inValue.Body.fechaNacimiento = fechaNacimiento;
+            inValue.Body.Email = Email;
+            inValue.Body.Password = Password;
+            inValue.Body.Sexo = Sexo;
+            return ((INTEGRACION.coreSR.coreWSSoap)(this)).InsertClienteCOREAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

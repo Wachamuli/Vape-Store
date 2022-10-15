@@ -31,7 +31,9 @@
                     <li>@Html.ActionLink("Iniciar sesión", "Login", "Home")</li>
                     <li>@Html.ActionLink("Carrito", "Carrito", "Home")</li>
                 </ul>
+                <p class="nombre-usuario">@Session["usuario"]</p>
             </div>
+           
         </div>
     </div>
     <div class="container body-content">

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CORE.integracionSR {
+namespace WEB.integracionSR {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -17,87 +17,87 @@ namespace CORE.integracionSR {
         
         // CODEGEN: Generating message contract since element name codigo from namespace http://intec.edu.do is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/InsertarProductoINTEGRACION", ReplyAction="*")]
-        CORE.integracionSR.InsertarProductoINTEGRACIONResponse InsertarProductoINTEGRACION(CORE.integracionSR.InsertarProductoINTEGRACIONRequest request);
+        WEB.integracionSR.InsertarProductoINTEGRACIONResponse InsertarProductoINTEGRACION(WEB.integracionSR.InsertarProductoINTEGRACIONRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/InsertarProductoINTEGRACION", ReplyAction="*")]
-        System.Threading.Tasks.Task<CORE.integracionSR.InsertarProductoINTEGRACIONResponse> InsertarProductoINTEGRACIONAsync(CORE.integracionSR.InsertarProductoINTEGRACIONRequest request);
+        System.Threading.Tasks.Task<WEB.integracionSR.InsertarProductoINTEGRACIONResponse> InsertarProductoINTEGRACIONAsync(WEB.integracionSR.InsertarProductoINTEGRACIONRequest request);
         
         // CODEGEN: Generating message contract since element name codigo from namespace http://intec.edu.do is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/DeleteProductoINTEGRACION", ReplyAction="*")]
-        CORE.integracionSR.DeleteProductoINTEGRACIONResponse DeleteProductoINTEGRACION(CORE.integracionSR.DeleteProductoINTEGRACIONRequest request);
+        WEB.integracionSR.DeleteProductoINTEGRACIONResponse DeleteProductoINTEGRACION(WEB.integracionSR.DeleteProductoINTEGRACIONRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/DeleteProductoINTEGRACION", ReplyAction="*")]
-        System.Threading.Tasks.Task<CORE.integracionSR.DeleteProductoINTEGRACIONResponse> DeleteProductoINTEGRACIONAsync(CORE.integracionSR.DeleteProductoINTEGRACIONRequest request);
+        System.Threading.Tasks.Task<WEB.integracionSR.DeleteProductoINTEGRACIONResponse> DeleteProductoINTEGRACIONAsync(WEB.integracionSR.DeleteProductoINTEGRACIONRequest request);
         
         // CODEGEN: Generating message contract since element name codigo from namespace http://intec.edu.do is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/UpdateProductoINTEGRACION", ReplyAction="*")]
-        CORE.integracionSR.UpdateProductoINTEGRACIONResponse UpdateProductoINTEGRACION(CORE.integracionSR.UpdateProductoINTEGRACIONRequest request);
+        WEB.integracionSR.UpdateProductoINTEGRACIONResponse UpdateProductoINTEGRACION(WEB.integracionSR.UpdateProductoINTEGRACIONRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/UpdateProductoINTEGRACION", ReplyAction="*")]
-        System.Threading.Tasks.Task<CORE.integracionSR.UpdateProductoINTEGRACIONResponse> UpdateProductoINTEGRACIONAsync(CORE.integracionSR.UpdateProductoINTEGRACIONRequest request);
+        System.Threading.Tasks.Task<WEB.integracionSR.UpdateProductoINTEGRACIONResponse> UpdateProductoINTEGRACIONAsync(WEB.integracionSR.UpdateProductoINTEGRACIONRequest request);
         
         // CODEGEN: Generating message contract since element name Nombres from namespace http://intec.edu.do is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/InsertClienteINTEGRACION", ReplyAction="*")]
-        CORE.integracionSR.InsertClienteINTEGRACIONResponse InsertClienteINTEGRACION(CORE.integracionSR.InsertClienteINTEGRACIONRequest request);
+        WEB.integracionSR.InsertClienteINTEGRACIONResponse InsertClienteINTEGRACION(WEB.integracionSR.InsertClienteINTEGRACIONRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/InsertClienteINTEGRACION", ReplyAction="*")]
-        System.Threading.Tasks.Task<CORE.integracionSR.InsertClienteINTEGRACIONResponse> InsertClienteINTEGRACIONAsync(CORE.integracionSR.InsertClienteINTEGRACIONRequest request);
+        System.Threading.Tasks.Task<WEB.integracionSR.InsertClienteINTEGRACIONResponse> InsertClienteINTEGRACIONAsync(WEB.integracionSR.InsertClienteINTEGRACIONRequest request);
         
         // CODEGEN: Generating message contract since element name Cedula from namespace http://intec.edu.do is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/DeleteClienteINTEGRACION", ReplyAction="*")]
-        CORE.integracionSR.DeleteClienteINTEGRACIONResponse DeleteClienteINTEGRACION(CORE.integracionSR.DeleteClienteINTEGRACIONRequest request);
+        WEB.integracionSR.DeleteClienteINTEGRACIONResponse DeleteClienteINTEGRACION(WEB.integracionSR.DeleteClienteINTEGRACIONRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/DeleteClienteINTEGRACION", ReplyAction="*")]
-        System.Threading.Tasks.Task<CORE.integracionSR.DeleteClienteINTEGRACIONResponse> DeleteClienteINTEGRACIONAsync(CORE.integracionSR.DeleteClienteINTEGRACIONRequest request);
+        System.Threading.Tasks.Task<WEB.integracionSR.DeleteClienteINTEGRACIONResponse> DeleteClienteINTEGRACIONAsync(WEB.integracionSR.DeleteClienteINTEGRACIONRequest request);
         
         // CODEGEN: Generating message contract since element name Cedula from namespace http://intec.edu.do is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/UpdateClienteINTEGRACION", ReplyAction="*")]
-        CORE.integracionSR.UpdateClienteINTEGRACIONResponse UpdateClienteINTEGRACION(CORE.integracionSR.UpdateClienteINTEGRACIONRequest request);
+        WEB.integracionSR.UpdateClienteINTEGRACIONResponse UpdateClienteINTEGRACION(WEB.integracionSR.UpdateClienteINTEGRACIONRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/UpdateClienteINTEGRACION", ReplyAction="*")]
-        System.Threading.Tasks.Task<CORE.integracionSR.UpdateClienteINTEGRACIONResponse> UpdateClienteINTEGRACIONAsync(CORE.integracionSR.UpdateClienteINTEGRACIONRequest request);
+        System.Threading.Tasks.Task<WEB.integracionSR.UpdateClienteINTEGRACIONResponse> UpdateClienteINTEGRACIONAsync(WEB.integracionSR.UpdateClienteINTEGRACIONRequest request);
         
         // CODEGEN: Generating message contract since element name Nombres from namespace http://intec.edu.do is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/InsertEmpleadoINTEGRACION", ReplyAction="*")]
-        CORE.integracionSR.InsertEmpleadoINTEGRACIONResponse InsertEmpleadoINTEGRACION(CORE.integracionSR.InsertEmpleadoINTEGRACIONRequest request);
+        WEB.integracionSR.InsertEmpleadoINTEGRACIONResponse InsertEmpleadoINTEGRACION(WEB.integracionSR.InsertEmpleadoINTEGRACIONRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/InsertEmpleadoINTEGRACION", ReplyAction="*")]
-        System.Threading.Tasks.Task<CORE.integracionSR.InsertEmpleadoINTEGRACIONResponse> InsertEmpleadoINTEGRACIONAsync(CORE.integracionSR.InsertEmpleadoINTEGRACIONRequest request);
+        System.Threading.Tasks.Task<WEB.integracionSR.InsertEmpleadoINTEGRACIONResponse> InsertEmpleadoINTEGRACIONAsync(WEB.integracionSR.InsertEmpleadoINTEGRACIONRequest request);
         
         // CODEGEN: Generating message contract since element name Cedula from namespace http://intec.edu.do is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/DeleteEmpleadoINTEGRACION", ReplyAction="*")]
-        CORE.integracionSR.DeleteEmpleadoINTEGRACIONResponse DeleteEmpleadoINTEGRACION(CORE.integracionSR.DeleteEmpleadoINTEGRACIONRequest request);
+        WEB.integracionSR.DeleteEmpleadoINTEGRACIONResponse DeleteEmpleadoINTEGRACION(WEB.integracionSR.DeleteEmpleadoINTEGRACIONRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/DeleteEmpleadoINTEGRACION", ReplyAction="*")]
-        System.Threading.Tasks.Task<CORE.integracionSR.DeleteEmpleadoINTEGRACIONResponse> DeleteEmpleadoINTEGRACIONAsync(CORE.integracionSR.DeleteEmpleadoINTEGRACIONRequest request);
+        System.Threading.Tasks.Task<WEB.integracionSR.DeleteEmpleadoINTEGRACIONResponse> DeleteEmpleadoINTEGRACIONAsync(WEB.integracionSR.DeleteEmpleadoINTEGRACIONRequest request);
         
         // CODEGEN: Generating message contract since element name Cedula from namespace http://intec.edu.do is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/UpdateEmpleadoINTEGRACION", ReplyAction="*")]
-        CORE.integracionSR.UpdateEmpleadoINTEGRACIONResponse UpdateEmpleadoINTEGRACION(CORE.integracionSR.UpdateEmpleadoINTEGRACIONRequest request);
+        WEB.integracionSR.UpdateEmpleadoINTEGRACIONResponse UpdateEmpleadoINTEGRACION(WEB.integracionSR.UpdateEmpleadoINTEGRACIONRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/UpdateEmpleadoINTEGRACION", ReplyAction="*")]
-        System.Threading.Tasks.Task<CORE.integracionSR.UpdateEmpleadoINTEGRACIONResponse> UpdateEmpleadoINTEGRACIONAsync(CORE.integracionSR.UpdateEmpleadoINTEGRACIONRequest request);
+        System.Threading.Tasks.Task<WEB.integracionSR.UpdateEmpleadoINTEGRACIONResponse> UpdateEmpleadoINTEGRACIONAsync(WEB.integracionSR.UpdateEmpleadoINTEGRACIONRequest request);
         
         // CODEGEN: Generating message contract since element name Nombres from namespace http://intec.edu.do is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/InsertCuentaINTEGRACION", ReplyAction="*")]
-        CORE.integracionSR.InsertCuentaINTEGRACIONResponse InsertCuentaINTEGRACION(CORE.integracionSR.InsertCuentaINTEGRACIONRequest request);
+        WEB.integracionSR.InsertCuentaINTEGRACIONResponse InsertCuentaINTEGRACION(WEB.integracionSR.InsertCuentaINTEGRACIONRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/InsertCuentaINTEGRACION", ReplyAction="*")]
-        System.Threading.Tasks.Task<CORE.integracionSR.InsertCuentaINTEGRACIONResponse> InsertCuentaINTEGRACIONAsync(CORE.integracionSR.InsertCuentaINTEGRACIONRequest request);
+        System.Threading.Tasks.Task<WEB.integracionSR.InsertCuentaINTEGRACIONResponse> InsertCuentaINTEGRACIONAsync(WEB.integracionSR.InsertCuentaINTEGRACIONRequest request);
         
         // CODEGEN: Generating message contract since element name cuentaID from namespace http://intec.edu.do is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/DeleteCuentaINTEGRACION", ReplyAction="*")]
-        CORE.integracionSR.DeleteCuentaINTEGRACIONResponse DeleteCuentaINTEGRACION(CORE.integracionSR.DeleteCuentaINTEGRACIONRequest request);
+        WEB.integracionSR.DeleteCuentaINTEGRACIONResponse DeleteCuentaINTEGRACION(WEB.integracionSR.DeleteCuentaINTEGRACIONRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/DeleteCuentaINTEGRACION", ReplyAction="*")]
-        System.Threading.Tasks.Task<CORE.integracionSR.DeleteCuentaINTEGRACIONResponse> DeleteCuentaINTEGRACIONAsync(CORE.integracionSR.DeleteCuentaINTEGRACIONRequest request);
+        System.Threading.Tasks.Task<WEB.integracionSR.DeleteCuentaINTEGRACIONResponse> DeleteCuentaINTEGRACIONAsync(WEB.integracionSR.DeleteCuentaINTEGRACIONRequest request);
         
         // CODEGEN: Generating message contract since element name Nombres from namespace http://intec.edu.do is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/InsertFacturaINTEGRACION", ReplyAction="*")]
-        CORE.integracionSR.InsertFacturaINTEGRACIONResponse InsertFacturaINTEGRACION(CORE.integracionSR.InsertFacturaINTEGRACIONRequest request);
+        WEB.integracionSR.InsertFacturaINTEGRACIONResponse InsertFacturaINTEGRACION(WEB.integracionSR.InsertFacturaINTEGRACIONRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://intec.edu.do/InsertFacturaINTEGRACION", ReplyAction="*")]
-        System.Threading.Tasks.Task<CORE.integracionSR.InsertFacturaINTEGRACIONResponse> InsertFacturaINTEGRACIONAsync(CORE.integracionSR.InsertFacturaINTEGRACIONRequest request);
+        System.Threading.Tasks.Task<WEB.integracionSR.InsertFacturaINTEGRACIONResponse> InsertFacturaINTEGRACIONAsync(WEB.integracionSR.InsertFacturaINTEGRACIONRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -107,12 +107,12 @@ namespace CORE.integracionSR {
     public partial class InsertarProductoINTEGRACIONRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertarProductoINTEGRACION", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.InsertarProductoINTEGRACIONRequestBody Body;
+        public WEB.integracionSR.InsertarProductoINTEGRACIONRequestBody Body;
         
         public InsertarProductoINTEGRACIONRequest() {
         }
         
-        public InsertarProductoINTEGRACIONRequest(CORE.integracionSR.InsertarProductoINTEGRACIONRequestBody Body) {
+        public InsertarProductoINTEGRACIONRequest(WEB.integracionSR.InsertarProductoINTEGRACIONRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -173,12 +173,12 @@ namespace CORE.integracionSR {
     public partial class InsertarProductoINTEGRACIONResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertarProductoINTEGRACIONResponse", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.InsertarProductoINTEGRACIONResponseBody Body;
+        public WEB.integracionSR.InsertarProductoINTEGRACIONResponseBody Body;
         
         public InsertarProductoINTEGRACIONResponse() {
         }
         
-        public InsertarProductoINTEGRACIONResponse(CORE.integracionSR.InsertarProductoINTEGRACIONResponseBody Body) {
+        public InsertarProductoINTEGRACIONResponse(WEB.integracionSR.InsertarProductoINTEGRACIONResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -207,12 +207,12 @@ namespace CORE.integracionSR {
     public partial class DeleteProductoINTEGRACIONRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteProductoINTEGRACION", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.DeleteProductoINTEGRACIONRequestBody Body;
+        public WEB.integracionSR.DeleteProductoINTEGRACIONRequestBody Body;
         
         public DeleteProductoINTEGRACIONRequest() {
         }
         
-        public DeleteProductoINTEGRACIONRequest(CORE.integracionSR.DeleteProductoINTEGRACIONRequestBody Body) {
+        public DeleteProductoINTEGRACIONRequest(WEB.integracionSR.DeleteProductoINTEGRACIONRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -241,12 +241,12 @@ namespace CORE.integracionSR {
     public partial class DeleteProductoINTEGRACIONResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteProductoINTEGRACIONResponse", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.DeleteProductoINTEGRACIONResponseBody Body;
+        public WEB.integracionSR.DeleteProductoINTEGRACIONResponseBody Body;
         
         public DeleteProductoINTEGRACIONResponse() {
         }
         
-        public DeleteProductoINTEGRACIONResponse(CORE.integracionSR.DeleteProductoINTEGRACIONResponseBody Body) {
+        public DeleteProductoINTEGRACIONResponse(WEB.integracionSR.DeleteProductoINTEGRACIONResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -275,12 +275,12 @@ namespace CORE.integracionSR {
     public partial class UpdateProductoINTEGRACIONRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateProductoINTEGRACION", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.UpdateProductoINTEGRACIONRequestBody Body;
+        public WEB.integracionSR.UpdateProductoINTEGRACIONRequestBody Body;
         
         public UpdateProductoINTEGRACIONRequest() {
         }
         
-        public UpdateProductoINTEGRACIONRequest(CORE.integracionSR.UpdateProductoINTEGRACIONRequestBody Body) {
+        public UpdateProductoINTEGRACIONRequest(WEB.integracionSR.UpdateProductoINTEGRACIONRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -313,12 +313,12 @@ namespace CORE.integracionSR {
     public partial class UpdateProductoINTEGRACIONResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateProductoINTEGRACIONResponse", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.UpdateProductoINTEGRACIONResponseBody Body;
+        public WEB.integracionSR.UpdateProductoINTEGRACIONResponseBody Body;
         
         public UpdateProductoINTEGRACIONResponse() {
         }
         
-        public UpdateProductoINTEGRACIONResponse(CORE.integracionSR.UpdateProductoINTEGRACIONResponseBody Body) {
+        public UpdateProductoINTEGRACIONResponse(WEB.integracionSR.UpdateProductoINTEGRACIONResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -347,12 +347,12 @@ namespace CORE.integracionSR {
     public partial class InsertClienteINTEGRACIONRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertClienteINTEGRACION", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.InsertClienteINTEGRACIONRequestBody Body;
+        public WEB.integracionSR.InsertClienteINTEGRACIONRequestBody Body;
         
         public InsertClienteINTEGRACIONRequest() {
         }
         
-        public InsertClienteINTEGRACIONRequest(CORE.integracionSR.InsertClienteINTEGRACIONRequestBody Body) {
+        public InsertClienteINTEGRACIONRequest(WEB.integracionSR.InsertClienteINTEGRACIONRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -409,12 +409,12 @@ namespace CORE.integracionSR {
     public partial class InsertClienteINTEGRACIONResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertClienteINTEGRACIONResponse", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.InsertClienteINTEGRACIONResponseBody Body;
+        public WEB.integracionSR.InsertClienteINTEGRACIONResponseBody Body;
         
         public InsertClienteINTEGRACIONResponse() {
         }
         
-        public InsertClienteINTEGRACIONResponse(CORE.integracionSR.InsertClienteINTEGRACIONResponseBody Body) {
+        public InsertClienteINTEGRACIONResponse(WEB.integracionSR.InsertClienteINTEGRACIONResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -443,12 +443,12 @@ namespace CORE.integracionSR {
     public partial class DeleteClienteINTEGRACIONRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteClienteINTEGRACION", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.DeleteClienteINTEGRACIONRequestBody Body;
+        public WEB.integracionSR.DeleteClienteINTEGRACIONRequestBody Body;
         
         public DeleteClienteINTEGRACIONRequest() {
         }
         
-        public DeleteClienteINTEGRACIONRequest(CORE.integracionSR.DeleteClienteINTEGRACIONRequestBody Body) {
+        public DeleteClienteINTEGRACIONRequest(WEB.integracionSR.DeleteClienteINTEGRACIONRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -477,12 +477,12 @@ namespace CORE.integracionSR {
     public partial class DeleteClienteINTEGRACIONResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteClienteINTEGRACIONResponse", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.DeleteClienteINTEGRACIONResponseBody Body;
+        public WEB.integracionSR.DeleteClienteINTEGRACIONResponseBody Body;
         
         public DeleteClienteINTEGRACIONResponse() {
         }
         
-        public DeleteClienteINTEGRACIONResponse(CORE.integracionSR.DeleteClienteINTEGRACIONResponseBody Body) {
+        public DeleteClienteINTEGRACIONResponse(WEB.integracionSR.DeleteClienteINTEGRACIONResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -511,12 +511,12 @@ namespace CORE.integracionSR {
     public partial class UpdateClienteINTEGRACIONRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateClienteINTEGRACION", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.UpdateClienteINTEGRACIONRequestBody Body;
+        public WEB.integracionSR.UpdateClienteINTEGRACIONRequestBody Body;
         
         public UpdateClienteINTEGRACIONRequest() {
         }
         
-        public UpdateClienteINTEGRACIONRequest(CORE.integracionSR.UpdateClienteINTEGRACIONRequestBody Body) {
+        public UpdateClienteINTEGRACIONRequest(WEB.integracionSR.UpdateClienteINTEGRACIONRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -549,12 +549,12 @@ namespace CORE.integracionSR {
     public partial class UpdateClienteINTEGRACIONResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateClienteINTEGRACIONResponse", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.UpdateClienteINTEGRACIONResponseBody Body;
+        public WEB.integracionSR.UpdateClienteINTEGRACIONResponseBody Body;
         
         public UpdateClienteINTEGRACIONResponse() {
         }
         
-        public UpdateClienteINTEGRACIONResponse(CORE.integracionSR.UpdateClienteINTEGRACIONResponseBody Body) {
+        public UpdateClienteINTEGRACIONResponse(WEB.integracionSR.UpdateClienteINTEGRACIONResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -583,12 +583,12 @@ namespace CORE.integracionSR {
     public partial class InsertEmpleadoINTEGRACIONRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertEmpleadoINTEGRACION", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.InsertEmpleadoINTEGRACIONRequestBody Body;
+        public WEB.integracionSR.InsertEmpleadoINTEGRACIONRequestBody Body;
         
         public InsertEmpleadoINTEGRACIONRequest() {
         }
         
-        public InsertEmpleadoINTEGRACIONRequest(CORE.integracionSR.InsertEmpleadoINTEGRACIONRequestBody Body) {
+        public InsertEmpleadoINTEGRACIONRequest(WEB.integracionSR.InsertEmpleadoINTEGRACIONRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -645,12 +645,12 @@ namespace CORE.integracionSR {
     public partial class InsertEmpleadoINTEGRACIONResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertEmpleadoINTEGRACIONResponse", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.InsertEmpleadoINTEGRACIONResponseBody Body;
+        public WEB.integracionSR.InsertEmpleadoINTEGRACIONResponseBody Body;
         
         public InsertEmpleadoINTEGRACIONResponse() {
         }
         
-        public InsertEmpleadoINTEGRACIONResponse(CORE.integracionSR.InsertEmpleadoINTEGRACIONResponseBody Body) {
+        public InsertEmpleadoINTEGRACIONResponse(WEB.integracionSR.InsertEmpleadoINTEGRACIONResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -679,12 +679,12 @@ namespace CORE.integracionSR {
     public partial class DeleteEmpleadoINTEGRACIONRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteEmpleadoINTEGRACION", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.DeleteEmpleadoINTEGRACIONRequestBody Body;
+        public WEB.integracionSR.DeleteEmpleadoINTEGRACIONRequestBody Body;
         
         public DeleteEmpleadoINTEGRACIONRequest() {
         }
         
-        public DeleteEmpleadoINTEGRACIONRequest(CORE.integracionSR.DeleteEmpleadoINTEGRACIONRequestBody Body) {
+        public DeleteEmpleadoINTEGRACIONRequest(WEB.integracionSR.DeleteEmpleadoINTEGRACIONRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -713,12 +713,12 @@ namespace CORE.integracionSR {
     public partial class DeleteEmpleadoINTEGRACIONResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteEmpleadoINTEGRACIONResponse", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.DeleteEmpleadoINTEGRACIONResponseBody Body;
+        public WEB.integracionSR.DeleteEmpleadoINTEGRACIONResponseBody Body;
         
         public DeleteEmpleadoINTEGRACIONResponse() {
         }
         
-        public DeleteEmpleadoINTEGRACIONResponse(CORE.integracionSR.DeleteEmpleadoINTEGRACIONResponseBody Body) {
+        public DeleteEmpleadoINTEGRACIONResponse(WEB.integracionSR.DeleteEmpleadoINTEGRACIONResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -747,12 +747,12 @@ namespace CORE.integracionSR {
     public partial class UpdateEmpleadoINTEGRACIONRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateEmpleadoINTEGRACION", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.UpdateEmpleadoINTEGRACIONRequestBody Body;
+        public WEB.integracionSR.UpdateEmpleadoINTEGRACIONRequestBody Body;
         
         public UpdateEmpleadoINTEGRACIONRequest() {
         }
         
-        public UpdateEmpleadoINTEGRACIONRequest(CORE.integracionSR.UpdateEmpleadoINTEGRACIONRequestBody Body) {
+        public UpdateEmpleadoINTEGRACIONRequest(WEB.integracionSR.UpdateEmpleadoINTEGRACIONRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -785,12 +785,12 @@ namespace CORE.integracionSR {
     public partial class UpdateEmpleadoINTEGRACIONResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateEmpleadoINTEGRACIONResponse", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.UpdateEmpleadoINTEGRACIONResponseBody Body;
+        public WEB.integracionSR.UpdateEmpleadoINTEGRACIONResponseBody Body;
         
         public UpdateEmpleadoINTEGRACIONResponse() {
         }
         
-        public UpdateEmpleadoINTEGRACIONResponse(CORE.integracionSR.UpdateEmpleadoINTEGRACIONResponseBody Body) {
+        public UpdateEmpleadoINTEGRACIONResponse(WEB.integracionSR.UpdateEmpleadoINTEGRACIONResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -819,12 +819,12 @@ namespace CORE.integracionSR {
     public partial class InsertCuentaINTEGRACIONRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertCuentaINTEGRACION", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.InsertCuentaINTEGRACIONRequestBody Body;
+        public WEB.integracionSR.InsertCuentaINTEGRACIONRequestBody Body;
         
         public InsertCuentaINTEGRACIONRequest() {
         }
         
-        public InsertCuentaINTEGRACIONRequest(CORE.integracionSR.InsertCuentaINTEGRACIONRequestBody Body) {
+        public InsertCuentaINTEGRACIONRequest(WEB.integracionSR.InsertCuentaINTEGRACIONRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -873,12 +873,12 @@ namespace CORE.integracionSR {
     public partial class InsertCuentaINTEGRACIONResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertCuentaINTEGRACIONResponse", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.InsertCuentaINTEGRACIONResponseBody Body;
+        public WEB.integracionSR.InsertCuentaINTEGRACIONResponseBody Body;
         
         public InsertCuentaINTEGRACIONResponse() {
         }
         
-        public InsertCuentaINTEGRACIONResponse(CORE.integracionSR.InsertCuentaINTEGRACIONResponseBody Body) {
+        public InsertCuentaINTEGRACIONResponse(WEB.integracionSR.InsertCuentaINTEGRACIONResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -907,12 +907,12 @@ namespace CORE.integracionSR {
     public partial class DeleteCuentaINTEGRACIONRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteCuentaINTEGRACION", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.DeleteCuentaINTEGRACIONRequestBody Body;
+        public WEB.integracionSR.DeleteCuentaINTEGRACIONRequestBody Body;
         
         public DeleteCuentaINTEGRACIONRequest() {
         }
         
-        public DeleteCuentaINTEGRACIONRequest(CORE.integracionSR.DeleteCuentaINTEGRACIONRequestBody Body) {
+        public DeleteCuentaINTEGRACIONRequest(WEB.integracionSR.DeleteCuentaINTEGRACIONRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -941,12 +941,12 @@ namespace CORE.integracionSR {
     public partial class DeleteCuentaINTEGRACIONResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteCuentaINTEGRACIONResponse", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.DeleteCuentaINTEGRACIONResponseBody Body;
+        public WEB.integracionSR.DeleteCuentaINTEGRACIONResponseBody Body;
         
         public DeleteCuentaINTEGRACIONResponse() {
         }
         
-        public DeleteCuentaINTEGRACIONResponse(CORE.integracionSR.DeleteCuentaINTEGRACIONResponseBody Body) {
+        public DeleteCuentaINTEGRACIONResponse(WEB.integracionSR.DeleteCuentaINTEGRACIONResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -975,12 +975,12 @@ namespace CORE.integracionSR {
     public partial class InsertFacturaINTEGRACIONRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertFacturaINTEGRACION", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.InsertFacturaINTEGRACIONRequestBody Body;
+        public WEB.integracionSR.InsertFacturaINTEGRACIONRequestBody Body;
         
         public InsertFacturaINTEGRACIONRequest() {
         }
         
-        public InsertFacturaINTEGRACIONRequest(CORE.integracionSR.InsertFacturaINTEGRACIONRequestBody Body) {
+        public InsertFacturaINTEGRACIONRequest(WEB.integracionSR.InsertFacturaINTEGRACIONRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1033,12 +1033,12 @@ namespace CORE.integracionSR {
     public partial class InsertFacturaINTEGRACIONResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertFacturaINTEGRACIONResponse", Namespace="http://intec.edu.do", Order=0)]
-        public CORE.integracionSR.InsertFacturaINTEGRACIONResponseBody Body;
+        public WEB.integracionSR.InsertFacturaINTEGRACIONResponseBody Body;
         
         public InsertFacturaINTEGRACIONResponse() {
         }
         
-        public InsertFacturaINTEGRACIONResponse(CORE.integracionSR.InsertFacturaINTEGRACIONResponseBody Body) {
+        public InsertFacturaINTEGRACIONResponse(WEB.integracionSR.InsertFacturaINTEGRACIONResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1061,12 +1061,12 @@ namespace CORE.integracionSR {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface integracionSWSoapChannel : CORE.integracionSR.integracionSWSoap, System.ServiceModel.IClientChannel {
+    public interface integracionSWSoapChannel : WEB.integracionSR.integracionSWSoap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class integracionSWSoapClient : System.ServiceModel.ClientBase<CORE.integracionSR.integracionSWSoap>, CORE.integracionSR.integracionSWSoap {
+    public partial class integracionSWSoapClient : System.ServiceModel.ClientBase<WEB.integracionSR.integracionSWSoap>, WEB.integracionSR.integracionSWSoap {
         
         public integracionSWSoapClient() {
         }
@@ -1088,13 +1088,13 @@ namespace CORE.integracionSR {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CORE.integracionSR.InsertarProductoINTEGRACIONResponse CORE.integracionSR.integracionSWSoap.InsertarProductoINTEGRACION(CORE.integracionSR.InsertarProductoINTEGRACIONRequest request) {
+        WEB.integracionSR.InsertarProductoINTEGRACIONResponse WEB.integracionSR.integracionSWSoap.InsertarProductoINTEGRACION(WEB.integracionSR.InsertarProductoINTEGRACIONRequest request) {
             return base.Channel.InsertarProductoINTEGRACION(request);
         }
         
         public string InsertarProductoINTEGRACION(string codigo, string marca, decimal precio, int cantidad, string tipo, string nombre, int peso, string imagen, string descripcion) {
-            CORE.integracionSR.InsertarProductoINTEGRACIONRequest inValue = new CORE.integracionSR.InsertarProductoINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.InsertarProductoINTEGRACIONRequestBody();
+            WEB.integracionSR.InsertarProductoINTEGRACIONRequest inValue = new WEB.integracionSR.InsertarProductoINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.InsertarProductoINTEGRACIONRequestBody();
             inValue.Body.codigo = codigo;
             inValue.Body.marca = marca;
             inValue.Body.precio = precio;
@@ -1104,18 +1104,18 @@ namespace CORE.integracionSR {
             inValue.Body.peso = peso;
             inValue.Body.imagen = imagen;
             inValue.Body.descripcion = descripcion;
-            CORE.integracionSR.InsertarProductoINTEGRACIONResponse retVal = ((CORE.integracionSR.integracionSWSoap)(this)).InsertarProductoINTEGRACION(inValue);
+            WEB.integracionSR.InsertarProductoINTEGRACIONResponse retVal = ((WEB.integracionSR.integracionSWSoap)(this)).InsertarProductoINTEGRACION(inValue);
             return retVal.Body.InsertarProductoINTEGRACIONResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CORE.integracionSR.InsertarProductoINTEGRACIONResponse> CORE.integracionSR.integracionSWSoap.InsertarProductoINTEGRACIONAsync(CORE.integracionSR.InsertarProductoINTEGRACIONRequest request) {
+        System.Threading.Tasks.Task<WEB.integracionSR.InsertarProductoINTEGRACIONResponse> WEB.integracionSR.integracionSWSoap.InsertarProductoINTEGRACIONAsync(WEB.integracionSR.InsertarProductoINTEGRACIONRequest request) {
             return base.Channel.InsertarProductoINTEGRACIONAsync(request);
         }
         
-        public System.Threading.Tasks.Task<CORE.integracionSR.InsertarProductoINTEGRACIONResponse> InsertarProductoINTEGRACIONAsync(string codigo, string marca, decimal precio, int cantidad, string tipo, string nombre, int peso, string imagen, string descripcion) {
-            CORE.integracionSR.InsertarProductoINTEGRACIONRequest inValue = new CORE.integracionSR.InsertarProductoINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.InsertarProductoINTEGRACIONRequestBody();
+        public System.Threading.Tasks.Task<WEB.integracionSR.InsertarProductoINTEGRACIONResponse> InsertarProductoINTEGRACIONAsync(string codigo, string marca, decimal precio, int cantidad, string tipo, string nombre, int peso, string imagen, string descripcion) {
+            WEB.integracionSR.InsertarProductoINTEGRACIONRequest inValue = new WEB.integracionSR.InsertarProductoINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.InsertarProductoINTEGRACIONRequestBody();
             inValue.Body.codigo = codigo;
             inValue.Body.marca = marca;
             inValue.Body.precio = precio;
@@ -1125,69 +1125,69 @@ namespace CORE.integracionSR {
             inValue.Body.peso = peso;
             inValue.Body.imagen = imagen;
             inValue.Body.descripcion = descripcion;
-            return ((CORE.integracionSR.integracionSWSoap)(this)).InsertarProductoINTEGRACIONAsync(inValue);
+            return ((WEB.integracionSR.integracionSWSoap)(this)).InsertarProductoINTEGRACIONAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CORE.integracionSR.DeleteProductoINTEGRACIONResponse CORE.integracionSR.integracionSWSoap.DeleteProductoINTEGRACION(CORE.integracionSR.DeleteProductoINTEGRACIONRequest request) {
+        WEB.integracionSR.DeleteProductoINTEGRACIONResponse WEB.integracionSR.integracionSWSoap.DeleteProductoINTEGRACION(WEB.integracionSR.DeleteProductoINTEGRACIONRequest request) {
             return base.Channel.DeleteProductoINTEGRACION(request);
         }
         
         public string DeleteProductoINTEGRACION(string codigo) {
-            CORE.integracionSR.DeleteProductoINTEGRACIONRequest inValue = new CORE.integracionSR.DeleteProductoINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.DeleteProductoINTEGRACIONRequestBody();
+            WEB.integracionSR.DeleteProductoINTEGRACIONRequest inValue = new WEB.integracionSR.DeleteProductoINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.DeleteProductoINTEGRACIONRequestBody();
             inValue.Body.codigo = codigo;
-            CORE.integracionSR.DeleteProductoINTEGRACIONResponse retVal = ((CORE.integracionSR.integracionSWSoap)(this)).DeleteProductoINTEGRACION(inValue);
+            WEB.integracionSR.DeleteProductoINTEGRACIONResponse retVal = ((WEB.integracionSR.integracionSWSoap)(this)).DeleteProductoINTEGRACION(inValue);
             return retVal.Body.DeleteProductoINTEGRACIONResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CORE.integracionSR.DeleteProductoINTEGRACIONResponse> CORE.integracionSR.integracionSWSoap.DeleteProductoINTEGRACIONAsync(CORE.integracionSR.DeleteProductoINTEGRACIONRequest request) {
+        System.Threading.Tasks.Task<WEB.integracionSR.DeleteProductoINTEGRACIONResponse> WEB.integracionSR.integracionSWSoap.DeleteProductoINTEGRACIONAsync(WEB.integracionSR.DeleteProductoINTEGRACIONRequest request) {
             return base.Channel.DeleteProductoINTEGRACIONAsync(request);
         }
         
-        public System.Threading.Tasks.Task<CORE.integracionSR.DeleteProductoINTEGRACIONResponse> DeleteProductoINTEGRACIONAsync(string codigo) {
-            CORE.integracionSR.DeleteProductoINTEGRACIONRequest inValue = new CORE.integracionSR.DeleteProductoINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.DeleteProductoINTEGRACIONRequestBody();
+        public System.Threading.Tasks.Task<WEB.integracionSR.DeleteProductoINTEGRACIONResponse> DeleteProductoINTEGRACIONAsync(string codigo) {
+            WEB.integracionSR.DeleteProductoINTEGRACIONRequest inValue = new WEB.integracionSR.DeleteProductoINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.DeleteProductoINTEGRACIONRequestBody();
             inValue.Body.codigo = codigo;
-            return ((CORE.integracionSR.integracionSWSoap)(this)).DeleteProductoINTEGRACIONAsync(inValue);
+            return ((WEB.integracionSR.integracionSWSoap)(this)).DeleteProductoINTEGRACIONAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CORE.integracionSR.UpdateProductoINTEGRACIONResponse CORE.integracionSR.integracionSWSoap.UpdateProductoINTEGRACION(CORE.integracionSR.UpdateProductoINTEGRACIONRequest request) {
+        WEB.integracionSR.UpdateProductoINTEGRACIONResponse WEB.integracionSR.integracionSWSoap.UpdateProductoINTEGRACION(WEB.integracionSR.UpdateProductoINTEGRACIONRequest request) {
             return base.Channel.UpdateProductoINTEGRACION(request);
         }
         
         public string UpdateProductoINTEGRACION(string codigo, string usuarioCedula) {
-            CORE.integracionSR.UpdateProductoINTEGRACIONRequest inValue = new CORE.integracionSR.UpdateProductoINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.UpdateProductoINTEGRACIONRequestBody();
+            WEB.integracionSR.UpdateProductoINTEGRACIONRequest inValue = new WEB.integracionSR.UpdateProductoINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.UpdateProductoINTEGRACIONRequestBody();
             inValue.Body.codigo = codigo;
             inValue.Body.usuarioCedula = usuarioCedula;
-            CORE.integracionSR.UpdateProductoINTEGRACIONResponse retVal = ((CORE.integracionSR.integracionSWSoap)(this)).UpdateProductoINTEGRACION(inValue);
+            WEB.integracionSR.UpdateProductoINTEGRACIONResponse retVal = ((WEB.integracionSR.integracionSWSoap)(this)).UpdateProductoINTEGRACION(inValue);
             return retVal.Body.UpdateProductoINTEGRACIONResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CORE.integracionSR.UpdateProductoINTEGRACIONResponse> CORE.integracionSR.integracionSWSoap.UpdateProductoINTEGRACIONAsync(CORE.integracionSR.UpdateProductoINTEGRACIONRequest request) {
+        System.Threading.Tasks.Task<WEB.integracionSR.UpdateProductoINTEGRACIONResponse> WEB.integracionSR.integracionSWSoap.UpdateProductoINTEGRACIONAsync(WEB.integracionSR.UpdateProductoINTEGRACIONRequest request) {
             return base.Channel.UpdateProductoINTEGRACIONAsync(request);
         }
         
-        public System.Threading.Tasks.Task<CORE.integracionSR.UpdateProductoINTEGRACIONResponse> UpdateProductoINTEGRACIONAsync(string codigo, string usuarioCedula) {
-            CORE.integracionSR.UpdateProductoINTEGRACIONRequest inValue = new CORE.integracionSR.UpdateProductoINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.UpdateProductoINTEGRACIONRequestBody();
+        public System.Threading.Tasks.Task<WEB.integracionSR.UpdateProductoINTEGRACIONResponse> UpdateProductoINTEGRACIONAsync(string codigo, string usuarioCedula) {
+            WEB.integracionSR.UpdateProductoINTEGRACIONRequest inValue = new WEB.integracionSR.UpdateProductoINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.UpdateProductoINTEGRACIONRequestBody();
             inValue.Body.codigo = codigo;
             inValue.Body.usuarioCedula = usuarioCedula;
-            return ((CORE.integracionSR.integracionSWSoap)(this)).UpdateProductoINTEGRACIONAsync(inValue);
+            return ((WEB.integracionSR.integracionSWSoap)(this)).UpdateProductoINTEGRACIONAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CORE.integracionSR.InsertClienteINTEGRACIONResponse CORE.integracionSR.integracionSWSoap.InsertClienteINTEGRACION(CORE.integracionSR.InsertClienteINTEGRACIONRequest request) {
+        WEB.integracionSR.InsertClienteINTEGRACIONResponse WEB.integracionSR.integracionSWSoap.InsertClienteINTEGRACION(WEB.integracionSR.InsertClienteINTEGRACIONRequest request) {
             return base.Channel.InsertClienteINTEGRACION(request);
         }
         
         public string InsertClienteINTEGRACION(string Nombres, string Apellidos, string Cedula, string Telefono, System.DateTime fechaNacimiento, string Email, string Password, string Sexo) {
-            CORE.integracionSR.InsertClienteINTEGRACIONRequest inValue = new CORE.integracionSR.InsertClienteINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.InsertClienteINTEGRACIONRequestBody();
+            WEB.integracionSR.InsertClienteINTEGRACIONRequest inValue = new WEB.integracionSR.InsertClienteINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.InsertClienteINTEGRACIONRequestBody();
             inValue.Body.Nombres = Nombres;
             inValue.Body.Apellidos = Apellidos;
             inValue.Body.Cedula = Cedula;
@@ -1196,18 +1196,18 @@ namespace CORE.integracionSR {
             inValue.Body.Email = Email;
             inValue.Body.Password = Password;
             inValue.Body.Sexo = Sexo;
-            CORE.integracionSR.InsertClienteINTEGRACIONResponse retVal = ((CORE.integracionSR.integracionSWSoap)(this)).InsertClienteINTEGRACION(inValue);
+            WEB.integracionSR.InsertClienteINTEGRACIONResponse retVal = ((WEB.integracionSR.integracionSWSoap)(this)).InsertClienteINTEGRACION(inValue);
             return retVal.Body.InsertClienteINTEGRACIONResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CORE.integracionSR.InsertClienteINTEGRACIONResponse> CORE.integracionSR.integracionSWSoap.InsertClienteINTEGRACIONAsync(CORE.integracionSR.InsertClienteINTEGRACIONRequest request) {
+        System.Threading.Tasks.Task<WEB.integracionSR.InsertClienteINTEGRACIONResponse> WEB.integracionSR.integracionSWSoap.InsertClienteINTEGRACIONAsync(WEB.integracionSR.InsertClienteINTEGRACIONRequest request) {
             return base.Channel.InsertClienteINTEGRACIONAsync(request);
         }
         
-        public System.Threading.Tasks.Task<CORE.integracionSR.InsertClienteINTEGRACIONResponse> InsertClienteINTEGRACIONAsync(string Nombres, string Apellidos, string Cedula, string Telefono, System.DateTime fechaNacimiento, string Email, string Password, string Sexo) {
-            CORE.integracionSR.InsertClienteINTEGRACIONRequest inValue = new CORE.integracionSR.InsertClienteINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.InsertClienteINTEGRACIONRequestBody();
+        public System.Threading.Tasks.Task<WEB.integracionSR.InsertClienteINTEGRACIONResponse> InsertClienteINTEGRACIONAsync(string Nombres, string Apellidos, string Cedula, string Telefono, System.DateTime fechaNacimiento, string Email, string Password, string Sexo) {
+            WEB.integracionSR.InsertClienteINTEGRACIONRequest inValue = new WEB.integracionSR.InsertClienteINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.InsertClienteINTEGRACIONRequestBody();
             inValue.Body.Nombres = Nombres;
             inValue.Body.Apellidos = Apellidos;
             inValue.Body.Cedula = Cedula;
@@ -1216,69 +1216,69 @@ namespace CORE.integracionSR {
             inValue.Body.Email = Email;
             inValue.Body.Password = Password;
             inValue.Body.Sexo = Sexo;
-            return ((CORE.integracionSR.integracionSWSoap)(this)).InsertClienteINTEGRACIONAsync(inValue);
+            return ((WEB.integracionSR.integracionSWSoap)(this)).InsertClienteINTEGRACIONAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CORE.integracionSR.DeleteClienteINTEGRACIONResponse CORE.integracionSR.integracionSWSoap.DeleteClienteINTEGRACION(CORE.integracionSR.DeleteClienteINTEGRACIONRequest request) {
+        WEB.integracionSR.DeleteClienteINTEGRACIONResponse WEB.integracionSR.integracionSWSoap.DeleteClienteINTEGRACION(WEB.integracionSR.DeleteClienteINTEGRACIONRequest request) {
             return base.Channel.DeleteClienteINTEGRACION(request);
         }
         
         public string DeleteClienteINTEGRACION(string Cedula) {
-            CORE.integracionSR.DeleteClienteINTEGRACIONRequest inValue = new CORE.integracionSR.DeleteClienteINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.DeleteClienteINTEGRACIONRequestBody();
+            WEB.integracionSR.DeleteClienteINTEGRACIONRequest inValue = new WEB.integracionSR.DeleteClienteINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.DeleteClienteINTEGRACIONRequestBody();
             inValue.Body.Cedula = Cedula;
-            CORE.integracionSR.DeleteClienteINTEGRACIONResponse retVal = ((CORE.integracionSR.integracionSWSoap)(this)).DeleteClienteINTEGRACION(inValue);
+            WEB.integracionSR.DeleteClienteINTEGRACIONResponse retVal = ((WEB.integracionSR.integracionSWSoap)(this)).DeleteClienteINTEGRACION(inValue);
             return retVal.Body.DeleteClienteINTEGRACIONResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CORE.integracionSR.DeleteClienteINTEGRACIONResponse> CORE.integracionSR.integracionSWSoap.DeleteClienteINTEGRACIONAsync(CORE.integracionSR.DeleteClienteINTEGRACIONRequest request) {
+        System.Threading.Tasks.Task<WEB.integracionSR.DeleteClienteINTEGRACIONResponse> WEB.integracionSR.integracionSWSoap.DeleteClienteINTEGRACIONAsync(WEB.integracionSR.DeleteClienteINTEGRACIONRequest request) {
             return base.Channel.DeleteClienteINTEGRACIONAsync(request);
         }
         
-        public System.Threading.Tasks.Task<CORE.integracionSR.DeleteClienteINTEGRACIONResponse> DeleteClienteINTEGRACIONAsync(string Cedula) {
-            CORE.integracionSR.DeleteClienteINTEGRACIONRequest inValue = new CORE.integracionSR.DeleteClienteINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.DeleteClienteINTEGRACIONRequestBody();
+        public System.Threading.Tasks.Task<WEB.integracionSR.DeleteClienteINTEGRACIONResponse> DeleteClienteINTEGRACIONAsync(string Cedula) {
+            WEB.integracionSR.DeleteClienteINTEGRACIONRequest inValue = new WEB.integracionSR.DeleteClienteINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.DeleteClienteINTEGRACIONRequestBody();
             inValue.Body.Cedula = Cedula;
-            return ((CORE.integracionSR.integracionSWSoap)(this)).DeleteClienteINTEGRACIONAsync(inValue);
+            return ((WEB.integracionSR.integracionSWSoap)(this)).DeleteClienteINTEGRACIONAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CORE.integracionSR.UpdateClienteINTEGRACIONResponse CORE.integracionSR.integracionSWSoap.UpdateClienteINTEGRACION(CORE.integracionSR.UpdateClienteINTEGRACIONRequest request) {
+        WEB.integracionSR.UpdateClienteINTEGRACIONResponse WEB.integracionSR.integracionSWSoap.UpdateClienteINTEGRACION(WEB.integracionSR.UpdateClienteINTEGRACIONRequest request) {
             return base.Channel.UpdateClienteINTEGRACION(request);
         }
         
         public string UpdateClienteINTEGRACION(decimal totalGastado, string Cedula) {
-            CORE.integracionSR.UpdateClienteINTEGRACIONRequest inValue = new CORE.integracionSR.UpdateClienteINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.UpdateClienteINTEGRACIONRequestBody();
+            WEB.integracionSR.UpdateClienteINTEGRACIONRequest inValue = new WEB.integracionSR.UpdateClienteINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.UpdateClienteINTEGRACIONRequestBody();
             inValue.Body.totalGastado = totalGastado;
             inValue.Body.Cedula = Cedula;
-            CORE.integracionSR.UpdateClienteINTEGRACIONResponse retVal = ((CORE.integracionSR.integracionSWSoap)(this)).UpdateClienteINTEGRACION(inValue);
+            WEB.integracionSR.UpdateClienteINTEGRACIONResponse retVal = ((WEB.integracionSR.integracionSWSoap)(this)).UpdateClienteINTEGRACION(inValue);
             return retVal.Body.UpdateClienteINTEGRACIONResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CORE.integracionSR.UpdateClienteINTEGRACIONResponse> CORE.integracionSR.integracionSWSoap.UpdateClienteINTEGRACIONAsync(CORE.integracionSR.UpdateClienteINTEGRACIONRequest request) {
+        System.Threading.Tasks.Task<WEB.integracionSR.UpdateClienteINTEGRACIONResponse> WEB.integracionSR.integracionSWSoap.UpdateClienteINTEGRACIONAsync(WEB.integracionSR.UpdateClienteINTEGRACIONRequest request) {
             return base.Channel.UpdateClienteINTEGRACIONAsync(request);
         }
         
-        public System.Threading.Tasks.Task<CORE.integracionSR.UpdateClienteINTEGRACIONResponse> UpdateClienteINTEGRACIONAsync(decimal totalGastado, string Cedula) {
-            CORE.integracionSR.UpdateClienteINTEGRACIONRequest inValue = new CORE.integracionSR.UpdateClienteINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.UpdateClienteINTEGRACIONRequestBody();
+        public System.Threading.Tasks.Task<WEB.integracionSR.UpdateClienteINTEGRACIONResponse> UpdateClienteINTEGRACIONAsync(decimal totalGastado, string Cedula) {
+            WEB.integracionSR.UpdateClienteINTEGRACIONRequest inValue = new WEB.integracionSR.UpdateClienteINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.UpdateClienteINTEGRACIONRequestBody();
             inValue.Body.totalGastado = totalGastado;
             inValue.Body.Cedula = Cedula;
-            return ((CORE.integracionSR.integracionSWSoap)(this)).UpdateClienteINTEGRACIONAsync(inValue);
+            return ((WEB.integracionSR.integracionSWSoap)(this)).UpdateClienteINTEGRACIONAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CORE.integracionSR.InsertEmpleadoINTEGRACIONResponse CORE.integracionSR.integracionSWSoap.InsertEmpleadoINTEGRACION(CORE.integracionSR.InsertEmpleadoINTEGRACIONRequest request) {
+        WEB.integracionSR.InsertEmpleadoINTEGRACIONResponse WEB.integracionSR.integracionSWSoap.InsertEmpleadoINTEGRACION(WEB.integracionSR.InsertEmpleadoINTEGRACIONRequest request) {
             return base.Channel.InsertEmpleadoINTEGRACION(request);
         }
         
         public string InsertEmpleadoINTEGRACION(string Nombres, string Apellidos, string Cedula, string Telefono, string rol, string Email, string Password, string Sexo) {
-            CORE.integracionSR.InsertEmpleadoINTEGRACIONRequest inValue = new CORE.integracionSR.InsertEmpleadoINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.InsertEmpleadoINTEGRACIONRequestBody();
+            WEB.integracionSR.InsertEmpleadoINTEGRACIONRequest inValue = new WEB.integracionSR.InsertEmpleadoINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.InsertEmpleadoINTEGRACIONRequestBody();
             inValue.Body.Nombres = Nombres;
             inValue.Body.Apellidos = Apellidos;
             inValue.Body.Cedula = Cedula;
@@ -1287,18 +1287,18 @@ namespace CORE.integracionSR {
             inValue.Body.Email = Email;
             inValue.Body.Password = Password;
             inValue.Body.Sexo = Sexo;
-            CORE.integracionSR.InsertEmpleadoINTEGRACIONResponse retVal = ((CORE.integracionSR.integracionSWSoap)(this)).InsertEmpleadoINTEGRACION(inValue);
+            WEB.integracionSR.InsertEmpleadoINTEGRACIONResponse retVal = ((WEB.integracionSR.integracionSWSoap)(this)).InsertEmpleadoINTEGRACION(inValue);
             return retVal.Body.InsertEmpleadoINTEGRACIONResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CORE.integracionSR.InsertEmpleadoINTEGRACIONResponse> CORE.integracionSR.integracionSWSoap.InsertEmpleadoINTEGRACIONAsync(CORE.integracionSR.InsertEmpleadoINTEGRACIONRequest request) {
+        System.Threading.Tasks.Task<WEB.integracionSR.InsertEmpleadoINTEGRACIONResponse> WEB.integracionSR.integracionSWSoap.InsertEmpleadoINTEGRACIONAsync(WEB.integracionSR.InsertEmpleadoINTEGRACIONRequest request) {
             return base.Channel.InsertEmpleadoINTEGRACIONAsync(request);
         }
         
-        public System.Threading.Tasks.Task<CORE.integracionSR.InsertEmpleadoINTEGRACIONResponse> InsertEmpleadoINTEGRACIONAsync(string Nombres, string Apellidos, string Cedula, string Telefono, string rol, string Email, string Password, string Sexo) {
-            CORE.integracionSR.InsertEmpleadoINTEGRACIONRequest inValue = new CORE.integracionSR.InsertEmpleadoINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.InsertEmpleadoINTEGRACIONRequestBody();
+        public System.Threading.Tasks.Task<WEB.integracionSR.InsertEmpleadoINTEGRACIONResponse> InsertEmpleadoINTEGRACIONAsync(string Nombres, string Apellidos, string Cedula, string Telefono, string rol, string Email, string Password, string Sexo) {
+            WEB.integracionSR.InsertEmpleadoINTEGRACIONRequest inValue = new WEB.integracionSR.InsertEmpleadoINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.InsertEmpleadoINTEGRACIONRequestBody();
             inValue.Body.Nombres = Nombres;
             inValue.Body.Apellidos = Apellidos;
             inValue.Body.Cedula = Cedula;
@@ -1307,129 +1307,129 @@ namespace CORE.integracionSR {
             inValue.Body.Email = Email;
             inValue.Body.Password = Password;
             inValue.Body.Sexo = Sexo;
-            return ((CORE.integracionSR.integracionSWSoap)(this)).InsertEmpleadoINTEGRACIONAsync(inValue);
+            return ((WEB.integracionSR.integracionSWSoap)(this)).InsertEmpleadoINTEGRACIONAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CORE.integracionSR.DeleteEmpleadoINTEGRACIONResponse CORE.integracionSR.integracionSWSoap.DeleteEmpleadoINTEGRACION(CORE.integracionSR.DeleteEmpleadoINTEGRACIONRequest request) {
+        WEB.integracionSR.DeleteEmpleadoINTEGRACIONResponse WEB.integracionSR.integracionSWSoap.DeleteEmpleadoINTEGRACION(WEB.integracionSR.DeleteEmpleadoINTEGRACIONRequest request) {
             return base.Channel.DeleteEmpleadoINTEGRACION(request);
         }
         
         public string DeleteEmpleadoINTEGRACION(string Cedula) {
-            CORE.integracionSR.DeleteEmpleadoINTEGRACIONRequest inValue = new CORE.integracionSR.DeleteEmpleadoINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.DeleteEmpleadoINTEGRACIONRequestBody();
+            WEB.integracionSR.DeleteEmpleadoINTEGRACIONRequest inValue = new WEB.integracionSR.DeleteEmpleadoINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.DeleteEmpleadoINTEGRACIONRequestBody();
             inValue.Body.Cedula = Cedula;
-            CORE.integracionSR.DeleteEmpleadoINTEGRACIONResponse retVal = ((CORE.integracionSR.integracionSWSoap)(this)).DeleteEmpleadoINTEGRACION(inValue);
+            WEB.integracionSR.DeleteEmpleadoINTEGRACIONResponse retVal = ((WEB.integracionSR.integracionSWSoap)(this)).DeleteEmpleadoINTEGRACION(inValue);
             return retVal.Body.DeleteEmpleadoINTEGRACIONResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CORE.integracionSR.DeleteEmpleadoINTEGRACIONResponse> CORE.integracionSR.integracionSWSoap.DeleteEmpleadoINTEGRACIONAsync(CORE.integracionSR.DeleteEmpleadoINTEGRACIONRequest request) {
+        System.Threading.Tasks.Task<WEB.integracionSR.DeleteEmpleadoINTEGRACIONResponse> WEB.integracionSR.integracionSWSoap.DeleteEmpleadoINTEGRACIONAsync(WEB.integracionSR.DeleteEmpleadoINTEGRACIONRequest request) {
             return base.Channel.DeleteEmpleadoINTEGRACIONAsync(request);
         }
         
-        public System.Threading.Tasks.Task<CORE.integracionSR.DeleteEmpleadoINTEGRACIONResponse> DeleteEmpleadoINTEGRACIONAsync(string Cedula) {
-            CORE.integracionSR.DeleteEmpleadoINTEGRACIONRequest inValue = new CORE.integracionSR.DeleteEmpleadoINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.DeleteEmpleadoINTEGRACIONRequestBody();
+        public System.Threading.Tasks.Task<WEB.integracionSR.DeleteEmpleadoINTEGRACIONResponse> DeleteEmpleadoINTEGRACIONAsync(string Cedula) {
+            WEB.integracionSR.DeleteEmpleadoINTEGRACIONRequest inValue = new WEB.integracionSR.DeleteEmpleadoINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.DeleteEmpleadoINTEGRACIONRequestBody();
             inValue.Body.Cedula = Cedula;
-            return ((CORE.integracionSR.integracionSWSoap)(this)).DeleteEmpleadoINTEGRACIONAsync(inValue);
+            return ((WEB.integracionSR.integracionSWSoap)(this)).DeleteEmpleadoINTEGRACIONAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CORE.integracionSR.UpdateEmpleadoINTEGRACIONResponse CORE.integracionSR.integracionSWSoap.UpdateEmpleadoINTEGRACION(CORE.integracionSR.UpdateEmpleadoINTEGRACIONRequest request) {
+        WEB.integracionSR.UpdateEmpleadoINTEGRACIONResponse WEB.integracionSR.integracionSWSoap.UpdateEmpleadoINTEGRACION(WEB.integracionSR.UpdateEmpleadoINTEGRACIONRequest request) {
             return base.Channel.UpdateEmpleadoINTEGRACION(request);
         }
         
         public string UpdateEmpleadoINTEGRACION(int cuentasCobradas, string Cedula) {
-            CORE.integracionSR.UpdateEmpleadoINTEGRACIONRequest inValue = new CORE.integracionSR.UpdateEmpleadoINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.UpdateEmpleadoINTEGRACIONRequestBody();
+            WEB.integracionSR.UpdateEmpleadoINTEGRACIONRequest inValue = new WEB.integracionSR.UpdateEmpleadoINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.UpdateEmpleadoINTEGRACIONRequestBody();
             inValue.Body.cuentasCobradas = cuentasCobradas;
             inValue.Body.Cedula = Cedula;
-            CORE.integracionSR.UpdateEmpleadoINTEGRACIONResponse retVal = ((CORE.integracionSR.integracionSWSoap)(this)).UpdateEmpleadoINTEGRACION(inValue);
+            WEB.integracionSR.UpdateEmpleadoINTEGRACIONResponse retVal = ((WEB.integracionSR.integracionSWSoap)(this)).UpdateEmpleadoINTEGRACION(inValue);
             return retVal.Body.UpdateEmpleadoINTEGRACIONResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CORE.integracionSR.UpdateEmpleadoINTEGRACIONResponse> CORE.integracionSR.integracionSWSoap.UpdateEmpleadoINTEGRACIONAsync(CORE.integracionSR.UpdateEmpleadoINTEGRACIONRequest request) {
+        System.Threading.Tasks.Task<WEB.integracionSR.UpdateEmpleadoINTEGRACIONResponse> WEB.integracionSR.integracionSWSoap.UpdateEmpleadoINTEGRACIONAsync(WEB.integracionSR.UpdateEmpleadoINTEGRACIONRequest request) {
             return base.Channel.UpdateEmpleadoINTEGRACIONAsync(request);
         }
         
-        public System.Threading.Tasks.Task<CORE.integracionSR.UpdateEmpleadoINTEGRACIONResponse> UpdateEmpleadoINTEGRACIONAsync(int cuentasCobradas, string Cedula) {
-            CORE.integracionSR.UpdateEmpleadoINTEGRACIONRequest inValue = new CORE.integracionSR.UpdateEmpleadoINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.UpdateEmpleadoINTEGRACIONRequestBody();
+        public System.Threading.Tasks.Task<WEB.integracionSR.UpdateEmpleadoINTEGRACIONResponse> UpdateEmpleadoINTEGRACIONAsync(int cuentasCobradas, string Cedula) {
+            WEB.integracionSR.UpdateEmpleadoINTEGRACIONRequest inValue = new WEB.integracionSR.UpdateEmpleadoINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.UpdateEmpleadoINTEGRACIONRequestBody();
             inValue.Body.cuentasCobradas = cuentasCobradas;
             inValue.Body.Cedula = Cedula;
-            return ((CORE.integracionSR.integracionSWSoap)(this)).UpdateEmpleadoINTEGRACIONAsync(inValue);
+            return ((WEB.integracionSR.integracionSWSoap)(this)).UpdateEmpleadoINTEGRACIONAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CORE.integracionSR.InsertCuentaINTEGRACIONResponse CORE.integracionSR.integracionSWSoap.InsertCuentaINTEGRACION(CORE.integracionSR.InsertCuentaINTEGRACIONRequest request) {
+        WEB.integracionSR.InsertCuentaINTEGRACIONResponse WEB.integracionSR.integracionSWSoap.InsertCuentaINTEGRACION(WEB.integracionSR.InsertCuentaINTEGRACIONRequest request) {
             return base.Channel.InsertCuentaINTEGRACION(request);
         }
         
         public string InsertCuentaINTEGRACION(string Nombres, string Apellidos, string Producto, decimal Total, string cuentaID, string Cedula) {
-            CORE.integracionSR.InsertCuentaINTEGRACIONRequest inValue = new CORE.integracionSR.InsertCuentaINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.InsertCuentaINTEGRACIONRequestBody();
+            WEB.integracionSR.InsertCuentaINTEGRACIONRequest inValue = new WEB.integracionSR.InsertCuentaINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.InsertCuentaINTEGRACIONRequestBody();
             inValue.Body.Nombres = Nombres;
             inValue.Body.Apellidos = Apellidos;
             inValue.Body.Producto = Producto;
             inValue.Body.Total = Total;
             inValue.Body.cuentaID = cuentaID;
             inValue.Body.Cedula = Cedula;
-            CORE.integracionSR.InsertCuentaINTEGRACIONResponse retVal = ((CORE.integracionSR.integracionSWSoap)(this)).InsertCuentaINTEGRACION(inValue);
+            WEB.integracionSR.InsertCuentaINTEGRACIONResponse retVal = ((WEB.integracionSR.integracionSWSoap)(this)).InsertCuentaINTEGRACION(inValue);
             return retVal.Body.InsertCuentaINTEGRACIONResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CORE.integracionSR.InsertCuentaINTEGRACIONResponse> CORE.integracionSR.integracionSWSoap.InsertCuentaINTEGRACIONAsync(CORE.integracionSR.InsertCuentaINTEGRACIONRequest request) {
+        System.Threading.Tasks.Task<WEB.integracionSR.InsertCuentaINTEGRACIONResponse> WEB.integracionSR.integracionSWSoap.InsertCuentaINTEGRACIONAsync(WEB.integracionSR.InsertCuentaINTEGRACIONRequest request) {
             return base.Channel.InsertCuentaINTEGRACIONAsync(request);
         }
         
-        public System.Threading.Tasks.Task<CORE.integracionSR.InsertCuentaINTEGRACIONResponse> InsertCuentaINTEGRACIONAsync(string Nombres, string Apellidos, string Producto, decimal Total, string cuentaID, string Cedula) {
-            CORE.integracionSR.InsertCuentaINTEGRACIONRequest inValue = new CORE.integracionSR.InsertCuentaINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.InsertCuentaINTEGRACIONRequestBody();
+        public System.Threading.Tasks.Task<WEB.integracionSR.InsertCuentaINTEGRACIONResponse> InsertCuentaINTEGRACIONAsync(string Nombres, string Apellidos, string Producto, decimal Total, string cuentaID, string Cedula) {
+            WEB.integracionSR.InsertCuentaINTEGRACIONRequest inValue = new WEB.integracionSR.InsertCuentaINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.InsertCuentaINTEGRACIONRequestBody();
             inValue.Body.Nombres = Nombres;
             inValue.Body.Apellidos = Apellidos;
             inValue.Body.Producto = Producto;
             inValue.Body.Total = Total;
             inValue.Body.cuentaID = cuentaID;
             inValue.Body.Cedula = Cedula;
-            return ((CORE.integracionSR.integracionSWSoap)(this)).InsertCuentaINTEGRACIONAsync(inValue);
+            return ((WEB.integracionSR.integracionSWSoap)(this)).InsertCuentaINTEGRACIONAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CORE.integracionSR.DeleteCuentaINTEGRACIONResponse CORE.integracionSR.integracionSWSoap.DeleteCuentaINTEGRACION(CORE.integracionSR.DeleteCuentaINTEGRACIONRequest request) {
+        WEB.integracionSR.DeleteCuentaINTEGRACIONResponse WEB.integracionSR.integracionSWSoap.DeleteCuentaINTEGRACION(WEB.integracionSR.DeleteCuentaINTEGRACIONRequest request) {
             return base.Channel.DeleteCuentaINTEGRACION(request);
         }
         
         public string DeleteCuentaINTEGRACION(string cuentaID) {
-            CORE.integracionSR.DeleteCuentaINTEGRACIONRequest inValue = new CORE.integracionSR.DeleteCuentaINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.DeleteCuentaINTEGRACIONRequestBody();
+            WEB.integracionSR.DeleteCuentaINTEGRACIONRequest inValue = new WEB.integracionSR.DeleteCuentaINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.DeleteCuentaINTEGRACIONRequestBody();
             inValue.Body.cuentaID = cuentaID;
-            CORE.integracionSR.DeleteCuentaINTEGRACIONResponse retVal = ((CORE.integracionSR.integracionSWSoap)(this)).DeleteCuentaINTEGRACION(inValue);
+            WEB.integracionSR.DeleteCuentaINTEGRACIONResponse retVal = ((WEB.integracionSR.integracionSWSoap)(this)).DeleteCuentaINTEGRACION(inValue);
             return retVal.Body.DeleteCuentaINTEGRACIONResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CORE.integracionSR.DeleteCuentaINTEGRACIONResponse> CORE.integracionSR.integracionSWSoap.DeleteCuentaINTEGRACIONAsync(CORE.integracionSR.DeleteCuentaINTEGRACIONRequest request) {
+        System.Threading.Tasks.Task<WEB.integracionSR.DeleteCuentaINTEGRACIONResponse> WEB.integracionSR.integracionSWSoap.DeleteCuentaINTEGRACIONAsync(WEB.integracionSR.DeleteCuentaINTEGRACIONRequest request) {
             return base.Channel.DeleteCuentaINTEGRACIONAsync(request);
         }
         
-        public System.Threading.Tasks.Task<CORE.integracionSR.DeleteCuentaINTEGRACIONResponse> DeleteCuentaINTEGRACIONAsync(string cuentaID) {
-            CORE.integracionSR.DeleteCuentaINTEGRACIONRequest inValue = new CORE.integracionSR.DeleteCuentaINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.DeleteCuentaINTEGRACIONRequestBody();
+        public System.Threading.Tasks.Task<WEB.integracionSR.DeleteCuentaINTEGRACIONResponse> DeleteCuentaINTEGRACIONAsync(string cuentaID) {
+            WEB.integracionSR.DeleteCuentaINTEGRACIONRequest inValue = new WEB.integracionSR.DeleteCuentaINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.DeleteCuentaINTEGRACIONRequestBody();
             inValue.Body.cuentaID = cuentaID;
-            return ((CORE.integracionSR.integracionSWSoap)(this)).DeleteCuentaINTEGRACIONAsync(inValue);
+            return ((WEB.integracionSR.integracionSWSoap)(this)).DeleteCuentaINTEGRACIONAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CORE.integracionSR.InsertFacturaINTEGRACIONResponse CORE.integracionSR.integracionSWSoap.InsertFacturaINTEGRACION(CORE.integracionSR.InsertFacturaINTEGRACIONRequest request) {
+        WEB.integracionSR.InsertFacturaINTEGRACIONResponse WEB.integracionSR.integracionSWSoap.InsertFacturaINTEGRACION(WEB.integracionSR.InsertFacturaINTEGRACIONRequest request) {
             return base.Channel.InsertFacturaINTEGRACION(request);
         }
         
         public string InsertFacturaINTEGRACION(string Nombres, string Apellidos, string Producto, decimal Total, string cuentaID, string Cedula, string facturadoPor) {
-            CORE.integracionSR.InsertFacturaINTEGRACIONRequest inValue = new CORE.integracionSR.InsertFacturaINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.InsertFacturaINTEGRACIONRequestBody();
+            WEB.integracionSR.InsertFacturaINTEGRACIONRequest inValue = new WEB.integracionSR.InsertFacturaINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.InsertFacturaINTEGRACIONRequestBody();
             inValue.Body.Nombres = Nombres;
             inValue.Body.Apellidos = Apellidos;
             inValue.Body.Producto = Producto;
@@ -1437,18 +1437,18 @@ namespace CORE.integracionSR {
             inValue.Body.cuentaID = cuentaID;
             inValue.Body.Cedula = Cedula;
             inValue.Body.facturadoPor = facturadoPor;
-            CORE.integracionSR.InsertFacturaINTEGRACIONResponse retVal = ((CORE.integracionSR.integracionSWSoap)(this)).InsertFacturaINTEGRACION(inValue);
+            WEB.integracionSR.InsertFacturaINTEGRACIONResponse retVal = ((WEB.integracionSR.integracionSWSoap)(this)).InsertFacturaINTEGRACION(inValue);
             return retVal.Body.InsertFacturaINTEGRACIONResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CORE.integracionSR.InsertFacturaINTEGRACIONResponse> CORE.integracionSR.integracionSWSoap.InsertFacturaINTEGRACIONAsync(CORE.integracionSR.InsertFacturaINTEGRACIONRequest request) {
+        System.Threading.Tasks.Task<WEB.integracionSR.InsertFacturaINTEGRACIONResponse> WEB.integracionSR.integracionSWSoap.InsertFacturaINTEGRACIONAsync(WEB.integracionSR.InsertFacturaINTEGRACIONRequest request) {
             return base.Channel.InsertFacturaINTEGRACIONAsync(request);
         }
         
-        public System.Threading.Tasks.Task<CORE.integracionSR.InsertFacturaINTEGRACIONResponse> InsertFacturaINTEGRACIONAsync(string Nombres, string Apellidos, string Producto, decimal Total, string cuentaID, string Cedula, string facturadoPor) {
-            CORE.integracionSR.InsertFacturaINTEGRACIONRequest inValue = new CORE.integracionSR.InsertFacturaINTEGRACIONRequest();
-            inValue.Body = new CORE.integracionSR.InsertFacturaINTEGRACIONRequestBody();
+        public System.Threading.Tasks.Task<WEB.integracionSR.InsertFacturaINTEGRACIONResponse> InsertFacturaINTEGRACIONAsync(string Nombres, string Apellidos, string Producto, decimal Total, string cuentaID, string Cedula, string facturadoPor) {
+            WEB.integracionSR.InsertFacturaINTEGRACIONRequest inValue = new WEB.integracionSR.InsertFacturaINTEGRACIONRequest();
+            inValue.Body = new WEB.integracionSR.InsertFacturaINTEGRACIONRequestBody();
             inValue.Body.Nombres = Nombres;
             inValue.Body.Apellidos = Apellidos;
             inValue.Body.Producto = Producto;
@@ -1456,7 +1456,7 @@ namespace CORE.integracionSR {
             inValue.Body.cuentaID = cuentaID;
             inValue.Body.Cedula = Cedula;
             inValue.Body.facturadoPor = facturadoPor;
-            return ((CORE.integracionSR.integracionSWSoap)(this)).InsertFacturaINTEGRACIONAsync(inValue);
+            return ((WEB.integracionSR.integracionSWSoap)(this)).InsertFacturaINTEGRACIONAsync(inValue);
         }
     }
 }

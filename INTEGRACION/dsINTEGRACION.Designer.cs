@@ -2052,23 +2052,27 @@ namespace INTEGRACION {
             
             private global::System.Data.DataColumn columnId;
             
-            private global::System.Data.DataColumn columnNombre;
+            private global::System.Data.DataColumn columncodigo;
             
-            private global::System.Data.DataColumn columnTipo;
+            private global::System.Data.DataColumn columnmarca;
             
-            private global::System.Data.DataColumn columnPrecio;
+            private global::System.Data.DataColumn columnprecio;
             
-            private global::System.Data.DataColumn columnCantidad;
+            private global::System.Data.DataColumn columncantidad;
             
-            private global::System.Data.DataColumn columnfechaAbastecimiento;
+            private global::System.Data.DataColumn columntipo;
             
-            private global::System.Data.DataColumn columnproductoID;
+            private global::System.Data.DataColumn columnnombre;
             
-            private global::System.Data.DataColumn columnDescripcion;
+            private global::System.Data.DataColumn columnabastfecha;
             
-            private global::System.Data.DataColumn columnMarca;
+            private global::System.Data.DataColumn columnpeso;
             
             private global::System.Data.DataColumn columnimagen;
+            
+            private global::System.Data.DataColumn columndescripcion;
+            
+            private global::System.Data.DataColumn columnusuarioCedula;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -2113,65 +2117,65 @@ namespace INTEGRACION {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NombreColumn {
+            public global::System.Data.DataColumn codigoColumn {
                 get {
-                    return this.columnNombre;
+                    return this.columncodigo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TipoColumn {
+            public global::System.Data.DataColumn marcaColumn {
                 get {
-                    return this.columnTipo;
+                    return this.columnmarca;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PrecioColumn {
+            public global::System.Data.DataColumn precioColumn {
                 get {
-                    return this.columnPrecio;
+                    return this.columnprecio;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CantidadColumn {
+            public global::System.Data.DataColumn cantidadColumn {
                 get {
-                    return this.columnCantidad;
+                    return this.columncantidad;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn fechaAbastecimientoColumn {
+            public global::System.Data.DataColumn tipoColumn {
                 get {
-                    return this.columnfechaAbastecimiento;
+                    return this.columntipo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn productoIDColumn {
+            public global::System.Data.DataColumn nombreColumn {
                 get {
-                    return this.columnproductoID;
+                    return this.columnnombre;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DescripcionColumn {
+            public global::System.Data.DataColumn abastfechaColumn {
                 get {
-                    return this.columnDescripcion;
+                    return this.columnabastfecha;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn MarcaColumn {
+            public global::System.Data.DataColumn pesoColumn {
                 get {
-                    return this.columnMarca;
+                    return this.columnpeso;
                 }
             }
             
@@ -2180,6 +2184,22 @@ namespace INTEGRACION {
             public global::System.Data.DataColumn imagenColumn {
                 get {
                     return this.columnimagen;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn descripcionColumn {
+                get {
+                    return this.columndescripcion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn usuarioCedulaColumn {
+                get {
+                    return this.columnusuarioCedula;
                 }
             }
             
@@ -2220,19 +2240,21 @@ namespace INTEGRACION {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ProductosRow AddProductosRow(string Nombre, string Tipo, decimal Precio, int Cantidad, System.DateTime fechaAbastecimiento, string productoID, string Descripcion, string Marca, string imagen) {
+            public ProductosRow AddProductosRow(string codigo, string marca, decimal precio, int cantidad, string tipo, string nombre, System.DateTime abastfecha, decimal peso, string imagen, string descripcion, string usuarioCedula) {
                 ProductosRow rowProductosRow = ((ProductosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Nombre,
-                        Tipo,
-                        Precio,
-                        Cantidad,
-                        fechaAbastecimiento,
-                        productoID,
-                        Descripcion,
-                        Marca,
-                        imagen};
+                        codigo,
+                        marca,
+                        precio,
+                        cantidad,
+                        tipo,
+                        nombre,
+                        abastfecha,
+                        peso,
+                        imagen,
+                        descripcion,
+                        usuarioCedula};
                 rowProductosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProductosRow);
                 return rowProductosRow;
@@ -2263,15 +2285,17 @@ namespace INTEGRACION {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
-                this.columnNombre = base.Columns["Nombre"];
-                this.columnTipo = base.Columns["Tipo"];
-                this.columnPrecio = base.Columns["Precio"];
-                this.columnCantidad = base.Columns["Cantidad"];
-                this.columnfechaAbastecimiento = base.Columns["fechaAbastecimiento"];
-                this.columnproductoID = base.Columns["productoID"];
-                this.columnDescripcion = base.Columns["Descripcion"];
-                this.columnMarca = base.Columns["Marca"];
+                this.columncodigo = base.Columns["codigo"];
+                this.columnmarca = base.Columns["marca"];
+                this.columnprecio = base.Columns["precio"];
+                this.columncantidad = base.Columns["cantidad"];
+                this.columntipo = base.Columns["tipo"];
+                this.columnnombre = base.Columns["nombre"];
+                this.columnabastfecha = base.Columns["abastfecha"];
+                this.columnpeso = base.Columns["peso"];
                 this.columnimagen = base.Columns["imagen"];
+                this.columndescripcion = base.Columns["descripcion"];
+                this.columnusuarioCedula = base.Columns["usuarioCedula"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2279,24 +2303,28 @@ namespace INTEGRACION {
             private void InitClass() {
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
-                this.columnNombre = new global::System.Data.DataColumn("Nombre", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombre);
-                this.columnTipo = new global::System.Data.DataColumn("Tipo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTipo);
-                this.columnPrecio = new global::System.Data.DataColumn("Precio", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrecio);
-                this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCantidad);
-                this.columnfechaAbastecimiento = new global::System.Data.DataColumn("fechaAbastecimiento", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfechaAbastecimiento);
-                this.columnproductoID = new global::System.Data.DataColumn("productoID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnproductoID);
-                this.columnDescripcion = new global::System.Data.DataColumn("Descripcion", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescripcion);
-                this.columnMarca = new global::System.Data.DataColumn("Marca", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMarca);
+                this.columncodigo = new global::System.Data.DataColumn("codigo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncodigo);
+                this.columnmarca = new global::System.Data.DataColumn("marca", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmarca);
+                this.columnprecio = new global::System.Data.DataColumn("precio", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprecio);
+                this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidad);
+                this.columntipo = new global::System.Data.DataColumn("tipo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntipo);
+                this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre);
+                this.columnabastfecha = new global::System.Data.DataColumn("abastfecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnabastfecha);
+                this.columnpeso = new global::System.Data.DataColumn("peso", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpeso);
                 this.columnimagen = new global::System.Data.DataColumn("imagen", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnimagen);
+                this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescripcion);
+                this.columnusuarioCedula = new global::System.Data.DataColumn("usuarioCedula", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnusuarioCedula);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -2305,21 +2333,21 @@ namespace INTEGRACION {
                 this.columnId.AllowDBNull = false;
                 this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
-                this.columnNombre.AllowDBNull = false;
-                this.columnNombre.MaxLength = 150;
-                this.columnTipo.AllowDBNull = false;
-                this.columnTipo.MaxLength = 150;
-                this.columnPrecio.AllowDBNull = false;
-                this.columnCantidad.AllowDBNull = false;
-                this.columnfechaAbastecimiento.AllowDBNull = false;
-                this.columnproductoID.AllowDBNull = false;
-                this.columnproductoID.MaxLength = 2147483647;
-                this.columnDescripcion.AllowDBNull = false;
-                this.columnDescripcion.MaxLength = 150;
-                this.columnMarca.AllowDBNull = false;
-                this.columnMarca.MaxLength = 150;
-                this.columnimagen.AllowDBNull = false;
-                this.columnimagen.MaxLength = 150;
+                this.columncodigo.AllowDBNull = false;
+                this.columncodigo.MaxLength = 50;
+                this.columnmarca.AllowDBNull = false;
+                this.columnmarca.MaxLength = 150;
+                this.columnprecio.AllowDBNull = false;
+                this.columncantidad.AllowDBNull = false;
+                this.columntipo.AllowDBNull = false;
+                this.columntipo.MaxLength = 100;
+                this.columnnombre.AllowDBNull = false;
+                this.columnnombre.MaxLength = 500;
+                this.columnabastfecha.AllowDBNull = false;
+                this.columnpeso.AllowDBNull = false;
+                this.columnimagen.MaxLength = 200;
+                this.columndescripcion.MaxLength = 200;
+                this.columnusuarioCedula.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2984,89 +3012,89 @@ namespace INTEGRACION {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Nombre {
+            public string codigo {
                 get {
-                    return ((string)(this[this.tableProductos.NombreColumn]));
+                    return ((string)(this[this.tableProductos.codigoColumn]));
                 }
                 set {
-                    this[this.tableProductos.NombreColumn] = value;
+                    this[this.tableProductos.codigoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Tipo {
+            public string marca {
                 get {
-                    return ((string)(this[this.tableProductos.TipoColumn]));
+                    return ((string)(this[this.tableProductos.marcaColumn]));
                 }
                 set {
-                    this[this.tableProductos.TipoColumn] = value;
+                    this[this.tableProductos.marcaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal Precio {
+            public decimal precio {
                 get {
-                    return ((decimal)(this[this.tableProductos.PrecioColumn]));
+                    return ((decimal)(this[this.tableProductos.precioColumn]));
                 }
                 set {
-                    this[this.tableProductos.PrecioColumn] = value;
+                    this[this.tableProductos.precioColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Cantidad {
+            public int cantidad {
                 get {
-                    return ((int)(this[this.tableProductos.CantidadColumn]));
+                    return ((int)(this[this.tableProductos.cantidadColumn]));
                 }
                 set {
-                    this[this.tableProductos.CantidadColumn] = value;
+                    this[this.tableProductos.cantidadColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime fechaAbastecimiento {
+            public string tipo {
                 get {
-                    return ((global::System.DateTime)(this[this.tableProductos.fechaAbastecimientoColumn]));
+                    return ((string)(this[this.tableProductos.tipoColumn]));
                 }
                 set {
-                    this[this.tableProductos.fechaAbastecimientoColumn] = value;
+                    this[this.tableProductos.tipoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string productoID {
+            public string nombre {
                 get {
-                    return ((string)(this[this.tableProductos.productoIDColumn]));
+                    return ((string)(this[this.tableProductos.nombreColumn]));
                 }
                 set {
-                    this[this.tableProductos.productoIDColumn] = value;
+                    this[this.tableProductos.nombreColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Descripcion {
+            public System.DateTime abastfecha {
                 get {
-                    return ((string)(this[this.tableProductos.DescripcionColumn]));
+                    return ((global::System.DateTime)(this[this.tableProductos.abastfechaColumn]));
                 }
                 set {
-                    this[this.tableProductos.DescripcionColumn] = value;
+                    this[this.tableProductos.abastfechaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Marca {
+            public decimal peso {
                 get {
-                    return ((string)(this[this.tableProductos.MarcaColumn]));
+                    return ((decimal)(this[this.tableProductos.pesoColumn]));
                 }
                 set {
-                    this[this.tableProductos.MarcaColumn] = value;
+                    this[this.tableProductos.pesoColumn] = value;
                 }
             }
             
@@ -3074,11 +3102,84 @@ namespace INTEGRACION {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string imagen {
                 get {
-                    return ((string)(this[this.tableProductos.imagenColumn]));
+                    try {
+                        return ((string)(this[this.tableProductos.imagenColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'imagen\' in table \'Productos\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableProductos.imagenColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string descripcion {
+                get {
+                    try {
+                        return ((string)(this[this.tableProductos.descripcionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'descripcion\' in table \'Productos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProductos.descripcionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string usuarioCedula {
+                get {
+                    try {
+                        return ((string)(this[this.tableProductos.usuarioCedulaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'usuarioCedula\' in table \'Productos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProductos.usuarioCedulaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsimagenNull() {
+                return this.IsNull(this.tableProductos.imagenColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetimagenNull() {
+                this[this.tableProductos.imagenColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsdescripcionNull() {
+                return this.IsNull(this.tableProductos.descripcionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetdescripcionNull() {
+                this[this.tableProductos.descripcionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsusuarioCedulaNull() {
+                return this.IsNull(this.tableProductos.usuarioCedulaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetusuarioCedulaNull() {
+                this[this.tableProductos.usuarioCedulaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5450,15 +5551,17 @@ namespace INTEGRACION.dsINTEGRACIONTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Productos";
             tableMapping.ColumnMappings.Add("Id", "Id");
-            tableMapping.ColumnMappings.Add("Nombre", "Nombre");
-            tableMapping.ColumnMappings.Add("Tipo", "Tipo");
-            tableMapping.ColumnMappings.Add("Precio", "Precio");
-            tableMapping.ColumnMappings.Add("Cantidad", "Cantidad");
-            tableMapping.ColumnMappings.Add("fechaAbastecimiento", "fechaAbastecimiento");
-            tableMapping.ColumnMappings.Add("productoID", "productoID");
-            tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
-            tableMapping.ColumnMappings.Add("Marca", "Marca");
+            tableMapping.ColumnMappings.Add("codigo", "codigo");
+            tableMapping.ColumnMappings.Add("marca", "marca");
+            tableMapping.ColumnMappings.Add("precio", "precio");
+            tableMapping.ColumnMappings.Add("cantidad", "cantidad");
+            tableMapping.ColumnMappings.Add("tipo", "tipo");
+            tableMapping.ColumnMappings.Add("nombre", "nombre");
+            tableMapping.ColumnMappings.Add("abastfecha", "abastfecha");
+            tableMapping.ColumnMappings.Add("peso", "peso");
             tableMapping.ColumnMappings.Add("imagen", "imagen");
+            tableMapping.ColumnMappings.Add("descripcion", "descripcion");
+            tableMapping.ColumnMappings.Add("usuarioCedula", "usuarioCedula");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -5467,33 +5570,34 @@ namespace INTEGRACION.dsINTEGRACIONTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Productos] ([Nombre], [Tipo], [Precio], [Cantidad], [fechaAbas" +
-                "tecimiento], [productoID], [Descripcion], [Marca], [imagen]) VALUES (@Nombre, @T" +
-                "ipo, @Precio, @Cantidad, @fechaAbastecimiento, @productoID, @Descripcion, @Marca" +
-                ", @imagen)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Productos] ([codigo], [marca], [precio], [cantidad], [tipo], [nombre], [abastfecha], [peso], [imagen], [descripcion], [usuarioCedula]) VALUES (@codigo, @marca, @precio, @cantidad, @tipo, @nombre, @abastfecha, @peso, @imagen, @descripcion, @usuarioCedula)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tipo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Precio", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "Precio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cantidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cantidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaAbastecimiento", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaAbastecimiento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productoID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "productoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descripcion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Marca", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codigo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@marca", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@precio", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "precio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cantidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cantidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@abastfecha", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "abastfecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@peso", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "peso", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imagen", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imagen", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usuarioCedula", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "usuarioCedula", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Productos] SET [Nombre] = @Nombre, [Tipo] = @Tipo, [Precio] = @Precio, [Cantidad] = @Cantidad, [fechaAbastecimiento] = @fechaAbastecimiento, [productoID] = @productoID, [Descripcion] = @Descripcion, [Marca] = @Marca, [imagen] = @imagen WHERE (([Id] = @Original_Id))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Productos] SET [codigo] = @codigo, [marca] = @marca, [precio] = @precio, [cantidad] = @cantidad, [tipo] = @tipo, [nombre] = @nombre, [abastfecha] = @abastfecha, [peso] = @peso, [imagen] = @imagen, [descripcion] = @descripcion, [usuarioCedula] = @usuarioCedula WHERE (([Id] = @Original_Id))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tipo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Precio", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "Precio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cantidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cantidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaAbastecimiento", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaAbastecimiento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productoID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "productoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descripcion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Marca", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codigo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@marca", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@precio", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "precio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cantidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cantidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@abastfecha", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "abastfecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@peso", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "peso", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imagen", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imagen", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usuarioCedula", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "usuarioCedula", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -5507,38 +5611,45 @@ namespace INTEGRACION.dsINTEGRACIONTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Nombre, Tipo, Precio, Cantidad, fechaAbastecimiento, productoID, Descr" +
-                "ipcion, Marca, imagen FROM dbo.Productos";
+            this._commandCollection[0].CommandText = "SELECT Id, codigo, marca, precio, cantidad, tipo, nombre, abastfecha, peso, image" +
+                "n, descripcion, usuarioCedula FROM dbo.Productos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "dbo.spDelProducto";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productoID", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "dbo.spInsProducto";
+            this._commandCollection[2].CommandText = "dbo.spFillByProductoID";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.NVarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tipo", global::System.Data.SqlDbType.NVarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Precio", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 2, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cantidad", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productoID", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descripcion", global::System.Data.SqlDbType.NVarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Marca", global::System.Data.SqlDbType.NVarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imagen", global::System.Data.SqlDbType.NVarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "dbo.spUpdProducto";
+            this._commandCollection[3].CommandText = "dbo.spInsProducto";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cantidad", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productoID", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@marca", global::System.Data.SqlDbType.NVarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@precio", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 2, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cantidad", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipo", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@peso", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 2, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imagen", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcion", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "dbo.spUpdateProductoEstado";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usuarioCedula", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5560,6 +5671,42 @@ namespace INTEGRACION.dsINTEGRACIONTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual dsINTEGRACION.ProductosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsINTEGRACION.ProductosDataTable dataTable = new dsINTEGRACION.ProductosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int spFillByProductoID(dsINTEGRACION.ProductosDataTable dataTable, string codigo) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((codigo == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(codigo));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsINTEGRACION.ProductosDataTable spFillByProductoID1(string codigo) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((codigo == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(codigo));
+            }
             dsINTEGRACION.ProductosDataTable dataTable = new dsINTEGRACION.ProductosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -5620,45 +5767,52 @@ namespace INTEGRACION.dsINTEGRACIONTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Nombre, string Tipo, decimal Precio, int Cantidad, System.DateTime fechaAbastecimiento, string productoID, string Descripcion, string Marca, string imagen) {
-            if ((Nombre == null)) {
-                throw new global::System.ArgumentNullException("Nombre");
+        public virtual int Insert(string codigo, string marca, decimal precio, int cantidad, string tipo, string nombre, System.DateTime abastfecha, decimal peso, string imagen, string descripcion, string usuarioCedula) {
+            if ((codigo == null)) {
+                throw new global::System.ArgumentNullException("codigo");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Nombre));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(codigo));
             }
-            if ((Tipo == null)) {
-                throw new global::System.ArgumentNullException("Tipo");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Tipo));
-            }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(Precio));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Cantidad));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(fechaAbastecimiento));
-            if ((productoID == null)) {
-                throw new global::System.ArgumentNullException("productoID");
+            if ((marca == null)) {
+                throw new global::System.ArgumentNullException("marca");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(productoID));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(marca));
             }
-            if ((Descripcion == null)) {
-                throw new global::System.ArgumentNullException("Descripcion");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Descripcion));
-            }
-            if ((Marca == null)) {
-                throw new global::System.ArgumentNullException("Marca");
+            this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(precio));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(cantidad));
+            if ((tipo == null)) {
+                throw new global::System.ArgumentNullException("tipo");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Marca));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(tipo));
             }
+            if ((nombre == null)) {
+                throw new global::System.ArgumentNullException("nombre");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(nombre));
+            }
+            this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(abastfecha));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((decimal)(peso));
             if ((imagen == null)) {
-                throw new global::System.ArgumentNullException("imagen");
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = ((string)(imagen));
+            }
+            if ((descripcion == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(descripcion));
+            }
+            if ((usuarioCedula == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(usuarioCedula));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5680,47 +5834,54 @@ namespace INTEGRACION.dsINTEGRACIONTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nombre, string Tipo, decimal Precio, int Cantidad, System.DateTime fechaAbastecimiento, string productoID, string Descripcion, string Marca, string imagen, int Original_Id) {
-            if ((Nombre == null)) {
-                throw new global::System.ArgumentNullException("Nombre");
+        public virtual int Update(string codigo, string marca, decimal precio, int cantidad, string tipo, string nombre, System.DateTime abastfecha, decimal peso, string imagen, string descripcion, string usuarioCedula, int Original_Id) {
+            if ((codigo == null)) {
+                throw new global::System.ArgumentNullException("codigo");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Nombre));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(codigo));
             }
-            if ((Tipo == null)) {
-                throw new global::System.ArgumentNullException("Tipo");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Tipo));
-            }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(Precio));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Cantidad));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(fechaAbastecimiento));
-            if ((productoID == null)) {
-                throw new global::System.ArgumentNullException("productoID");
+            if ((marca == null)) {
+                throw new global::System.ArgumentNullException("marca");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(productoID));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(marca));
             }
-            if ((Descripcion == null)) {
-                throw new global::System.ArgumentNullException("Descripcion");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Descripcion));
-            }
-            if ((Marca == null)) {
-                throw new global::System.ArgumentNullException("Marca");
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(precio));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(cantidad));
+            if ((tipo == null)) {
+                throw new global::System.ArgumentNullException("tipo");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Marca));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(tipo));
             }
+            if ((nombre == null)) {
+                throw new global::System.ArgumentNullException("nombre");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(nombre));
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(abastfecha));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(peso));
             if ((imagen == null)) {
-                throw new global::System.ArgumentNullException("imagen");
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(imagen));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Id));
+            if ((descripcion == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(descripcion));
+            }
+            if ((usuarioCedula == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(usuarioCedula));
+            }
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5740,13 +5901,13 @@ namespace INTEGRACION.dsINTEGRACIONTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int spDelProducto(string productoID) {
+        public virtual int spDelProducto(string codigo) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            if ((productoID == null)) {
+            if ((codigo == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[1].Value = ((string)(productoID));
+                command.Parameters[1].Value = ((string)(codigo));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5768,49 +5929,49 @@ namespace INTEGRACION.dsINTEGRACIONTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int spInsProducto(string Nombre, string Tipo, global::System.Nullable<decimal> Precio, global::System.Nullable<int> Cantidad, string productoID, string Descripcion, string Marca, string imagen) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
-            if ((Nombre == null)) {
+        public virtual int spInsProducto(string codigo, string marca, global::System.Nullable<decimal> precio, global::System.Nullable<int> cantidad, string tipo, string nombre, global::System.Nullable<decimal> peso, string imagen, string descripcion) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((codigo == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[1].Value = ((string)(Nombre));
+                command.Parameters[1].Value = ((string)(codigo));
             }
-            if ((Tipo == null)) {
+            if ((marca == null)) {
                 command.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[2].Value = ((string)(Tipo));
+                command.Parameters[2].Value = ((string)(marca));
             }
-            if ((Precio.HasValue == true)) {
-                command.Parameters[3].Value = ((decimal)(Precio.Value));
+            if ((precio.HasValue == true)) {
+                command.Parameters[3].Value = ((decimal)(precio.Value));
             }
             else {
                 command.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Cantidad.HasValue == true)) {
-                command.Parameters[4].Value = ((int)(Cantidad.Value));
+            if ((cantidad.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(cantidad.Value));
             }
             else {
                 command.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((productoID == null)) {
+            if ((tipo == null)) {
                 command.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[5].Value = ((string)(productoID));
+                command.Parameters[5].Value = ((string)(tipo));
             }
-            if ((Descripcion == null)) {
+            if ((nombre == null)) {
                 command.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[6].Value = ((string)(Descripcion));
+                command.Parameters[6].Value = ((string)(nombre));
             }
-            if ((Marca == null)) {
-                command.Parameters[7].Value = global::System.DBNull.Value;
+            if ((peso.HasValue == true)) {
+                command.Parameters[7].Value = ((decimal)(peso.Value));
             }
             else {
-                command.Parameters[7].Value = ((string)(Marca));
+                command.Parameters[7].Value = global::System.DBNull.Value;
             }
             if ((imagen == null)) {
                 command.Parameters[8].Value = global::System.DBNull.Value;
@@ -5818,6 +5979,12 @@ namespace INTEGRACION.dsINTEGRACIONTableAdapters {
             else {
                 command.Parameters[8].Value = ((string)(imagen));
             }
+            if ((descripcion == null)) {
+                command.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[9].Value = ((string)(descripcion));
+            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5838,19 +6005,19 @@ namespace INTEGRACION.dsINTEGRACIONTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int spUpdProducto(global::System.Nullable<int> Cantidad, string productoID) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
-            if ((Cantidad.HasValue == true)) {
-                command.Parameters[1].Value = ((int)(Cantidad.Value));
-            }
-            else {
+        public virtual int spUpdateProductoEstado(string codigo, string usuarioCedula) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            if ((codigo == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((productoID == null)) {
+            else {
+                command.Parameters[1].Value = ((string)(codigo));
+            }
+            if ((usuarioCedula == null)) {
                 command.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[2].Value = ((string)(productoID));
+                command.Parameters[2].Value = ((string)(usuarioCedula));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

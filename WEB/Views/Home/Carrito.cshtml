@@ -18,7 +18,27 @@
             </div>
         }
     </div>
+    <form method="post" action="@Url.Action("CarritoComprar","Home") ">
+        <button type="submit">
+            COMPRAR
+            <i class="fa fa-plus-circle fa-lg icon"></i>
+        </button>
+    </form>
     <div class="resumen">
 
+
     </div>
+
+
+</div>
+
+<div>
+    <h1>
+        Resumen
+    </h1>
+    <ul>
+        <li>Precio Total: @ViewData["preciosTotales"]</li>
+        <li>Cantidad de productos: @ViewData["cantidadCompra"]</li>
+        <li>Peso Total: @ViewData["pesoTotal"]</li>
+    </ul>
 </div>

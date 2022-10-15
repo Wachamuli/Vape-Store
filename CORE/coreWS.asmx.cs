@@ -55,7 +55,7 @@ namespace CORE
 
                     adapterProducto.spInsProducto(codigo, marca, precio, cantidad, tipo, nombre, peso, imagen,descripcion);
 
-                   // clienteIntegracion.InsertarProductoINTEGRACION(codigo, marca, precio, cantidad, tipo, nombre, peso, imagen, descripcion);
+                   clienteIntegracion.InsertarProductoINTEGRACION(codigo, marca, precio, cantidad, tipo, nombre, peso, imagen, descripcion);
 
                     transaction.Commit();
                     adapterEmpleado.Connection.Close();
@@ -66,7 +66,7 @@ namespace CORE
 
                 throw new Exception();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 transaction.Rollback();
                 adapterProducto.Connection.Close();
@@ -97,7 +97,7 @@ namespace CORE
 
                     adapterProducto.spDelProducto(codigo);
 
-                    clienteIntegracion.DeleteProductoINTEGRACION(codigo);
+                   clienteIntegracion.DeleteProductoINTEGRACION(codigo);
 
                     transaction.Commit();
                     adapterEmpleado.Connection.Close();
@@ -108,7 +108,7 @@ namespace CORE
 
                 throw new Exception();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 transaction.Rollback();
                 adapterProducto.Connection.Close();
@@ -151,7 +151,7 @@ namespace CORE
 
                 throw new Exception();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 transaction.Rollback();
                 adapterCliente.Connection.Close();
@@ -193,7 +193,7 @@ namespace CORE
 
                 throw new Exception();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 transaction.Rollback();
                 adapterEmpleado.Connection.Close();
@@ -236,7 +236,7 @@ namespace CORE
 
                 throw new Exception();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 transaction.Rollback();
                 adapterEmpleado.Connection.Close();

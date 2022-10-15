@@ -184,5 +184,216 @@ namespace WEB
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spUpdateProductoEstado", codigoParameter, usuarioCedulaParameter);
         }
+    
+        public virtual int spDelCliente(string cedula)
+        {
+            var cedulaParameter = cedula != null ?
+                new ObjectParameter("Cedula", cedula) :
+                new ObjectParameter("Cedula", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spDelCliente", cedulaParameter);
+        }
+    
+        public virtual int spDelCuenta(string cuentaID)
+        {
+            var cuentaIDParameter = cuentaID != null ?
+                new ObjectParameter("cuentaID", cuentaID) :
+                new ObjectParameter("cuentaID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spDelCuenta", cuentaIDParameter);
+        }
+    
+        public virtual int spDelEmpleado(string cedula)
+        {
+            var cedulaParameter = cedula != null ?
+                new ObjectParameter("Cedula", cedula) :
+                new ObjectParameter("Cedula", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spDelEmpleado", cedulaParameter);
+        }
+    
+        public virtual int spDelProducto(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spDelProducto", codigoParameter);
+        }
+    
+        public virtual int spInsCuenta(string nombres, string apellidos, string producto, Nullable<decimal> total, string cuentaID, string cedula)
+        {
+            var nombresParameter = nombres != null ?
+                new ObjectParameter("Nombres", nombres) :
+                new ObjectParameter("Nombres", typeof(string));
+    
+            var apellidosParameter = apellidos != null ?
+                new ObjectParameter("Apellidos", apellidos) :
+                new ObjectParameter("Apellidos", typeof(string));
+    
+            var productoParameter = producto != null ?
+                new ObjectParameter("Producto", producto) :
+                new ObjectParameter("Producto", typeof(string));
+    
+            var totalParameter = total.HasValue ?
+                new ObjectParameter("Total", total) :
+                new ObjectParameter("Total", typeof(decimal));
+    
+            var cuentaIDParameter = cuentaID != null ?
+                new ObjectParameter("cuentaID", cuentaID) :
+                new ObjectParameter("cuentaID", typeof(string));
+    
+            var cedulaParameter = cedula != null ?
+                new ObjectParameter("Cedula", cedula) :
+                new ObjectParameter("Cedula", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsCuenta", nombresParameter, apellidosParameter, productoParameter, totalParameter, cuentaIDParameter, cedulaParameter);
+        }
+    
+        public virtual int spInsEmpleado(string nombres, string apellidos, string email, string telefono, string cedula, string password, string rol, string sexo)
+        {
+            var nombresParameter = nombres != null ?
+                new ObjectParameter("Nombres", nombres) :
+                new ObjectParameter("Nombres", typeof(string));
+    
+            var apellidosParameter = apellidos != null ?
+                new ObjectParameter("Apellidos", apellidos) :
+                new ObjectParameter("Apellidos", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("Email", email) :
+                new ObjectParameter("Email", typeof(string));
+    
+            var telefonoParameter = telefono != null ?
+                new ObjectParameter("Telefono", telefono) :
+                new ObjectParameter("Telefono", typeof(string));
+    
+            var cedulaParameter = cedula != null ?
+                new ObjectParameter("Cedula", cedula) :
+                new ObjectParameter("Cedula", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            var rolParameter = rol != null ?
+                new ObjectParameter("rol", rol) :
+                new ObjectParameter("rol", typeof(string));
+    
+            var sexoParameter = sexo != null ?
+                new ObjectParameter("Sexo", sexo) :
+                new ObjectParameter("Sexo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsEmpleado", nombresParameter, apellidosParameter, emailParameter, telefonoParameter, cedulaParameter, passwordParameter, rolParameter, sexoParameter);
+        }
+    
+        public virtual int spInsFactura(string nombres, string apellidos, string producto, Nullable<decimal> total, string cuentaID, string cedula, string facturadoPor)
+        {
+            var nombresParameter = nombres != null ?
+                new ObjectParameter("Nombres", nombres) :
+                new ObjectParameter("Nombres", typeof(string));
+    
+            var apellidosParameter = apellidos != null ?
+                new ObjectParameter("Apellidos", apellidos) :
+                new ObjectParameter("Apellidos", typeof(string));
+    
+            var productoParameter = producto != null ?
+                new ObjectParameter("Producto", producto) :
+                new ObjectParameter("Producto", typeof(string));
+    
+            var totalParameter = total.HasValue ?
+                new ObjectParameter("Total", total) :
+                new ObjectParameter("Total", typeof(decimal));
+    
+            var cuentaIDParameter = cuentaID != null ?
+                new ObjectParameter("cuentaID", cuentaID) :
+                new ObjectParameter("cuentaID", typeof(string));
+    
+            var cedulaParameter = cedula != null ?
+                new ObjectParameter("Cedula", cedula) :
+                new ObjectParameter("Cedula", typeof(string));
+    
+            var facturadoPorParameter = facturadoPor != null ?
+                new ObjectParameter("facturadoPor", facturadoPor) :
+                new ObjectParameter("facturadoPor", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsFactura", nombresParameter, apellidosParameter, productoParameter, totalParameter, cuentaIDParameter, cedulaParameter, facturadoPorParameter);
+        }
+    
+        public virtual int spInsProducto(string codigo, string marca, Nullable<decimal> precio, Nullable<int> cantidad, string tipo, string nombre, Nullable<decimal> peso, string imagen, string descripcion)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            var marcaParameter = marca != null ?
+                new ObjectParameter("marca", marca) :
+                new ObjectParameter("marca", typeof(string));
+    
+            var precioParameter = precio.HasValue ?
+                new ObjectParameter("precio", precio) :
+                new ObjectParameter("precio", typeof(decimal));
+    
+            var cantidadParameter = cantidad.HasValue ?
+                new ObjectParameter("cantidad", cantidad) :
+                new ObjectParameter("cantidad", typeof(int));
+    
+            var tipoParameter = tipo != null ?
+                new ObjectParameter("tipo", tipo) :
+                new ObjectParameter("tipo", typeof(string));
+    
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("nombre", nombre) :
+                new ObjectParameter("nombre", typeof(string));
+    
+            var pesoParameter = peso.HasValue ?
+                new ObjectParameter("peso", peso) :
+                new ObjectParameter("peso", typeof(decimal));
+    
+            var imagenParameter = imagen != null ?
+                new ObjectParameter("imagen", imagen) :
+                new ObjectParameter("imagen", typeof(string));
+    
+            var descripcionParameter = descripcion != null ?
+                new ObjectParameter("descripcion", descripcion) :
+                new ObjectParameter("descripcion", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsProducto", codigoParameter, marcaParameter, precioParameter, cantidadParameter, tipoParameter, nombreParameter, pesoParameter, imagenParameter, descripcionParameter);
+        }
+    
+        public virtual int spUpdCliente(Nullable<decimal> totalGastado, string cedula)
+        {
+            var totalGastadoParameter = totalGastado.HasValue ?
+                new ObjectParameter("totalGastado", totalGastado) :
+                new ObjectParameter("totalGastado", typeof(decimal));
+    
+            var cedulaParameter = cedula != null ?
+                new ObjectParameter("Cedula", cedula) :
+                new ObjectParameter("Cedula", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spUpdCliente", totalGastadoParameter, cedulaParameter);
+        }
+    
+        public virtual int spUpdEmpleado(Nullable<int> cuentasCobradas, string cedula)
+        {
+            var cuentasCobradasParameter = cuentasCobradas.HasValue ?
+                new ObjectParameter("cuentasCobradas", cuentasCobradas) :
+                new ObjectParameter("cuentasCobradas", typeof(int));
+    
+            var cedulaParameter = cedula != null ?
+                new ObjectParameter("Cedula", cedula) :
+                new ObjectParameter("Cedula", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spUpdEmpleado", cuentasCobradasParameter, cedulaParameter);
+        }
+    
+        public virtual int spDelCarrito(string usuarioCedula)
+        {
+            var usuarioCedulaParameter = usuarioCedula != null ?
+                new ObjectParameter("usuarioCedula", usuarioCedula) :
+                new ObjectParameter("usuarioCedula", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spDelCarrito", usuarioCedulaParameter);
+        }
     }
 }

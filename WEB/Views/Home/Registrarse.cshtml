@@ -6,56 +6,59 @@
     <form action="@Url.Action("Registrarse", "Home")" method="post" class="loginForm">
         <h1>Registro</h1>
 
+        <p>@ViewData["Error"]</p>
+
         <div class="control">
             <label>Nombre</label>
-            <input name="Nombres" />
+            <input name="Nombres" required />
         </div>
 
         <div class="control">
             <label>Apellido</label>
-            <input name="Apellidos" />
+            <input name="Apellidos" required />
         </div>
 
         <div class="control">
             <label>Fecha de nacimiento</label>
-            <input name="FechaNacimiento" type="date" />
+            <input name="FechaNacimiento" type="date" required />
         </div>
 
         <div class="control">
             <label>Sexo</label>
             <div class="labelSexo">
                 Hombre
-                <span><input name="sexo" type="radio" /></span>
+                <span><input name="sexo" type="radio" required /></span>
 
                 Mujer
-                <span><input name="sexo" type="radio" /></span>
+                <span><input name="sexo" type="radio" required /></span>
             </div>
         </div>
 
         <div class="control">
             <label>Teléfono</label>
-            <input name="telefono" />
+            <input name="telefono" required />
         </div>
 
         <div class="control">
             <label>Correo</label>
-            <input name="Email" />
+            <input name="Email" required />
         </div>
 
         <div class="control">
             <label>Cédula</label>
-            <input name="Cedula" />
+            <input name="Cedula" required />
         </div>
 
         <div class="control">
             <label>Contraseña</label>
-            <input type="password" class="password" name="Password" />
+            <input type="password" class="password" name="Password" required />
         </div>
 
         <div class="control">
             <label>Confirmar contraseña</label>
-            <input type="password" class="password" name="confirmarpassword" />
+            <input type="password" class="password" name="confirmarpassword" required />
         </div>
+
 
         <button type="submit">Registrar</button>
     </form>
